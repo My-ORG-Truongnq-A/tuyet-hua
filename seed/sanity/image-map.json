@@ -1,0 +1,149 @@
+{
+  "strategy": "client_photos",
+  "ssimMin": 0.98,
+  "images": {
+    "event-cake.jpg": {
+      "original": "seed/sanity/assets/event-cake.jpg",
+      "originalBytes": 162699,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/event-cake-480.webp",
+          "width": 480,
+          "height": 640,
+          "quality": 84,
+          "ssim": 0.98,
+          "bytes": 44146
+        },
+        {
+          "file": "/images/event-cake-709.webp",
+          "width": 709,
+          "height": 945,
+          "quality": 87,
+          "ssim": 0.9819,
+          "bytes": 110392
+        }
+      ]
+    },
+    "portrait-navy.jpg": {
+      "original": "seed/sanity/assets/portrait-navy.jpg",
+      "originalBytes": 69963,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/portrait-navy-480.webp",
+          "width": 480,
+          "height": 720,
+          "quality": 68,
+          "ssim": 0.9806,
+          "bytes": 13894
+        },
+        {
+          "file": "/images/portrait-navy-630.webp",
+          "width": 630,
+          "height": 945,
+          "quality": 76,
+          "ssim": 0.98,
+          "bytes": 23992
+        }
+      ]
+    },
+    "talk-sale-event.jpg": {
+      "original": "seed/sanity/assets/talk-sale-event.jpg",
+      "originalBytes": 262472,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/talk-sale-event-480.webp",
+          "width": 480,
+          "height": 320,
+          "quality": 85,
+          "ssim": 0.9804,
+          "bytes": 28518
+        },
+        {
+          "file": "/images/talk-sale-event-768.webp",
+          "width": 768,
+          "height": 512,
+          "quality": 87,
+          "ssim": 0.9811,
+          "bytes": 64580
+        },
+        {
+          "file": "/images/talk-sale-event-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "quality": 89,
+          "ssim": 0.9841,
+          "bytes": 146894
+        },
+        {
+          "file": "/images/talk-sale-event-1417.webp",
+          "width": 1417,
+          "height": 945,
+          "quality": 87,
+          "ssim": 0.9804,
+          "bytes": 183962
+        }
+      ]
+    },
+    "team-office.jpg": {
+      "original": "seed/sanity/assets/team-office.jpg",
+      "originalBytes": 276381,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/team-office-480.webp",
+          "width": 480,
+          "height": 360,
+          "quality": 80,
+          "ssim": 0.9806,
+          "bytes": 33814
+        },
+        {
+          "file": "/images/team-office-768.webp",
+          "width": 768,
+          "height": 576,
+          "quality": 82,
+          "ssim": 0.9803,
+          "bytes": 72780
+        },
+        {
+          "file": "/images/team-office-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "quality": 84,
+          "ssim": 0.9813,
+          "bytes": 152626
+        },
+        {
+          "file": "/images/team-office-1260.webp",
+          "width": 1260,
+          "height": 945,
+          "quality": 85,
+          "ssim": 0.9804,
+          "bytes": 182084
+        }
+      ]
+    }
+  },
+  "og": {
+    "default:vi": "/og/default-vi.webp",
+    "home:vi": "/og/home-vi.webp",
+    "about:vi": "/og/about-vi.webp",
+    "projects:vi": "/og/projects-vi.webp",
+    "team:vi": "/og/team-vi.webp",
+    "articles:vi": "/og/articles-vi.webp",
+    "contact:vi": "/og/contact-vi.webp",
+    "legal:vi": "/og/legal-vi.webp",
+    "default:en": "/og/default-en.webp",
+    "home:en": "/og/home-en.webp",
+    "about:en": "/og/about-en.webp",
+    "projects:en": "/og/projects-en.webp",
+    "team:en": "/og/team-en.webp",
+    "articles:en": "/og/articles-en.webp",
+    "contact:en": "/og/contact-en.webp",
+    "legal:en": "/og/legal-en.webp"
+  },
+  "logo": "NEEDS_INPUT"
+}
