@@ -24,3 +24,8 @@ pnpm typecheck && pnpm lint && pnpm test && pnpm build
 - `SANITY_SOURCE=seed` hoặc chưa có `NEXT_PUBLIC_SANITY_PROJECT_ID` → đọc `seed/sanity/documents.json` bằng `groq-js`.
 - `SANITY_SOURCE=sanity` → đọc Sanity qua CDN, cùng truy vấn GROQ (`lib/content/`).
 - Studio ở `/studio` chỉ chạy khi đã có `NEXT_PUBLIC_SANITY_PROJECT_ID`; chưa có thì trang báo “chưa bật CMS”.
+
+## Tracking (10-tracking)
+
+- Không có form lead. GTM / GA4 / Search Console đọc từ env `NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_GA_ID`, `GOOGLE_SITE_VERIFICATION`; thiếu ID hoặc không phải `VERCEL_ENV=production` thì không nhúng gì. Đổi ID phải build lại.
+- Sự kiện `click_zalo` / `click_phone` / `click_email` + UTM first-touch vào `dataLayer`. Chi tiết và tệp import GTM: `docs/tracking.md`, `docs/gtm-container-import.json`.

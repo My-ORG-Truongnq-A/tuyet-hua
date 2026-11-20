@@ -51,7 +51,7 @@
 | Form key CRM · `allowed_domains` đã thêm host? ([LD-02](09-lead.md#ld-02)) | Không áp dụng |
 | Email nhận lead (nếu Gmail) | Không áp dụng |
 | Các form: tên · trường · đích CTA | Không có form. CTA chính: Zalo 0359 361 359 xuyên suốt site (YC-07) |
-| GTM / GA4 / Search Console / pixel (để trống được, Q-15) | `missing_info` (MI-16) — để trống, không nhúng script |
+| GTM / GA4 / Search Console / pixel (để trống được, Q-15) | `missing_info` (MI-16) — để trống, không nhúng script. Code dựng sẵn: ID từ env `NEXT_PUBLIC_GTM_ID` / `NEXT_PUBLIC_GA_ID` / `GOOGLE_SITE_VERIFICATION`, chỉ bật khi `VERCEL_ENV=production` (sau G6); GTM-only; dataLayer `click_zalo` / `click_phone` / `click_email` + UTM first-touch — xem `docs/tracking.md`. Không pixel quảng cáo |
 | Chat widget key (của chính dự án) | Không dùng |
 | Câu đồng ý + link chính sách (người duyệt pháp lý) ([BM-07](11-bao-mat-phap-ly.md#bm-07)) | Không thu dữ liệu qua form; nội dung trang Chính sách bảo mật `missing_info` (MI-16) |
 
@@ -98,3 +98,7 @@ Mỗi lần làm khác luật **NÊN** hoặc **PHẢI** đều ghi vào đây. 
 | content_model.groq_queries | Giữ 9 câu; thêm `_updatedAt` cho settings / projectList / postList (lastmod sitemap) và 3 câu hạ tầng (menu, đếm bài, thông tin ảnh). Ảnh gắn url / kích thước bằng MỘT truy vấn asset chung sau truy vấn chính, thay vì `asset->` trong từng projection | Câu `page` trả cả document nên không deref ảnh trong GROQ được; cách này giống hệt cho seed và Sanity | Chờ duyệt |
 | content_model.i18n | Plugin document-internationalization chỉ áp cho `project`, `post`, `testimonial`; trang tĩnh mở bản vi / en theo `_id` cố định `<type>-<lang>` trong structure | Plugin tạo bản dịch với `_id` ngẫu nhiên, trái D-05 | Chờ duyệt |
 | Kế hoạch T2.7 | Câu `testimonials` (content_model) lọc `consentConfirmed == true` ở mọi chế độ → bản xem trước cũng không hiện cảm nhận chưa đồng ý | Theo đúng câu GROQ đã duyệt; chặt hơn là an toàn (D-10) | Chờ duyệt |
+| Kế hoạch T5.6 | ID đo lường đọc từ env (`NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_GA_ID`, `GOOGLE_SITE_VERIFICATION`) thay vì `siteSettings.integrations` trong CMS | TR-01 (ID chỉ từ env, đổi ID phải redeploy) + chỉ dẫn bước tracking; ID nhập ở thẻ Cấu hình dự án, env đặt ở lần áp cấu hình sau G6 | Chờ duyệt |
+| Kế hoạch T5.6 (MI-16) | Đã dựng dataLayer cho nút Zalo / gọi (`click_zalo`, `click_phone`) trước khi khách trả lời MI-16 | Theo chỉ dẫn bước tracking. Sự kiện chỉ nằm trong bộ nhớ trình duyệt, không gửi đi đâu cho tới khi có ID trên production; không PII | Chờ duyệt |
+| LD-05 (PHẢI — phần nguồn truy cập) | UTM **first-touch** (bộ utm_* đầu tiên, 30 ngày, không ghi đè) lưu `localStorage` key `th_first_touch` thay vì cookie «last non-direct»; không lưu click ID | Site không có form lead nên LD-05 không áp trọn; người vận hành yêu cầu first-touch. `localStorage` không gửi lên server theo mỗi request; click ID để GA4 / GTM tự đọc từ URL | Chờ duyệt |
+| Kế hoạch T1.7 (CSP) | Khi tracking bật (production + ID) CSP thêm `https://www.googletagmanager.com` (script), `*.google-analytics.com`, `*.analytics.google.com`, `*.googletagmanager.com` (connect / img); không bật thì CSP giữ nguyên, không host ngoài | Cần cho GTM / GA4; tính lúc build từ cùng hàm `resolveTracking` với chỗ nhúng | Chờ duyệt |
