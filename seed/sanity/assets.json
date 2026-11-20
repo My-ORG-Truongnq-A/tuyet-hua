@@ -1,1 +1,46 @@
-[]
+[
+  {
+    "_sanityAsset": "image@file://./seed/sanity/assets/event-cake.jpg",
+    "assetId": "image-5c1baf929ac08e1b0cd8bb781beaa9688eee85b8-709x945-jpg",
+    "file": "event-cake.jpg",
+    "sha1hash": "5c1baf929ac08e1b0cd8bb781beaa9688eee85b8",
+    "width": 709,
+    "height": 945,
+    "extension": "jpg",
+    "mimeType": "image/jpeg",
+    "size": 162699
+  },
+  {
+    "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy.jpg",
+    "assetId": "image-39950a22ae3a57af7d2df7e75492304621330819-630x945-jpg",
+    "file": "portrait-navy.jpg",
+    "sha1hash": "39950a22ae3a57af7d2df7e75492304621330819",
+    "width": 630,
+    "height": 945,
+    "extension": "jpg",
+    "mimeType": "image/jpeg",
+    "size": 69963
+  },
+  {
+    "_sanityAsset": "image@file://./seed/sanity/assets/talk-sale-event.jpg",
+    "assetId": "image-329ba048b06d4708a6f1bad1c56706c9c5ee5d99-1417x945-jpg",
+    "file": "talk-sale-event.jpg",
+    "sha1hash": "329ba048b06d4708a6f1bad1c56706c9c5ee5d99",
+    "width": 1417,
+    "height": 945,
+    "extension": "jpg",
+    "mimeType": "image/jpeg",
+    "size": 262472
+  },
+  {
+    "_sanityAsset": "image@file://./seed/sanity/assets/team-office.jpg",
+    "assetId": "image-08a625eb7a440f00662c6c52932e062856afabee-1260x945-jpg",
+    "file": "team-office.jpg",
+    "sha1hash": "08a625eb7a440f00662c6c52932e062856afabee",
+    "width": 1260,
+    "height": 945,
+    "extension": "jpg",
+    "mimeType": "image/jpeg",
+    "size": 276381
+  }
+]

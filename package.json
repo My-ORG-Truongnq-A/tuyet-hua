@@ -16,7 +16,10 @@
     "test:watch": "vitest",
     "e2e": "playwright test",
     "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm build",
-    "schema:check": "sanity schema validate --level error"
+    "schema:check": "sanity schema validate --level error",
+    "seed:assets": "tsx scripts/seed-assets.ts",
+    "seed:validate": "tsx scripts/seed-validate.ts",
+    "seed:ndjson": "tsx scripts/seed-to-ndjson.ts"
   },
   "dependencies": {
     "@sanity/document-internationalization": "6.3.0",

@@ -6,6 +6,7 @@ export const BANNED_PHRASES = [
   "chuyên gia hàng đầu",
   "cam kết lợi nhuận",
   "lợi nhuận cam kết",
+  "lợi nhuận đảm bảo",
   "đảm bảo lợi nhuận",
   "bảo đảm lợi nhuận",
   "cam kết sinh lời",
