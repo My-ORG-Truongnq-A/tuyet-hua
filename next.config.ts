@@ -23,6 +23,9 @@ const nextConfig: NextConfig = {
   experimental: { globalNotFound: true },
   images: {
     remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
+    // Ảnh seed (BP-05) đi qua bộ tối ưu của Next; chỉ đường dẫn này, không query.
+    localPatterns: [{ pathname: "/seed-assets/**", search: "" }],
+    qualities: [75],
   },
   async rewrites() {
     // Tiếng Anh chưa bật (SITE_LANGUAGES=vi, REQ-17): mọi /en/* trả 404 toàn cục.

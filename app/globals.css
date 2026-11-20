@@ -59,6 +59,28 @@
   }
 }
 
+/* Reveal (T3.9): chỉ opacity / transform; token --duration-reveal, --reveal-distance (= 0 khi reduced-motion). */
+@layer base {
+  [data-reveal="pending"] {
+    opacity: 0;
+    transform: translateY(var(--reveal-distance));
+  }
+  [data-reveal="shown"] {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity var(--duration-reveal) var(--ease-calm),
+      transform var(--duration-reveal) var(--ease-calm);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+}
+
 @utility container-page {
   margin-inline: auto;
   width: 100%;
