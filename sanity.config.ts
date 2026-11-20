@@ -19,7 +19,8 @@ import {
  */
 export default defineConfig({
   name: "default",
-  title: "Hứa Thị Tuyết — Quản trị nội dung",
+  // Không ghi tên thương hiệu trong mã (CM-03) — tên hiển thị lấy từ Cài đặt chung trên site.
+  title: "Quản trị nội dung website",
   basePath: "/studio",
   projectId,
   dataset,

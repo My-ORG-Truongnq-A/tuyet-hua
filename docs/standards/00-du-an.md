@@ -91,3 +91,7 @@ Mỗi lần làm khác luật **NÊN** hoặc **PHẢI** đều ghi vào đây. 
 | Kế hoạch meta.stack | Next.js 16.4.6 thay vì 15.5 | Chuẩn yêu cầu Next 16 (KT-07) | Chờ duyệt |
 | BP-03 | `/studio` trả 200 với thông báo «Chưa bật CMS» (noindex) thay vì 404 khi chưa có project Sanity | Theo chỉ dẫn bước dựng khung | Chờ duyệt |
 | design_tokens pa1 `focus-ring` | Vòng focus trên nền sáng dùng emerald-700, trên nền tối gold-300 (thay gold-400) | gold-400 trên ngà chỉ ~1,9:1, dưới 3:1 của WCAG 1.4.11 | Chờ duyệt |
+| Kế hoạch T2.5 | Fixture test ở `seed/fixtures/` (thay `tests/fixtures/`), chọn bằng `SEED_FILE=fixtures/seed-full.json` | Loader seed chỉ đọc trong `seed/` (giới hạn phạm vi đọc tệp / trace) | Chờ duyệt |
+| content_model.groq_queries | Giữ 9 câu; thêm `_updatedAt` cho settings / projectList / postList (lastmod sitemap) và 3 câu hạ tầng (menu, đếm bài, thông tin ảnh). Ảnh gắn url / kích thước bằng MỘT truy vấn asset chung sau truy vấn chính, thay vì `asset->` trong từng projection | Câu `page` trả cả document nên không deref ảnh trong GROQ được; cách này giống hệt cho seed và Sanity | Chờ duyệt |
+| content_model.i18n | Plugin document-internationalization chỉ áp cho `project`, `post`, `testimonial`; trang tĩnh mở bản vi / en theo `_id` cố định `<type>-<lang>` trong structure | Plugin tạo bản dịch với `_id` ngẫu nhiên, trái D-05 | Chờ duyệt |
+| Kế hoạch T2.7 | Câu `testimonials` (content_model) lọc `consentConfirmed == true` ở mọi chế độ → bản xem trước cũng không hiện cảm nhận chưa đồng ý | Theo đúng câu GROQ đã duyệt; chặt hơn là an toàn (D-10) | Chờ duyệt |
