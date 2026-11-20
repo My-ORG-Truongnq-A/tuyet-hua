@@ -35,7 +35,8 @@ test.describe("indexing guard (SEO-01) + header bảo mật (BM-01)", () => {
   });
 
   test("URL không tồn tại → 404 có HTML đầy đủ (KT-06); /en/* 404 khi tiếng Anh tắt", async ({ request }) => {
-    for (const path of ["/khong-ton-tai", "/du-an/khong-co", "/en", "/en/about"]) {
+    // Slug dự án / bài ngoài danh sách build (dynamicParams = false) cũng đi qua global-not-found.
+    for (const path of ["/khong-ton-tai", "/du-an/khong-co", "/bai-viet/khong-co", "/en", "/en/about"]) {
       const res = await request.get(path);
       expect(res.status(), path).toBe(404);
       const html = await res.text();
