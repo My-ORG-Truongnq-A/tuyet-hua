@@ -27,6 +27,21 @@ describe("repo", () => {
     expect(lines.some((l) => /^\/?public(\/images)?\/?$/.test(l))).toBe(false);
   });
 
+  it("mẫu biến môi trường có đủ tên biến chuẩn, không chứa giá trị bí mật (KT-11)", () => {
+    const sample = readFileSync(join(ROOT, ".env" + ".example"), "utf8");
+    const names = [
+      "NEXT_PUBLIC_SITE_URL", "ALLOW_INDEXING", "SANITY_SOURCE", "NEXT_PUBLIC_SANITY_PROJECT_ID",
+      "NEXT_PUBLIC_SANITY_DATASET", "SANITY_API_READ_TOKEN", "SANITY_API_WRITE_TOKEN", "SANITY_REVALIDATE_SECRET",
+      "LEAD_DESTINATION", "DGA_API_URL", "DGA_FORM_KEY", "LEAD_TO_EMAIL", "LEADS_DRY_RUN",
+      "NEXT_PUBLIC_GTM_ID", "NEXT_PUBLIC_GA_ID", "GOOGLE_SITE_VERIFICATION", "NEXT_PUBLIC_CHAT_WIDGET_KEY",
+      "CRON_SECRET", "CONTENT_MODE", "SITE_LANGUAGES",
+    ];
+    for (const n of names) expect(sample, n).toMatch(new RegExp(`^${n}=`, "m"));
+    for (const secret of ["SANITY_API_READ_TOKEN", "SANITY_API_WRITE_TOKEN", "SANITY_REVALIDATE_SECRET", "DGA_FORM_KEY", "CRON_SECRET"]) {
+      expect(sample, secret).toMatch(new RegExp(`^${secret}=$`, "m"));
+    }
+  });
+
   it("chỉ một lockfile (pnpm)", () => {
     expect(existsSync(join(ROOT, "pnpm-lock.yaml"))).toBe(true);
     expect(existsSync(join(ROOT, "package-lock.json"))).toBe(false);
