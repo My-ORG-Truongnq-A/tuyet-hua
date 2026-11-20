@@ -31,4 +31,10 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm lint
       - run: pnpm test
+      # Kiểm schema + seed offline (CM-01, CM-02, ND-10) — không gọi Sanity
+      - run: pnpm schema:check
+      - run: pnpm seed:assets --check
+      - run: pnpm seed:validate
+      - run: pnpm seed:validate --file fixtures/seed-full.json
+      - run: pnpm seed:validate --file fixtures/seed-empty.json
       - run: pnpm build

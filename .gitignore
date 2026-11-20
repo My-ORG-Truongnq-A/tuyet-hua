@@ -37,3 +37,6 @@ npm-debug.log*
 pnpm-debug.log*
 
 # KHÔNG chặn public/images (KT-09)
+
+# Tệp sinh tạm (seed:ndjson)
+tmp/
