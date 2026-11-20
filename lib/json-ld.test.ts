@@ -1,20 +1,20 @@
 import { describe, expect, it } from "vitest";
-import type { SiteSettings } from "./content/site-settings";
+import { normalizeSiteSettings, type SiteSettings } from "./content/site-settings";
 import { breadcrumbNode, graph, personNode, serializeJsonLd, webPageNode, websiteNode } from "./json-ld";
 
 const SITE = "https://tuyethua.vn";
 const settings: SiteSettings = {
+  ...normalizeSiteSettings(null, "vi"),
   updatedAt: null,
   personName: "Hứa Thị Tuyết",
   jobTitle: "Giám đốc Kinh doanh",
-  organization: "Công ty Mẫu",
   tagline: null,
   phone: "0359 361 359",
   zaloPhone: "0359 361 359",
   email: null,
   area: "Hạ Long – Quảng Ninh",
   socials: [{ platform: "facebook", url: "https://facebook.com/x" }],
-  seo: { titleTemplate: "%s", description: "Mô tả." },
+  seo: { titleTemplate: "%s", description: "Mô tả.", ogImage: null },
 };
 
 describe("lib/json-ld (GEO-02, T5.1)", () => {

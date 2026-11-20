@@ -11,6 +11,7 @@ const assets = read<SeedAsset[]>("seed/sanity/assets.json");
 const pendingRequired = Object.keys(read<{ pendingRequired: object }>("seed/sanity/field-status.json").pendingRequired);
 
 const clone = () => structuredClone(docs);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- test sửa sâu cấu trúc JSON tuỳ ý
 const find = (list: SeedDoc[], id: string) => list.find((d) => d._id === id)! as Record<string, any>;
 const messages = async (list: unknown) => (await checkSeed({ docs: list, assets, pendingRequired })).map((i) => `${i.id} ${i.path} ${i.message}`);
 
@@ -85,7 +86,7 @@ describe("seed:validate (CM-02, ND-10)", () => {
     find(list, "project-lang-van-vi").slug.current = "ha-long-xanh";
     expect((await messages(list)).join("\n")).toMatch(/slug «ha-long-xanh» trùng/);
     const other = clone();
-    other.push({ ...find(other, "project-ha-long-xanh-vi"), _id: "project-ha-long-xanh-en", language: "en" } as SeedDoc);
+    other.push({ ...find(other, "project-ha-long-xanh-vi"), _id: "project-ha-long-xanh-en", language: "en" } as unknown as SeedDoc);
     expect(await messages(other)).toEqual([]);
   });
 

@@ -12,7 +12,7 @@ import { Icon } from "../ui/Icon";
 export function Footer({ lang, settings }: { lang: Lang; settings: SiteSettings }) {
   const t = UI[lang];
   const year = new Date().getFullYear();
-  const role = [settings.jobTitle, settings.organization].filter(Boolean).join(" · ");
+  const role = settings.jobTitle;
   return (
     <footer className="surface-dark bg-(--surface-footer) pb-24 text-emerald-100 sm:pb-0">
       <div className="container-page grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]">

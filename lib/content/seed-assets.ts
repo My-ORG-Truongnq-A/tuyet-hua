@@ -91,7 +91,8 @@ export function materializeSeedAssets(docs: Doc[], assets: SeedAsset[]): Doc[] {
       const asset = byRef.get(obj._sanityAsset);
       if (!asset) throw new Error(`[seed] ảnh «${obj._sanityAsset}» chưa có trong assets.json — chạy pnpm seed:assets`);
       used.set(asset.assetId, asset);
-      const { _sanityAsset: _ignored, ...rest } = obj;
+      const rest = { ...obj };
+      delete rest._sanityAsset;
       return { ...walkObject(rest), asset: { _type: "reference", _ref: asset.assetId } };
     }
     return walkObject(obj);

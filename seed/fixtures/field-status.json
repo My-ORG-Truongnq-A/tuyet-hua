@@ -1,0 +1,6 @@
+{
+  "_note": "FIXTURE — không dùng cho nội dung thật. Lỗi chủ đích để kiểm bộ lọc nội dung chưa xác nhận.",
+  "expectedIssues": {
+    "testimonial-b-vi.consentConfirmed": "Cảm nhận chưa có đồng ý — kiểm truy vấn testimonials / gate bỏ bản này"
+  }
+}

@@ -1,19 +1,19 @@
 import { describe, expect, it } from "vitest";
-import type { SiteSettings } from "./content/site-settings";
+import { normalizeSiteSettings, type SiteSettings } from "./content/site-settings";
 import { buildMetadataFor } from "./seo";
 
 const settings: SiteSettings = {
+  ...normalizeSiteSettings(null, "vi"),
   updatedAt: null,
   personName: "Hứa Thị Tuyết",
   jobTitle: "Chức danh",
-  organization: null,
   tagline: "Khẩu hiệu.",
   phone: "0359 361 359",
   zaloPhone: "0359 361 359",
   email: null,
   area: null,
   socials: [],
-  seo: { titleTemplate: "%s | Hứa Thị Tuyết", description: "Mô tả mặc định." },
+  seo: { titleTemplate: "%s | Hứa Thị Tuyết", description: "Mô tả mặc định.", ogImage: null },
 };
 const ctx = { siteUrl: "https://tuyethua.vn", indexable: true, languages: ["vi", "en"] as const };
 

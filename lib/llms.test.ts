@@ -1,20 +1,20 @@
 import { describe, expect, it } from "vitest";
-import type { SiteSettings } from "./content/site-settings";
+import { normalizeSiteSettings, type SiteSettings } from "./content/site-settings";
 import { findBannedPhrases } from "./banned-phrases";
 import { llmsTxt } from "./llms";
 
 const settings: SiteSettings = {
+  ...normalizeSiteSettings(null, "vi"),
   updatedAt: null,
   personName: "Hứa Thị Tuyết",
   jobTitle: "Giám đốc Kinh doanh",
-  organization: null,
   tagline: "Thấu hiểu thị trường.",
   phone: "0359361359",
   zaloPhone: null,
   email: null,
   area: null,
   socials: [],
-  seo: { titleTemplate: "%s", description: "Mô tả ngắn." },
+  seo: { titleTemplate: "%s", description: "Mô tả ngắn.", ogImage: null },
 };
 
 describe("llms.txt (GEO-06, T5.3)", () => {
@@ -27,7 +27,7 @@ describe("llms.txt (GEO-06, T5.3)", () => {
   });
 
   it("trường trống bỏ dòng, không «undefined» / «null», không cụm cấm", () => {
-    const txt = llmsTxt({ settings: { ...settings, seo: { titleTemplate: "%s", description: null }, jobTitle: null }, siteUrl: "https://tuyethua.vn", pages: [] });
+    const txt = llmsTxt({ settings: { ...settings, seo: { titleTemplate: "%s", description: null, ogImage: null }, jobTitle: null }, siteUrl: "https://tuyethua.vn", pages: [] });
     expect(txt).not.toMatch(/undefined|null/);
     expect(findBannedPhrases(txt)).toEqual([]);
   });
