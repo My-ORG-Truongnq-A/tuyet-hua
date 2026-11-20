@@ -1,0 +1,22 @@
+[
+  {
+    "_id": "siteSettings",
+    "_type": "siteSettings",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "personName": "Hứa Thị Tuyết",
+    "jobTitle": { "vi": "Giám đốc Kinh doanh – Khối TP55" },
+    "organization": "Trường Phát Group",
+    "tagline": { "vi": "Thấu hiểu thị trường. Tinh chọn giá trị. Đồng hành bền lâu." },
+    "phone": "0359 361 359",
+    "zaloPhone": "0359 361 359",
+    "area": { "vi": "Hạ Long – Quảng Ninh" },
+    "socials": [],
+    "seoDefaults": {
+      "titleTemplate": "%s | Hứa Thị Tuyết",
+      "description": {
+        "vi": "Hứa Thị Tuyết — tư vấn bất động sản thực chiến tại Hạ Long – Quảng Ninh, đồng hành cùng khách hàng trước, trong và sau giao dịch."
+      }
+    }
+  }
+]

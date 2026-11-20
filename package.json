@@ -18,11 +18,15 @@
     "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm build"
   },
   "dependencies": {
+    "@sanity/locale-vi-vn": "^1.1.38",
     "groq-js": "^2.0.3",
     "next": "16.4.6",
+    "next-sanity": "^13.5.1",
     "react": "19.3.1",
     "react-dom": "19.3.1",
+    "sanity": "^6.24.0",
     "server-only": "^0.0.1",
+    "styled-components": "^6.6.0",
     "zod": "^4.6.7"
   },
   "devDependencies": {

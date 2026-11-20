@@ -29,6 +29,8 @@ export type Env = {
   /** Ngôn ngữ đang bật; luôn có "vi", thứ tự cố định vi → en. */
   languages: Lang[];
   contentMode: ContentMode;
+  /** Tệp seed (mặc định seed/sanity/documents.json; e2e có thể trỏ sang fixture). */
+  seedFile?: string;
   leadsDryRun: boolean;
   tracking: {
     gtmId?: string;
@@ -109,6 +111,7 @@ export function parseEnv(raw: RawEnv): Env {
     },
     languages: parseLanguages(opt(raw.SITE_LANGUAGES)),
     contentMode: contentModeRaw,
+    seedFile: opt(raw.SEED_FILE),
     leadsDryRun: raw.LEADS_DRY_RUN !== "0",
     tracking: {
       gtmId: opt(raw.NEXT_PUBLIC_GTM_ID),
@@ -137,6 +140,7 @@ export const env: Env = parseEnv({
   SANITY_REVALIDATE_SECRET: process.env.SANITY_REVALIDATE_SECRET,
   SITE_LANGUAGES: process.env.SITE_LANGUAGES,
   CONTENT_MODE: process.env.CONTENT_MODE,
+  SEED_FILE: process.env.SEED_FILE,
   LEADS_DRY_RUN: process.env.LEADS_DRY_RUN,
   NEXT_PUBLIC_GTM_ID: process.env.NEXT_PUBLIC_GTM_ID,
   NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
