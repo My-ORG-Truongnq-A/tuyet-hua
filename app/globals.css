@@ -1,1 +1,67 @@
-@import "tailwindcss";
+/* Chỉ quét mã site — không quét Studio / node_modules (GD-02). */
+@import "tailwindcss" source(none);
+@import "../styles/tokens.css";
+
+@source "../app";
+@source "../components";
+@source "../lib";
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: var(--header-h); /* GD-03: anchor không bị header che */
+    background: var(--surface-page);
+    color: var(--on-page);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    min-height: 100dvh;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance; /* GD-03 */
+    overflow-wrap: break-word;
+  }
+  p,
+  li {
+    text-wrap: pretty;
+  }
+  b,
+  strong {
+    font-weight: 600; /* HN-04: không > 700 */
+  }
+  img,
+  svg,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+  :focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+  /* Vùng nền tối: đổi vòng focus sang gold-300 cho đủ tương phản. */
+  .surface-dark {
+    --focus-ring: var(--focus-ring-on-dark);
+  }
+}
+
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-page);
+  padding-inline: var(--gutter);
+}
+
+@utility section-y {
+  padding-block: var(--section-y);
+}
