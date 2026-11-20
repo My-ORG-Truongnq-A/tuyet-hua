@@ -36,7 +36,7 @@ export function Footer({
         .join(", ")
     : null;
   return (
-    <footer className="surface-dark bg-(--surface-footer) pb-24 text-emerald-100 sm:pb-0">
+    <footer data-track-area="footer" className="surface-dark bg-(--surface-footer) pb-24 text-emerald-100 sm:pb-0">
       <div className="container-page grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <p className="font-display text-2xl text-ivory-100">{settings.brandName}</p>

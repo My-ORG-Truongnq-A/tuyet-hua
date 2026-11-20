@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { resolveTracking, trackingCspSources } from "./lib/analytics";
 import { env } from "./lib/env";
 import { indexingAllowed } from "./lib/indexing";
 import { contentSecurityPolicy, securityHeaders } from "./lib/security-headers";
@@ -49,7 +50,11 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: contentSecurityPolicy({ isDev: process.env.NODE_ENV === "development" }),
+            value: contentSecurityPolicy({
+              isDev: process.env.NODE_ENV === "development",
+              // Chỉ mở host Google khi tracking thật sự được nhúng (production + có ID — TR-01).
+              extra: trackingCspSources(resolveTracking(env)),
+            }),
           },
         ],
       },

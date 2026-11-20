@@ -34,6 +34,7 @@ export function MobileMenu({
         <Icon name="menu" />
       </button>
       <dialog
+        data-track-area="mobile_menu"
         ref={ref}
         aria-label={navLabel}
         className="m-0 h-dvh max-h-none w-full max-w-none bg-ivory-50 p-0 text-ink-900 backdrop:bg-emerald-950/40 open:flex open:flex-col"

@@ -31,7 +31,7 @@ export function Header({
   const links = items.map(({ href, label }) => ({ href, label }));
   const zaloLabel = settings.ui.zaloCta ?? t.zaloCta;
   return (
-    <header className="surface-hero relative z-30 bg-(--surface-hero) text-(--on-hero)">
+    <header data-track-area="header" className="surface-hero relative z-30 bg-(--surface-hero) text-(--on-hero)">
       <div className="container-page flex min-h-(--header-h) items-center justify-between gap-4 py-3">
         <a href={pathFor("home", lang)} className="min-w-0" aria-label={`${settings.brandName} — ${t.pages.home}`}>
           {logo ? (
