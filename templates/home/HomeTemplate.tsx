@@ -1,22 +1,34 @@
+import { Section } from "@/components/content/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { PhoneText, ZaloButton } from "@/components/ui/ContactLinks";
+import { getPage, getPosts, getProjects, getTestimonials } from "@/lib/content/pages";
 import { getSiteSettings } from "@/lib/content/site-settings";
 import type { Lang } from "@/lib/env";
 import { graph, personNode, webPageNode, websiteNode } from "@/lib/json-ld";
 import { pathFor } from "@/lib/routes";
 import { SITE_URL } from "@/lib/site-url";
 import { UI } from "@/lib/ui-strings";
+import { ValueList } from "../shared/blocks";
+import { DEFAULT_KNOWLEDGE_LIMIT, type HomePage } from "./home.data";
+import { Connect } from "./sections/Connect";
+import { Hero } from "./sections/Hero";
+import { Knowledge } from "./sections/Knowledge";
+import { Projects } from "./sections/Projects";
+import { Story } from "./sections/Story";
+import { Trust } from "./sections/Trust";
+import { WhyMe } from "./sections/WhyMe";
 
 /**
- * Trang chủ — KHUNG (bước dựng nền). Chỉ có hero dữ liệu chung: H1 = personName (T4.1), chức danh,
- * tagline nguyên văn, CTA Zalo. Bố cục từng khối (chân dung, Về tôi, Giá trị, Dự án, Uy tín, Kiến thức, Kết nối)
- * dựng ở bước implement_templates theo phương án mockup được chọn ở G2.
- * Không animate H1 / phần tử LCP (HN-02).
+ * Trang chủ (T4.1): thứ tự khối cố định hero → story → whyMe → projects → trust → knowledge → [services] → connect
+ * (YC-08, D-06). Đúng một H1 = personName ở hero. Khối không có dữ liệu tự ẩn.
+ * Giao diện từng khối là PHẦN CHUNG — G2 chưa ghi phương án (Q-58); phương án được chọn thay uiSlot.
  */
 export async function HomeTemplate({ lang }: { lang: Lang }) {
-  const settings = await getSiteSettings(lang);
-  const t = UI[lang];
+  const [settings, page] = await Promise.all([getSiteSettings(lang), getPage<HomePage>("homePage", lang)]);
+  const limit = page?.knowledgeSection?.postsLimit ?? DEFAULT_KNOWLEDGE_LIMIT;
+  const [projects, posts, testimonials] = await Promise.all([getProjects(lang), getPosts(lang, 1, limit), getTestimonials(lang)]);
   const path = pathFor("home", lang);
+  const services = page?.servicesSection;
+  const serviceItems = (services?.items ?? []).filter((i) => i.title?.trim());
   return (
     <>
       <JsonLd
@@ -26,25 +38,21 @@ export async function HomeTemplate({ lang }: { lang: Lang }) {
           webPageNode({ siteUrl: SITE_URL, path, name: settings.personName, lang, description: settings.seo.description }),
         ])}
       />
-      <section className="surface-hero bg-(--surface-hero) text-(--on-hero)" aria-labelledby="hero-title">
-        <div className="container-page section-y grid gap-6">
-          {settings.jobTitle && (
-            <p className="text-eyebrow font-semibold uppercase text-(--on-hero-accent)">{settings.jobTitle}</p>
-          )}
-          <h1 id="hero-title" className="font-display text-display">
-            {settings.personName}
-          </h1>
-          {settings.tagline && (
-            <p className="max-w-(--container-prose) font-display text-h3 uppercase tracking-title text-(--on-hero-muted)">
-              {settings.tagline}
-            </p>
-          )}
-          <div className="flex flex-wrap items-center gap-4 pt-2">
-            <ZaloButton phone={settings.zaloPhone} label={t.zaloCta} />
-            <PhoneText phone={settings.phone} className="font-semibold" />
-          </div>
-        </div>
-      </section>
+      <Hero lang={lang} settings={settings} hero={page?.hero} />
+      <Story lang={lang} story={page?.story} />
+      <WhyMe lang={lang} whyMe={page?.whyMe} />
+      <Projects lang={lang} section={page?.projectsSection} projects={projects} />
+      <Trust lang={lang} section={page?.trustSection} testimonials={testimonials} />
+      <Knowledge lang={lang} section={page?.knowledgeSection} posts={posts.items} />
+      <Section
+        name="services"
+        heading={services?.heading ?? UI[lang].sections.services}
+        intro={services?.intro}
+        empty={services?.enabled !== true || !serviceItems.length}
+      >
+        <ValueList items={serviceItems} />
+      </Section>
+      <Connect lang={lang} settings={settings} section={page?.connectSection} />
     </>
   );
 }
