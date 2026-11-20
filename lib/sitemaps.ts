@@ -59,7 +59,7 @@ export function urlsetXml(siteUrl: string, entries: SitemapEntry[]): string {
   return `${XML_HEAD}<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${body}\n</urlset>\n`;
 }
 
-/** Các sitemap con đang có; bước sau thêm "projects", "posts". */
-export const SITEMAPS = ["pages"];
+/** Các sitemap con (app/sitemaps/<tên>.xml). */
+export const SITEMAPS = ["pages", "projects", "posts"];
 
 export const XML_HEADERS = { "Content-Type": "application/xml; charset=utf-8" } as const;

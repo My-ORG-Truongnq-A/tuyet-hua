@@ -2,7 +2,7 @@ import { getSiteSettings } from "@/lib/content/site-settings";
 import { SITE_URL } from "@/lib/site-url";
 import { SITEMAPS, sitemapIndexXml, XML_HEADERS } from "@/lib/sitemaps";
 
-/** Sitemap index (KT-03: có thời hạn làm mới). Bước sau thêm projects / posts. */
+/** Sitemap index (KT-03: có thời hạn làm mới). Sitemap con: pages, projects, posts. */
 export const revalidate = 3600;
 
 export async function GET() {

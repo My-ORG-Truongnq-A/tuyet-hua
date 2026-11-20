@@ -14,9 +14,9 @@ export async function NotFoundTemplate({ lang }: { lang: Lang }) {
     <section className="container-page section-y" aria-labelledby="nf-title">
       <p className="text-eyebrow font-semibold uppercase text-(--on-page-accent)">{t.notFound.eyebrow}</p>
       <h1 id="nf-title" className="mt-3 font-display text-h2 text-(--on-page-heading)">
-        {t.notFound.title}
+        {settings.ui.notFoundTitle ?? t.notFound.title}
       </h1>
-      <p className="mt-4 max-w-(--container-prose) text-lead text-(--on-page-muted)">{t.notFound.body}</p>
+      <p className="mt-4 max-w-(--container-prose) text-lead text-(--on-page-muted)">{settings.ui.notFoundBody ?? t.notFound.body}</p>
       <h2 className="mt-10 text-eyebrow font-semibold uppercase">{t.notFound.links}</h2>
       <ul className="mt-3 grid max-w-(--container-prose) gap-1 sm:grid-cols-2">
         {links.map((l) => (
@@ -29,7 +29,7 @@ export async function NotFoundTemplate({ lang }: { lang: Lang }) {
         ))}
       </ul>
       <div className="mt-10">
-        <ZaloButton phone={settings.zaloPhone} label={t.zaloCta} />
+        <ZaloButton phone={settings.zaloPhone} label={settings.ui.zaloCta ?? t.zaloCta} />
       </div>
     </section>
   );

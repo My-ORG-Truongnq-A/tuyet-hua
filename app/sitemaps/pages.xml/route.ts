@@ -1,23 +1,16 @@
-import { getSiteSettings } from "@/lib/content/site-settings";
-import { env } from "@/lib/env";
-import { pathFor } from "@/lib/routes";
+import { pageEntries } from "@/lib/content/sitemap-entries";
 import { SITE_URL } from "@/lib/site-url";
-import { urlsetXml, XML_HEADERS, type SitemapEntry } from "@/lib/sitemaps";
-import { BUILT_PAGES } from "@/lib/ui-strings";
+import { urlsetXml, XML_HEADERS } from "@/lib/sitemaps";
 
-/** Trang tĩnh đã dựng (KT-03). Bản en chỉ vào khi tiếng Anh đang bật (REQ-17). */
+/** Trang tĩnh có document ở ngôn ngữ đang bật, bỏ seo.noindex (T5.2). Lỗi đọc nội dung → sitemap rỗng hợp lệ + ghi log, không 500. */
 export const revalidate = 3600;
 
 export async function GET() {
-  let updatedAt: string | null = null;
+  let entries: Awaited<ReturnType<typeof pageEntries>> = [];
   try {
-    updatedAt = (await getSiteSettings("vi")).updatedAt;
+    entries = await pageEntries();
   } catch (error) {
-    console.error("[sitemap] không đọc được siteSettings", error);
+    console.error("[sitemap] không đọc được nội dung", error);
   }
-  const entries: SitemapEntry[] = BUILT_PAGES.flatMap((key) => {
-    const alternates = Object.fromEntries(env.languages.map((l) => [l, pathFor(key, l)]));
-    return env.languages.map((lang) => ({ path: pathFor(key, lang), lastModified: updatedAt, alternates }));
-  });
   return new Response(urlsetXml(SITE_URL, entries), { headers: XML_HEADERS });
 }
