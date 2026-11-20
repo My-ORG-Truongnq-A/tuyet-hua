@@ -35,12 +35,74 @@ function resolveAssets(value: unknown, byRef: Map<string, SeedAsset>): unknown {
   return Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, resolveAssets(v, byRef)]));
 }
 
-export function buildSeed(base: Json[], overlays: Overlay[], assets: SeedAsset[]): Json[] {
-  const docs = structuredClone(base);
+export type EnCopy = {
+  /** id các tài liệu `*-vi` được nhân bản thành `*-en`. */
+  translatedIds: readonly string[];
+  /** Chữ en áp lên bản nhân bản (id = id bản vi). */
+  overlays: Overlay[];
+  /** Singleton dùng chung: điền `.en` tại chỗ. */
+  singletonOverlays: Overlay[];
+};
+
+const toEnId = (id: string) => id.replace(/-vi$/, "-en");
+
+/** Đổi `_ref` trỏ tới tài liệu `*-vi` đã có bản en sang `*-en` (bản en chỉ liên kết nội bộ trong en). */
+function retargetRefs(value: unknown, translated: Set<string>): unknown {
+  if (Array.isArray(value)) return value.map((v) => retargetRefs(v, translated));
+  if (!value || typeof value !== "object") return value;
+  return Object.fromEntries(
+    Object.entries(value as Json).map(([k, v]) =>
+      k === "_ref" && typeof v === "string" && translated.has(v) ? [k, toEnId(v)] : [k, retargetRefs(v, translated)],
+    ),
+  );
+}
+
+function applyOverlays(docs: Json[], overlays: Overlay[]) {
   for (const { id, set } of overlays) {
     const doc = docs.find((d) => d._id === id);
     if (!doc) throw new Error(`[build-seed] không có document «${id}» trong khung seed`);
     for (const [path, value] of Object.entries(set)) setPath(doc, path, structuredClone(value), id);
+  }
+}
+
+/** Tài liệu liên kết bản dịch (plugin document-internationalization): một metadata cho mỗi cặp vi / en. */
+function translationMetadata(viDoc: Json): Json {
+  const viId = viDoc._id as string;
+  const base = viId.replace(/-vi$/, "");
+  const ref = (key: string, id: string) => ({
+    _key: key,
+    _type: "internationalizedArrayReferenceValue",
+    value: { _type: "reference", _ref: id, _weak: true },
+  });
+  return {
+    _id: `translation-metadata-${base}`,
+    _type: "translation.metadata",
+    _createdAt: viDoc._createdAt,
+    _updatedAt: viDoc._updatedAt,
+    schemaTypes: [viDoc._type],
+    translations: [ref("vi", viId), ref("en", toEnId(viId))],
+  };
+}
+
+export function buildSeed(base: Json[], overlays: Overlay[], assets: SeedAsset[], en?: EnCopy): Json[] {
+  const docs = structuredClone(base);
+  applyOverlays(docs, overlays);
+  if (en) {
+    applyOverlays(docs, en.singletonOverlays);
+    const translated = new Set(en.translatedIds);
+    const enDocs: Json[] = [];
+    const metas: Json[] = [];
+    for (const id of en.translatedIds) {
+      const vi = docs.find((d) => d._id === id);
+      if (!vi) throw new Error(`[build-seed] không có document «${id}» để dịch`);
+      const copy = retargetRefs(structuredClone(vi), translated) as Json;
+      copy._id = toEnId(id);
+      copy.language = "en";
+      enDocs.push(copy);
+      metas.push(translationMetadata(vi));
+    }
+    applyOverlays(enDocs, en.overlays.map((o) => ({ ...o, id: toEnId(o.id) })));
+    docs.push(...enDocs, ...metas);
   }
   const byRef = new Map(assets.map((a) => [a._sanityAsset, a]));
   return resolveAssets(docs, byRef) as Json[];

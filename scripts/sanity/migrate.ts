@@ -13,6 +13,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import type { SeedAsset } from "../../lib/content/seed-assets";
 import { checkSeed } from "../../sanity/lib/seed-check";
+import { EN_TRANSLATED_IDS, enOverlays, enSingletonOverlays } from "./content/en-copy";
 import { viOverlays } from "./content/vi-copy";
 import {
   chunk,
@@ -29,7 +30,9 @@ import {
   type Remote,
 } from "./migrate-core";
 import { patches } from "./patches";
-import { buildSeed, serializeSeed } from "./seed-build";
+import { buildSeed, serializeSeed, type EnCopy } from "./seed-build";
+
+const EN_COPY: EnCopy = { translatedIds: EN_TRANSLATED_IDS, overlays: enOverlays, singletonOverlays: enSingletonOverlays };
 
 const root = process.cwd();
 const args = process.argv.slice(2);
@@ -68,7 +71,7 @@ function saveManifest(m: Manifest) {
 
 async function verifySeed(docs: Doc[], assets: SeedAsset[]) {
   const regenerated = serializeSeed(
-    buildSeed(readJson("scripts/sanity/content/base.json"), viOverlays, assets),
+    buildSeed(readJson("scripts/sanity/content/base.json"), viOverlays, assets, EN_COPY),
   );
   const onDisk = readFileSync(join(root, "seed/sanity/documents.json"), "utf8");
   if (regenerated !== onDisk) fail("documents.json lệch bản sinh lại — chạy `pnpm sanity:build-seed` rồi commit");

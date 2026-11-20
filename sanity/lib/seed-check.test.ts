@@ -16,14 +16,17 @@ const find = (list: SeedDoc[], id: string) => list.find((d) => d._id === id)! as
 const messages = async (list: unknown) => (await checkSeed({ docs: list, assets, pendingRequired })).map((i) => `${i.id} ${i.path} ${i.message}`);
 
 describe("seed:validate (CM-02, ND-10)", () => {
-  it("seed thật hợp lệ: đủ 12 document theo content_model", async () => {
+  it("seed thật hợp lệ: đủ 12 document vi + 8 bản en + 8 translation.metadata", async () => {
     expect(await messages(docs)).toEqual([]);
-    expect(docs.map((d) => d._id).sort()).toEqual(
-      [
-        "siteSettings", "header", "footer", "homePage-vi", "aboutPage-vi", "projectsPage-vi", "teamPage-vi",
-        "articlesPage-vi", "contactPage-vi", "privacyPage-vi", "project-ha-long-xanh-vi", "project-lang-van-vi",
-      ].sort(),
-    );
+    const vi = [
+      "siteSettings", "header", "footer", "homePage-vi", "aboutPage-vi", "projectsPage-vi", "teamPage-vi",
+      "articlesPage-vi", "contactPage-vi", "privacyPage-vi", "project-ha-long-xanh-vi", "project-lang-van-vi",
+    ];
+    // privacyPage chưa có bản en (bản vi chờ duyệt pháp lý) → không tạo trang en rỗng.
+    const translated = vi.filter((id) => id.endsWith("-vi") && id !== "privacyPage-vi");
+    const en = translated.map((id) => id.replace(/-vi$/, "-en"));
+    const meta = translated.map((id) => `translation-metadata-${id.replace(/-vi$/, "")}`);
+    expect(docs.map((d) => d._id).sort()).toEqual([...vi, ...en, ...meta].sort());
   });
 
   it("seed không chứa số liệu / feedback / email minh hoạ (REQ-21) và ảnh đều chờ xác nhận", () => {
@@ -86,7 +89,8 @@ describe("seed:validate (CM-02, ND-10)", () => {
     find(list, "project-lang-van-vi").slug.current = "ha-long-xanh";
     expect((await messages(list)).join("\n")).toMatch(/slug «ha-long-xanh» trùng/);
     const other = clone();
-    other.push({ ...find(other, "project-ha-long-xanh-vi"), _id: "project-ha-long-xanh-en", language: "en" } as unknown as SeedDoc);
+    find(other, "project-ha-long-xanh-en").slug.current = "ha-long-xanh";
+    expect(find(other, "project-ha-long-xanh-vi").slug.current).toBe("ha-long-xanh");
     expect(await messages(other)).toEqual([]);
   });
 
