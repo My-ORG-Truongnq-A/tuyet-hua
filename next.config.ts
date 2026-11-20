@@ -17,8 +17,24 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   trailingSlash: false,
+  // Không để `next dev` tự ghi thêm vào AGENTS.md của repo.
+  agentRules: false,
+  // Hai root layout (vi / en) → 404 toàn cục qua app/global-not-found.tsx (KT-06).
+  experimental: { globalNotFound: true },
   images: {
     remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
+  },
+  async rewrites() {
+    // Tiếng Anh chưa bật (SITE_LANGUAGES=vi, REQ-17): mọi /en/* trả 404 toàn cục.
+    if (env.languages.includes("en")) return [];
+    return {
+      beforeFiles: [
+        { source: "/en", destination: "/__khong-ton-tai" },
+        { source: "/en/:path*", destination: "/__khong-ton-tai" },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
   },
   async headers() {
     return [

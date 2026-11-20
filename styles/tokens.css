@@ -165,6 +165,7 @@
      trên nền tối (.surface-dark) dùng gold-300 — đạt ≥ 3:1 (TC, WCAG 1.4.11). */
   --focus-ring: var(--color-emerald-700);
   --focus-ring-on-dark: var(--color-gold-300);
+  --focus-ring-hero: var(--color-gold-300); /* vùng hero / header (pa1 nền tối) */
 }
 
 [data-variant="pa2"] {
@@ -178,6 +179,7 @@
   --cta-bg-hover: var(--color-emerald-700);
   --cta-fg: var(--color-ivory-100);
   --focus-ring: var(--color-emerald-600);
+  --focus-ring-hero: var(--color-emerald-700);
 }
 
 @media (prefers-reduced-motion: reduce) {

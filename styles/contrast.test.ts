@@ -61,6 +61,7 @@ const SEMANTIC_PAIRS: Pair[] = [
   ["--cta-fg", "--cta-bg", 4.5],
   ["--cta-fg", "--cta-bg-hover", 4.5],
   ["--focus-ring", "--surface-page", 3],
+  ["--focus-ring-hero", "--surface-hero", 3],
 ];
 
 const FIXED_PAIRS: Pair[] = [

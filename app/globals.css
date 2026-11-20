@@ -5,6 +5,7 @@
 @source "../app";
 @source "../components";
 @source "../lib";
+@source "../templates";
 
 @layer base {
   html {
@@ -52,6 +53,9 @@
   /* Vùng nền tối: đổi vòng focus sang gold-300 cho đủ tương phản. */
   .surface-dark {
     --focus-ring: var(--focus-ring-on-dark);
+  }
+  .surface-hero {
+    --focus-ring: var(--focus-ring-hero);
   }
 }
 
