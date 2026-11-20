@@ -14,7 +14,7 @@ export function Analytics() {
   return (
     <>
       {config && <script id="th-tag" dangerouslySetInnerHTML={{ __html: trackingBootstrap(config) }} />}
-      <ContactTracker />
+      <ContactTracker sendViaGtag={config?.kind === "ga4"} />
     </>
   );
 }
