@@ -19,7 +19,9 @@
     "schema:check": "sanity schema validate --level error",
     "seed:assets": "tsx scripts/seed-assets.ts",
     "seed:validate": "tsx scripts/seed-validate.ts",
-    "seed:ndjson": "tsx scripts/seed-to-ndjson.ts"
+    "seed:ndjson": "tsx scripts/seed-to-ndjson.ts",
+    "sanity:build-seed": "tsx scripts/sanity/build-seed.ts",
+    "sanity:migrate": "tsx scripts/sanity/migrate.ts"
   },
   "dependencies": {
     "@sanity/document-internationalization": "6.3.0",

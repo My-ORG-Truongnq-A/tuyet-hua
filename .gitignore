@@ -40,3 +40,6 @@ pnpm-debug.log*
 
 # Tệp sinh tạm (seed:ndjson)
 tmp/
+
+# Trạng thái sanity:migrate (không commit)
+scripts/sanity/state/

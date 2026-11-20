@@ -1,7 +1,6 @@
 {
   "_note": "Trường BẮT BUỘC trong schema nhưng được phép trống trong seed vì đang chờ khách (content_model.field_status). Khách cung cấp nội dung → điền vào documents.json và xoá dòng tương ứng ở đây. seed:validate đọc tệp này.",
   "pendingRequired": {
-    "siteSettings.ui.callCtaLabel": "NEEDS_INPUT — nhãn nút gọi điện (field_status: siteSettings.ui.callCtaLabel)",
     "privacyPage-vi.body": "MI-16 — nội dung chính sách bảo mật cần người duyệt (pháp lý)",
     "privacyPage-vi.lastUpdated": "MI-16 — ngày cập nhật chính sách"
   }

@@ -16,6 +16,11 @@ export type SeedAsset = {
   extension: string;
   mimeType: string;
   size: number;
+  /** Trường theo hợp đồng assets.json của orchestrator (content-migration): url công khai, sha256, ext, bytes. */
+  url: string;
+  sha256: string;
+  ext: string;
+  bytes: number;
 };
 
 /** Thư mục ảnh seed, tương đối gốc repo. */
@@ -69,6 +74,10 @@ export function seedAssetEntry(file: string, buf: Buffer): SeedAsset {
     extension,
     mimeType: MIME[extension]!,
     size: buf.length,
+    url: `${SEED_ASSET_URL_PREFIX}${file}`,
+    sha256: createHash("sha256").update(buf).digest("hex"),
+    ext: extension,
+    bytes: buf.length,
   };
 }
 
@@ -81,6 +90,7 @@ type Doc = { _id: string; _type: string; [key: string]: unknown };
  */
 export function materializeSeedAssets(docs: Doc[], assets: SeedAsset[]): Doc[] {
   const byRef = new Map(assets.map((a) => [a._sanityAsset, a]));
+  const byId = new Map(assets.map((a) => [a.assetId, a]));
   const used = new Map<string, SeedAsset>();
 
   const walk = (value: unknown): unknown => {
@@ -94,6 +104,13 @@ export function materializeSeedAssets(docs: Doc[], assets: SeedAsset[]): Doc[] {
       const rest = { ...obj };
       delete rest._sanityAsset;
       return { ...walkObject(rest), asset: { _type: "reference", _ref: asset.assetId } };
+    }
+    // Dạng đã chuẩn hoá (seed sinh bởi sanity:build-seed): asset._ref = image-<sha1>-<w>x<h>-<ext>.
+    const ref = (obj.asset as { _ref?: unknown } | undefined)?._ref;
+    if (obj._type === "image" && typeof ref === "string") {
+      const asset = byId.get(ref);
+      if (!asset) throw new Error(`[seed] ảnh «${ref}» chưa có trong assets.json — chạy pnpm seed:assets`);
+      used.set(asset.assetId, asset);
     }
     return walkObject(obj);
   };

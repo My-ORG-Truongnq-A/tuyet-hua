@@ -8,7 +8,11 @@
     "height": 945,
     "extension": "jpg",
     "mimeType": "image/jpeg",
-    "size": 162699
+    "size": 162699,
+    "url": "/seed-assets/event-cake.jpg",
+    "sha256": "e3dc5d8c248eb9cb72fe1a7780dc0ef2a4e7c714995f4ee0c61dc07dcead654a",
+    "ext": "jpg",
+    "bytes": 162699
   },
   {
     "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy.jpg",
@@ -19,7 +23,11 @@
     "height": 945,
     "extension": "jpg",
     "mimeType": "image/jpeg",
-    "size": 69963
+    "size": 69963,
+    "url": "/seed-assets/portrait-navy.jpg",
+    "sha256": "eba55a059cbb9c494cb084f7ee5c03f33ce40b93de1ec604a088311863f269a9",
+    "ext": "jpg",
+    "bytes": 69963
   },
   {
     "_sanityAsset": "image@file://./seed/sanity/assets/talk-sale-event.jpg",
@@ -30,7 +38,11 @@
     "height": 945,
     "extension": "jpg",
     "mimeType": "image/jpeg",
-    "size": 262472
+    "size": 262472,
+    "url": "/seed-assets/talk-sale-event.jpg",
+    "sha256": "112988e2d544711bd7548b08f053b7b08c256f0dd7438547305b4cd92adc1072",
+    "ext": "jpg",
+    "bytes": 262472
   },
   {
     "_sanityAsset": "image@file://./seed/sanity/assets/team-office.jpg",
@@ -41,6 +53,10 @@
     "height": 945,
     "extension": "jpg",
     "mimeType": "image/jpeg",
-    "size": 276381
+    "size": 276381,
+    "url": "/seed-assets/team-office.jpg",
+    "sha256": "004c90593b4521e9442c05129c2e077eb6d47664cb256829e585ef2ace8fc092",
+    "ext": "jpg",
+    "bytes": 276381
   }
 ]

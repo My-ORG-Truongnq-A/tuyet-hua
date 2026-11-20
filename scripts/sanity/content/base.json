@@ -1,0 +1,580 @@
+[
+  {
+    "_id": "siteSettings",
+    "_type": "siteSettings",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "brandName": "Hứa Thị Tuyết",
+    "personName": "Hứa Thị Tuyết",
+    "jobTitle": {
+      "_type": "localeString",
+      "en": null,
+      "vi": "Giám đốc Kinh doanh – Khối TP55 | Trường Phát Group"
+    },
+    "tagline": {
+      "_type": "localeString",
+      "en": null,
+      "vi": "THẤU HIỂU THỊ TRƯỜNG. TINH CHỌN GIÁ TRỊ. ĐỒNG HÀNH BỀN LÂU."
+    },
+    "logo": null,
+    "favicon": null,
+    "contact": {
+      "email": null,
+      "phone": "0359 361 359",
+      "address": null,
+      "zaloPhone": null,
+      "serviceArea": {
+        "_type": "localeString",
+        "en": null,
+        "vi": "Hạ Long – Quảng Ninh"
+      },
+      "socialLinks": [],
+      "openingHours": [],
+      "openingHoursNote": null
+    },
+    "ui": {
+      "notFound": {
+        "body": {
+          "_type": "localeText",
+          "en": null,
+          "vi": null
+        },
+        "title": {
+          "_type": "localeString",
+          "en": "Page not found",
+          "vi": "Không tìm thấy trang"
+        }
+      },
+      "joinTeamCta": {
+        "href": null,
+        "kind": "zalo",
+        "label": {
+          "_type": "localeString",
+          "en": null,
+          "vi": "Tham gia đội ngũ cùng Tuyết"
+        }
+      },
+      "callCtaLabel": {
+        "_type": "localeString",
+        "en": null,
+        "vi": null
+      },
+      "zaloCtaLabel": {
+        "_type": "localeString",
+        "en": null,
+        "vi": "Kết nối Zalo"
+      },
+      "readMoreLabel": {
+        "_type": "localeString",
+        "en": null,
+        "vi": null
+      },
+      "consultCtaLabel": {
+        "_type": "localeString",
+        "en": null,
+        "vi": "Tư vấn cùng Tuyết"
+      },
+      "breadcrumbHomeLabel": {
+        "_type": "localeString",
+        "en": "Home",
+        "vi": "Trang chủ"
+      },
+      "languageSwitchLabel": {
+        "_type": "localeString",
+        "en": null,
+        "vi": null
+      }
+    },
+    "seoDefaults": {
+      "ogImage": null,
+      "description": null,
+      "titleTemplate": null
+    },
+    "blog": {
+      "postsPerPage": null
+    },
+    "integrations": {
+      "ga4Id": null,
+      "gtmId": null,
+      "gscVerification": null
+    },
+    "redirects": []
+  },
+  {
+    "_id": "header",
+    "_type": "header",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "navItems": [
+      {
+        "_key": "home",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Home",
+          "vi": "Trang chủ"
+        },
+        "target": "home",
+        "visible": true
+      },
+      {
+        "_key": "about",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "About",
+          "vi": "Giới thiệu"
+        },
+        "target": "about",
+        "visible": true
+      },
+      {
+        "_key": "projects",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Projects",
+          "vi": "Dự án"
+        },
+        "target": "projects",
+        "visible": true
+      },
+      {
+        "_key": "team",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Training & Team",
+          "vi": "Đào tạo & Đội ngũ"
+        },
+        "target": "team",
+        "visible": true
+      },
+      {
+        "_key": "articles",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Insights",
+          "vi": "Bài viết"
+        },
+        "target": "articles",
+        "visible": true
+      },
+      {
+        "_key": "contact",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Contact",
+          "vi": "Liên hệ"
+        },
+        "target": "contact",
+        "visible": true
+      }
+    ],
+    "showLanguageSwitch": false
+  },
+  {
+    "_id": "footer",
+    "_type": "footer",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "navItems": [
+      {
+        "_key": "home",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Home",
+          "vi": "Trang chủ"
+        },
+        "target": "home",
+        "visible": true
+      },
+      {
+        "_key": "about",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "About",
+          "vi": "Giới thiệu"
+        },
+        "target": "about",
+        "visible": true
+      },
+      {
+        "_key": "projects",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Projects",
+          "vi": "Dự án"
+        },
+        "target": "projects",
+        "visible": true
+      },
+      {
+        "_key": "team",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Training & Team",
+          "vi": "Đào tạo & Đội ngũ"
+        },
+        "target": "team",
+        "visible": true
+      },
+      {
+        "_key": "articles",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Insights",
+          "vi": "Bài viết"
+        },
+        "target": "articles",
+        "visible": true
+      },
+      {
+        "_key": "contact",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Contact",
+          "vi": "Liên hệ"
+        },
+        "target": "contact",
+        "visible": true
+      }
+    ],
+    "legalItems": [
+      {
+        "_key": "privacy",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Privacy policy",
+          "vi": "Chính sách bảo mật"
+        },
+        "target": "privacy",
+        "visible": true
+      }
+    ],
+    "copyrightText": {
+      "_type": "localeString",
+      "en": null,
+      "vi": null
+    }
+  },
+  {
+    "_id": "homePage-vi",
+    "_type": "homePage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Trang chủ",
+    "hero": {
+      "image": {
+        "alt": "Chân dung Hứa Thị Tuyết mặc vest xanh navy, khoanh tay",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy.jpg"
+        },
+        "rightsNote": "MI-06, MI-07: chờ xác nhận quyền dùng; độ phân giải thấp cho hero",
+        "usageApproved": false
+      },
+      "subline": null,
+      "headline": null,
+      "primaryCta": {
+        "_type": "link",
+        "kind": "zalo",
+        "label": "Tư vấn cùng Tuyết"
+      },
+      "secondaryCta": {
+        "_type": "link",
+        "kind": "internal",
+        "label": "Tìm hiểu dự án",
+        "internal": {
+          "_ref": "projectsPage-vi",
+          "_type": "reference"
+        }
+      }
+    },
+    "story": {
+      "body": null,
+      "image": null,
+      "quote": "Tôi cũng là khách hàng của chính mình",
+      "heading": null,
+      "highlights": [],
+      "aboutLinkLabel": null
+    },
+    "whyMe": {
+      "intro": null,
+      "items": [],
+      "heading": "Tại sao chọn tôi"
+    },
+    "projectsSection": {
+      "intro": null,
+      "heading": "Dự án đang triển khai",
+      "viewAllLabel": null
+    },
+    "trustSection": {
+      "body": null,
+      "image": null,
+      "stats": [],
+      "heading": null,
+      "teamLinkLabel": "Tham gia đội ngũ cùng Tuyết",
+      "testimonialsHeading": null
+    },
+    "knowledgeSection": {
+      "heading": null,
+      "postsLimit": null,
+      "viewAllLabel": null
+    },
+    "servicesSection": {
+      "intro": null,
+      "items": [],
+      "enabled": false,
+      "heading": null
+    },
+    "connectSection": {
+      "body": null,
+      "heading": null
+    },
+    "seo": null
+  },
+  {
+    "_id": "aboutPage-vi",
+    "_type": "aboutPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Giới thiệu về tôi",
+    "heroImage": {
+      "alt": "Chân dung Hứa Thị Tuyết mặc vest xanh navy, khoanh tay",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy.jpg"
+      },
+      "rightsNote": "MI-07",
+      "usageApproved": false
+    },
+    "intro": null,
+    "brandStory": {
+      "body": null,
+      "heading": "Tôi cũng là khách hàng của chính mình"
+    },
+    "positioning": {
+      "roles": [
+        {
+          "_key": "advisor",
+          "_type": "roleShare",
+          "share": 60,
+          "title": "Người tư vấn BĐS thực chiến",
+          "description": "Thị trường, pháp lý, tài chính, đồng hành sau giao dịch."
+        },
+        {
+          "_key": "leader",
+          "_type": "roleShare",
+          "share": 40,
+          "title": "Leader & đào tạo",
+          "description": "Quản lý, đào tạo, phát triển đội ngũ kinh doanh TP55."
+        }
+      ],
+      "heading": null
+    },
+    "bio": null,
+    "timeline": [],
+    "achievements": [],
+    "cta": {
+      "_type": "link",
+      "kind": "zalo",
+      "label": "Kết nối Zalo"
+    },
+    "seo": null
+  },
+  {
+    "_id": "projectsPage-vi",
+    "_type": "projectsPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Dự án đang triển khai",
+    "intro": null,
+    "seo": null
+  },
+  {
+    "_id": "teamPage-vi",
+    "_type": "teamPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Đào tạo & Đội ngũ",
+    "heroImage": null,
+    "intro": null,
+    "leaderSection": {
+      "body": null,
+      "heading": null
+    },
+    "trainingPoints": [],
+    "stats": [],
+    "gallery": [
+      {
+        "_key": "event-cake",
+        "alt": "Hứa Thị Tuyết cùng đồng nghiệp cầm bánh kem trên sân khấu sự kiện",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/event-cake.jpg"
+        },
+        "rightsNote": "MI-07: người trong ảnh chưa xác nhận đồng ý",
+        "usageApproved": false
+      },
+      {
+        "_key": "talk-sale-event",
+        "alt": "Hứa Thị Tuyết cùng hai diễn giả tại buổi chia sẻ về bất động sản cao cấp",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/talk-sale-event.jpg"
+        },
+        "rightsNote": "MI-07, MI-14: có logo bên thứ ba trong ảnh",
+        "usageApproved": false
+      },
+      {
+        "_key": "team-office",
+        "alt": "Hứa Thị Tuyết chụp ảnh cùng đội ngũ kinh doanh tại văn phòng",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/team-office.jpg"
+        },
+        "rightsNote": "MI-07: nhiều người trong ảnh",
+        "usageApproved": false
+      }
+    ],
+    "joinCtaHeading": null,
+    "seo": null
+  },
+  {
+    "_id": "articlesPage-vi",
+    "_type": "articlesPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Bài viết",
+    "intro": null,
+    "emptyStateText": null,
+    "seo": null
+  },
+  {
+    "_id": "contactPage-vi",
+    "_type": "contactPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Liên hệ",
+    "intro": null,
+    "image": null,
+    "seo": null
+  },
+  {
+    "_id": "privacyPage-vi",
+    "_type": "privacyPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Chính sách bảo mật",
+    "body": null,
+    "lastUpdated": null,
+    "seo": null
+  },
+  {
+    "_id": "project-ha-long-xanh-vi",
+    "_type": "project",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Hạ Long Xanh",
+    "slug": {
+      "_type": "slug",
+      "current": "ha-long-xanh"
+    },
+    "featured": true,
+    "sortOrder": 1,
+    "summary": null,
+    "heroImage": null,
+    "location": null,
+    "developer": null,
+    "productTypes": [],
+    "legalStatus": null,
+    "progress": null,
+    "valueProposition": {
+      "_type": "projectValueProposition",
+      "values": [
+        {
+          "_key": "cashflow",
+          "_type": "valueItem",
+          "title": "Tạo dòng tiền"
+        },
+        {
+          "_key": "living",
+          "_type": "valueItem",
+          "title": "An cư & nghỉ dưỡng"
+        },
+        {
+          "_key": "longterm",
+          "_type": "valueItem",
+          "title": "Giá trị dài hạn"
+        }
+      ],
+      "headline": "MỘT TÀI SẢN – BA GIÁ TRỊ",
+      "keyMessage": "Vừa ở. Vừa khai thác. Vừa tích lũy giá trị."
+    },
+    "personalExperience": null,
+    "body": null,
+    "gallery": [],
+    "faqs": [],
+    "cta": {
+      "_type": "link",
+      "kind": "zalo",
+      "label": "Kết nối Zalo"
+    },
+    "seo": null
+  },
+  {
+    "_id": "project-lang-van-vi",
+    "_type": "project",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Làng Vân",
+    "slug": {
+      "_type": "slug",
+      "current": "lang-van"
+    },
+    "featured": false,
+    "sortOrder": 2,
+    "summary": null,
+    "heroImage": null,
+    "location": null,
+    "developer": null,
+    "productTypes": [],
+    "legalStatus": null,
+    "progress": null,
+    "valueProposition": null,
+    "personalExperience": null,
+    "body": null,
+    "gallery": [],
+    "faqs": [],
+    "cta": {
+      "_type": "link",
+      "kind": "zalo",
+      "label": "Kết nối Zalo"
+    },
+    "seo": null
+  }
+]

@@ -140,7 +140,9 @@ function walkValue(def: FieldDef, value: unknown, parent: unknown, path: string,
     return;
   }
   if (kind === "image") {
+    const assetRef = (obj.asset as { _ref?: unknown } | undefined)?._ref;
     if (typeof obj._sanityAsset === "string") ctx.assetRefs.push({ path, ref: obj._sanityAsset });
+    else if (typeof assetRef === "string") ctx.assetRefs.push({ path, ref: assetRef });
     else if (!obj.asset) issue("ảnh thiếu _sanityAsset / asset");
     for (const k of Object.keys(obj)) {
       if (!["_type", "_key", "_sanityAsset", "asset", "hotspot", "crop"].includes(k)) issue(`trường lạ «${k}» trong ảnh`);
@@ -200,7 +202,7 @@ export async function checkSeed({ docs, assets, pendingRequired = [] }: SeedChec
   const list = docs as SeedDoc[];
   const ids = new Set<string>();
   const pending = new Set(pendingRequired);
-  const assetKeys = new Set(assets.map((a) => a._sanityAsset));
+  const assetKeys = new Set(assets.flatMap((a) => [a._sanityAsset, a.assetId]));
   const allRefs: { id: string; path: string; ref: string }[] = [];
 
   for (const doc of list) {
