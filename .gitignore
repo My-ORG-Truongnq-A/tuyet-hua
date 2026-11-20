@@ -1,0 +1,39 @@
+# Phụ thuộc
+node_modules/
+.pnpm-store/
+
+# Next.js
+.next/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
+
+# Test
+coverage/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Biến môi trường — chỉ commit .env.example (KT-09, KT-11)
+.env*
+!.env.example
+
+# Công cụ / agent / cache (KT-09)
+.vercel
+.codex
+.cache
+.claude
+.claude.json
+.digiauto/
+client-inputs/
+
+# Hệ điều hành / editor
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# KHÔNG chặn public/images (KT-09)
