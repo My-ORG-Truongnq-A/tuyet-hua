@@ -8,7 +8,8 @@ import { evaluate, parse } from "groq-js";
  */
 export type SanityDocument = { _id: string; _type: string; [key: string]: unknown };
 
-export const DEFAULT_SEED_FILE = "seed/sanity/documents.json";
+/** Đường dẫn tương đối trong thư mục seed/ (giới hạn phạm vi đọc tệp — tránh trace cả project). */
+export const DEFAULT_SEED_FILE = "sanity/documents.json";
 
 /** Bỏ bản nháp / bản phát hành chưa publish — giống perspective "published" của Sanity. */
 export function publishedOnly(docs: SanityDocument[]): SanityDocument[] {
@@ -31,9 +32,9 @@ let cached: { file: string; docs: Promise<SanityDocument[]> } | null = null;
 export function loadSeed(file: string): Promise<SanityDocument[]> {
   const memo = process.env.NODE_ENV === "production";
   if (memo && cached?.file === file) return cached.docs;
-  const docs = readFile(join(process.cwd(), file), "utf8").then((text) => {
+  const docs = readFile(join(process.cwd(), "seed", file), "utf8").then((text) => {
     const parsed: unknown = JSON.parse(text);
-    if (!Array.isArray(parsed)) throw new Error(`[seed] ${file} phải là mảng document`);
+    if (!Array.isArray(parsed)) throw new Error(`[seed] seed/${file} phải là mảng document`);
     return publishedOnly(parsed as SanityDocument[]);
   });
   if (memo) cached = { file, docs };

@@ -29,7 +29,7 @@ export type Env = {
   /** Ngôn ngữ đang bật; luôn có "vi", thứ tự cố định vi → en. */
   languages: Lang[];
   contentMode: ContentMode;
-  /** Tệp seed (mặc định seed/sanity/documents.json; e2e có thể trỏ sang fixture). */
+  /** Tệp seed, tương đối trong seed/ (mặc định sanity/documents.json; e2e có thể trỏ sang fixture trong seed/). */
   seedFile?: string;
   leadsDryRun: boolean;
   tracking: {
