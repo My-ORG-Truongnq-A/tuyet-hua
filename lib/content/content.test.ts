@@ -169,7 +169,8 @@ describe("normalizeSiteSettings (chuẩn hoá null tại cửa)", () => {
     const doc = read<{ _id: string; contact: { phone: string } }[]>("seed/sanity/documents.json").find((d) => d._id === "siteSettings")!;
     expect(s.phone).toBe(doc.contact.phone);
     expect(s.zaloPhone).toBe(doc.contact.phone);
-    expect(s.seo.titleTemplate).toBe("%s");
+    // titleTemplate trống trong seed → mẫu seo_plan «%s | {brandName}»
+    expect(s.seo.titleTemplate).toBe(`%s | ${s.brandName}`);
   });
 });
 

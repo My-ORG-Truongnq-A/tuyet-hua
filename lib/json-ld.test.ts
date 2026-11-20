@@ -1,6 +1,18 @@
 import { describe, expect, it } from "vitest";
 import { normalizeSiteSettings, type SiteSettings } from "./content/site-settings";
-import { breadcrumbNode, graph, personNode, serializeJsonLd, webPageNode, websiteNode } from "./json-ld";
+import {
+  blogPostingNode,
+  breadcrumbNode,
+  faqPageNode,
+  graph,
+  itemListNode,
+  personNode,
+  placeNode,
+  roleOnly,
+  serializeJsonLd,
+  webPageNode,
+  websiteNode,
+} from "./json-ld";
 
 const SITE = "https://tuyethua.vn";
 const settings: SiteSettings = {
@@ -50,5 +62,64 @@ describe("lib/json-ld (GEO-02, T5.1)", () => {
     expect(g["@context"]).toBe("https://schema.org");
     expect(g["@graph"]).toHaveLength(1);
     expect(serializeJsonLd({ a: "</script><b>" })).not.toContain("</script>");
+  });
+
+  it("jobTitle trong schema bỏ phần đơn vị sau « | » (chưa xác nhận — MI-14)", () => {
+    expect(roleOnly("Giám đốc Kinh doanh – Khối TP55 | Trường Phát Group")).toBe("Giám đốc Kinh doanh – Khối TP55");
+    expect(roleOnly("Chức danh")).toBe("Chức danh");
+    expect(roleOnly(null)).toBeNull();
+    const p = personNode({ ...settings, jobTitle: "Giám đốc | Trường Phát Group" }, SITE);
+    expect(JSON.stringify(p)).not.toContain("Trường Phát");
+  });
+
+  it("ProfilePage / ContactPage có mainEntity → Person", () => {
+    const page = webPageNode({ siteUrl: SITE, path: "/gioi-thieu", name: "Giới thiệu", lang: "vi", type: "ProfilePage", mainEntity: true });
+    expect(page["@type"]).toBe("ProfilePage");
+    expect(page.mainEntity).toEqual({ "@id": "https://tuyethua.vn/#person" });
+  });
+
+  it("ItemList: URL tuyệt đối theo thứ tự", () => {
+    const l = itemListNode(SITE, [{ name: "A", path: "/du-an/a" }, { name: "B", path: "/du-an/b" }]);
+    expect(l["@type"]).toBe("ItemList");
+    expect(l.itemListElement).toEqual([
+      { "@type": "ListItem", position: 1, name: "A", url: "https://tuyethua.vn/du-an/a" },
+      { "@type": "ListItem", position: 2, name: "B", url: "https://tuyethua.vn/du-an/b" },
+    ]);
+  });
+
+  it("Place: ảnh tuyệt đối, bỏ trường trống, không Offer / giá", () => {
+    const p = placeNode({ siteUrl: SITE, path: "/du-an/x", name: "X", description: null, image: "/seed-assets/a.jpg", address: null });
+    expect(p).toMatchObject({ "@type": "Place", name: "X", image: "https://tuyethua.vn/seed-assets/a.jpg", url: "https://tuyethua.vn/du-an/x" });
+    expect(p).not.toHaveProperty("description");
+    expect(JSON.stringify(p)).not.toMatch(/Offer|price/i);
+  });
+
+  it("BlogPosting: tác giả = Person @id, ngày ISO, ảnh tuyệt đối", () => {
+    const a = blogPostingNode({
+      siteUrl: SITE,
+      path: "/bai-viet/a",
+      headline: "Bài A",
+      description: "Mô tả",
+      datePublished: "2026-10-01T08:00:00Z",
+      dateModified: "2026-10-02T08:00:00Z",
+      image: "https://cdn.sanity.io/images/x.jpg",
+      lang: "vi",
+    });
+    expect(a).toMatchObject({
+      "@type": "BlogPosting",
+      headline: "Bài A",
+      author: { "@id": "https://tuyethua.vn/#person" },
+      publisher: { "@id": "https://tuyethua.vn/#person" },
+      image: "https://cdn.sanity.io/images/x.jpg",
+      mainEntityOfPage: "https://tuyethua.vn/bai-viet/a",
+      inLanguage: "vi",
+    });
+  });
+
+  it("FAQPage chỉ khi có ≥ 1 câu hỏi có trả lời", () => {
+    expect(faqPageNode([])).toBeNull();
+    expect(faqPageNode([{ question: "Q?", answer: "" }])).toBeNull();
+    const f = faqPageNode([{ question: "Q?", answer: "A." }]);
+    expect(f?.mainEntity).toEqual([{ "@type": "Question", name: "Q?", acceptedAnswer: { "@type": "Answer", text: "A." } }]);
   });
 });

@@ -21,6 +21,15 @@ function clean<T extends Node>(node: T): T {
 }
 
 export const personId = (siteUrl: string) => `${siteUrl}/#person`;
+
+/**
+ * Chức danh dùng trong schema: bỏ phần đơn vị công tác sau « | » (vd. «… | Trường Phát Group») vì tên tổ chức
+ * chưa được khách xác nhận cho JSON-LD (MI-14, REQ-28). Phần hiển thị trên trang vẫn dùng nguyên văn CMS.
+ */
+export function roleOnly(jobTitle: string | null | undefined): string | null {
+  const role = jobTitle?.split(/\s+\|\s+/)[0]?.trim();
+  return role ? role : null;
+}
 export const websiteId = (siteUrl: string) => `${siteUrl}/#website`;
 
 export function personNode(s: SiteSettings, siteUrl: string): Node {
@@ -28,7 +37,7 @@ export function personNode(s: SiteSettings, siteUrl: string): Node {
     "@type": "Person",
     "@id": personId(siteUrl),
     name: s.personName,
-    jobTitle: s.jobTitle,
+    jobTitle: roleOnly(s.jobTitle),
     description: s.seo.description,
     url: siteUrl,
     telephone: e164(s.phone),
@@ -57,6 +66,10 @@ export function webPageNode(input: {
   lang: Lang;
   type?: "WebPage" | "ProfilePage" | "CollectionPage" | "ContactPage";
   description?: string | null;
+  /** ProfilePage / ContactPage: mainEntity → Person @id (seo_plan). */
+  mainEntity?: boolean;
+  /** Danh sách (ItemList) nằm trong trang. */
+  hasPart?: Node | null;
 }): Node {
   const url = absoluteUrlFor(input.siteUrl, input.path);
   return clean({
@@ -68,7 +81,82 @@ export function webPageNode(input: {
     inLanguage: input.lang,
     isPartOf: { "@id": websiteId(input.siteUrl) },
     about: { "@id": personId(input.siteUrl) },
+    mainEntity: input.mainEntity ? { "@id": personId(input.siteUrl) } : null,
+    hasPart: input.hasPart ?? null,
   });
+}
+
+export function itemListNode(siteUrl: string, items: { name: string; path: string }[]): Node {
+  return {
+    "@type": "ItemList",
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.name,
+      url: absoluteUrlFor(siteUrl, it.path),
+    })),
+  };
+}
+
+const absImage = (siteUrl: string, src: string | null | undefined) =>
+  src ? (/^https?:\/\//.test(src) ? src : absoluteUrlFor(siteUrl, src)) : null;
+
+/** Dự án = Place (seo_plan): không Offer / giá / lợi suất (YC-13). */
+export function placeNode(input: {
+  siteUrl: string;
+  path: string;
+  name: string;
+  description?: string | null;
+  image?: string | null;
+  address?: string | null;
+}): Node {
+  const url = absoluteUrlFor(input.siteUrl, input.path);
+  return clean({
+    "@type": "Place",
+    "@id": `${url}#place`,
+    name: input.name,
+    url,
+    description: input.description,
+    image: absImage(input.siteUrl, input.image),
+    address: input.address,
+  });
+}
+
+export function blogPostingNode(input: {
+  siteUrl: string;
+  path: string;
+  headline: string;
+  description?: string | null;
+  datePublished?: string | null;
+  dateModified?: string | null;
+  image?: string | null;
+  lang: Lang;
+}): Node {
+  const url = absoluteUrlFor(input.siteUrl, input.path);
+  const person = { "@id": personId(input.siteUrl) };
+  return clean({
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: input.headline,
+    description: input.description,
+    datePublished: input.datePublished,
+    dateModified: input.dateModified ?? input.datePublished,
+    image: absImage(input.siteUrl, input.image),
+    author: person,
+    publisher: person,
+    mainEntityOfPage: url,
+    inLanguage: input.lang,
+  });
+}
+
+/** FAQPage khi có ≥ 1 câu hỏi có câu trả lời (seo_plan site.geo.directAnswers). */
+export function faqPageNode(faqs: { question: string; answer: string }[]): Node | null {
+  const items = faqs.filter((f) => f.question.trim() && f.answer.trim());
+  if (!items.length) return null;
+  return {
+    "@type": "FAQPage",
+    mainEntity: items.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })),
+  };
 }
 
 export function breadcrumbNode(siteUrl: string, items: { name: string; path: string }[]): Node {

@@ -86,9 +86,10 @@ export function normalizeSiteSettings(raw: RawSiteSettings | null | undefined, l
   const phone = text(c?.phone);
   const kind = ui?.joinTeamCta?.kind;
   const template = pickLocale(raw?.seoDefaults?.titleTemplate, lang);
+  const brandName = text(raw?.brandName) ?? text(raw?.personName) ?? "";
   return {
     updatedAt: raw?._updatedAt ?? null,
-    brandName: text(raw?.brandName) ?? text(raw?.personName) ?? "",
+    brandName,
     personName: text(raw?.personName) ?? "",
     jobTitle: pickLocale(raw?.jobTitle, lang),
     tagline: pickLocale(raw?.tagline, lang),
@@ -121,7 +122,8 @@ export function normalizeSiteSettings(raw: RawSiteSettings | null | undefined, l
       notFoundBody: pickLocale(ui?.notFound?.body, lang),
     },
     seo: {
-      titleTemplate: template?.includes("%s") ? template : "%s",
+      // Trống → mẫu của seo_plan «{tiêu đề} | {brandName}» (site.metadataDefaults); không có tên → chỉ tiêu đề.
+      titleTemplate: template?.includes("%s") ? template : brandName ? `%s | ${brandName}` : "%s",
       description: pickLocale(raw?.seoDefaults?.description, lang),
       ogImage: raw?.seoDefaults?.ogImage?.asset ? raw.seoDefaults.ogImage : null,
     },
