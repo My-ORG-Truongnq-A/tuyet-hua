@@ -18,6 +18,8 @@ export type Env = {
   /** ALLOW_INDEXING === "1" (SEO-01). Cần thêm điều kiện production + host — xem lib/indexing.ts. */
   allowIndexing: boolean;
   isProductionDeploy: boolean;
+  /** VERCEL_ENV === "production" — cổng tracking (TR-01): không dùng NODE_ENV vì preview cũng là production build. */
+  isVercelProduction: boolean;
   sanitySource: SanitySource;
   sanity: {
     projectId?: string;
@@ -101,6 +103,7 @@ export function parseEnv(raw: RawEnv): Env {
     siteUrl: parseSiteUrl(raw),
     allowIndexing: raw.ALLOW_INDEXING === "1",
     isProductionDeploy,
+    isVercelProduction: raw.VERCEL_ENV === "production",
     sanitySource,
     sanity: {
       projectId,

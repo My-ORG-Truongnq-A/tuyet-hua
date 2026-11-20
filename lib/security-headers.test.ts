@@ -21,6 +21,20 @@ describe("header bảo mật (BM-01, T1.7)", () => {
     expect(csp).not.toContain("unsafe-eval");
   });
 
+  it("CSP mặc định (không tracking): không có host Google", () => {
+    expect(contentSecurityPolicy({ isDev: false })).not.toMatch(/google/);
+  });
+
+  it("CSP có tracking: thêm nguồn vào đúng chỉ thị", () => {
+    const csp = contentSecurityPolicy({
+      isDev: false,
+      extra: { script: ["https://www.googletagmanager.com"], connect: ["https://*.google-analytics.com"], img: ["https://*.google-analytics.com"] },
+    });
+    expect(csp).toContain("script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;");
+    expect(csp).toContain("connect-src 'self' https://*.google-analytics.com;");
+    expect(csp).toContain("img-src 'self' data: blob: https://cdn.sanity.io https://*.google-analytics.com;");
+  });
+
   it("CSP dev cho phép unsafe-eval (React dev tools / HMR)", () => {
     expect(contentSecurityPolicy({ isDev: true })).toContain("'unsafe-eval'");
   });

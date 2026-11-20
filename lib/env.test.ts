@@ -79,6 +79,12 @@ describe("parseEnv", () => {
     expect(env.tracking.gaId).toBeUndefined();
   });
 
+  it("isVercelProduction (cổng tracking — TR-01): chỉ đúng khi VERCEL_ENV=production, không theo NODE_ENV", () => {
+    expect(parseEnv({ NODE_ENV: "production" }).isVercelProduction).toBe(false);
+    expect(parseEnv({ VERCEL_ENV: "preview", NODE_ENV: "production", NEXT_PUBLIC_SITE_URL: "https://a.vn" }).isVercelProduction).toBe(false);
+    expect(parseEnv({ VERCEL_ENV: "production", NEXT_PUBLIC_SITE_URL: "https://a.vn" }).isVercelProduction).toBe(true);
+  });
+
   it("LEADS_DRY_RUN chỉ tắt khi đúng «0»", () => {
     expect(parseEnv({ LEADS_DRY_RUN: "0" }).leadsDryRun).toBe(false);
     expect(parseEnv({ LEADS_DRY_RUN: "false" }).leadsDryRun).toBe(true);
