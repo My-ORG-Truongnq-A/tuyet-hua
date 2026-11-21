@@ -9,7 +9,7 @@ export type SectionTone = "page" | "alt" | "band";
 const TONE: Record<SectionTone, string> = {
   page: "",
   alt: "bg-(--surface-alt)",
-  band: "surface-dark bg-(--surface-band) bg-(image:--surface-band-image) text-ivory-100",
+  band: "surface-dark bg-(--surface-band) bg-(image:--surface-band-image) text-(--on-band)",
 };
 
 export function Section({
@@ -55,10 +55,10 @@ export function Section({
           >
             <div className={ornament ? "w-full" : "max-w-(--container-prose)"}>
               {eyebrow && (
-                <p className={`text-eyebrow font-semibold uppercase ${dark ? "text-gold-300" : "text-(--on-page-accent)"}`}>{eyebrow}</p>
+                <p className={`text-eyebrow font-semibold uppercase ${dark ? "text-(--on-band-accent)" : "text-(--on-page-accent)"}`}>{eyebrow}</p>
               )}
               {heading && !ornament && (
-                <h2 id={headingId} className={`mt-3 font-display text-h2 ${dark ? "text-ivory-100" : "text-(--on-page-heading)"}`}>
+                <h2 id={headingId} className={`mt-3 font-display text-h2 ${dark ? "text-(--on-band)" : "text-(--on-page-heading)"}`}>
                   {heading}
                 </h2>
               )}
@@ -66,16 +66,16 @@ export function Section({
                 <h2
                   id={headingId}
                   className={`flex items-center justify-center gap-4 font-display text-h3 uppercase tracking-title sm:gap-6 ${
-                    dark ? "text-gold-300" : "text-(--on-page-heading)"
+                    dark ? "text-(--on-band-accent)" : "text-(--on-page-heading)"
                   }`}
                 >
-                  <span aria-hidden="true" className="h-px w-8 shrink-0 bg-gold-500 sm:w-24 lg:w-40" />
+                  <span aria-hidden="true" className="h-px w-8 shrink-0 bg-(--line-accent) sm:w-24 lg:w-40" />
                   <span className="min-w-0 [overflow-wrap:anywhere]">{heading}</span>
-                  <span aria-hidden="true" className="h-px w-8 shrink-0 bg-gold-500 sm:w-24 lg:w-40" />
+                  <span aria-hidden="true" className="h-px w-8 shrink-0 bg-(--line-accent) sm:w-24 lg:w-40" />
                 </h2>
               )}
               {intro && (
-                <div className={`mt-4 text-lead ${ornament ? "mx-auto max-w-(--container-prose)" : ""} ${dark ? "text-emerald-100" : "text-(--on-page-muted)"}`}>
+                <div className={`mt-4 text-lead ${ornament ? "mx-auto max-w-(--container-prose)" : ""} ${dark ? "text-(--on-band-muted)" : "text-(--on-page-muted)"}`}>
                   {intro}
                 </div>
               )}

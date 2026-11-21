@@ -80,7 +80,7 @@ export async function ArticleDetailTemplate({ lang, slug }: { lang: Lang; slug: 
               <div className="flex gap-2">
                 <dt className="text-(--on-page-muted)">{t.posts.author}</dt>
                 <dd>
-                  <a href={pathFor("about", lang)} rel="author" className="font-medium text-emerald-800 underline-offset-4 hover:underline">
+                  <a href={pathFor("about", lang)} rel="author" className="font-medium text-(--on-page-link) underline-offset-4 hover:underline">
                     {settings.personName}
                   </a>
                 </dd>
@@ -101,7 +101,7 @@ export async function ArticleDetailTemplate({ lang, slug }: { lang: Lang; slug: 
         </div>
       </article>
 
-      <Section name="faqs" heading={t.project.faqs} empty={!faqs.length}>
+      <Section name="faqs" titleStyle="ornament" heading={t.project.faqs} empty={!faqs.length}>
         <div className="mt-8 max-w-(--container-prose)">
           {faqs.map((f, i) => (
             <div key={f._key ?? i} className="border-b border-(--line-subtle) py-5">

@@ -111,7 +111,7 @@ export async function ProjectDetailTemplate({ lang, slug }: { lang: Lang; slug: 
         <RichText value={project.body} lang={lang} className="mt-6" />
       </Section>
 
-      <Section name="gallery" heading={t.project.gallery} empty={!gallery.length}>
+      <Section name="gallery" titleStyle="ornament" heading={t.project.gallery} empty={!gallery.length}>
         <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {gallery.map((f, i) => (
             <li key={f._key ?? i}>
@@ -121,7 +121,7 @@ export async function ProjectDetailTemplate({ lang, slug }: { lang: Lang; slug: 
         </ul>
       </Section>
 
-      <Section name="faqs" tone="alt" heading={t.project.faqs} empty={!faqs.length}>
+      <Section name="faqs" tone="alt" titleStyle="ornament" heading={t.project.faqs} empty={!faqs.length}>
         <div className="mt-8 max-w-(--container-prose)">
           {faqs.map((f, i) => (
             <details key={f._key ?? i} className="group border-b border-(--line-subtle) py-4">

@@ -22,12 +22,12 @@ export function ValueList({ items, tone = "light", columns = 3 }: { items: Value
   return (
     <ol className={`mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 ${columns === 3 ? "lg:grid-cols-3" : ""}`}>
       {list.map((v, i) => (
-        <li key={v._key ?? i} className={`border-t pt-6 ${dark ? "border-gold-400/60" : "border-(--on-page-heading)"}`}>
-          <p aria-hidden="true" className={`font-display text-h3 ${dark ? "text-gold-300" : "text-(--on-page-accent)"}`}>
+        <li key={v._key ?? i} className={`border-t pt-6 ${dark ? "border-(--line-accent)/60" : "border-(--on-page-heading)"}`}>
+          <p aria-hidden="true" className={`font-display text-h3 ${dark ? "text-(--on-band-accent)" : "text-(--on-page-accent)"}`}>
             {String(i + 1).padStart(2, "0")}
           </p>
-          <h3 className={`mt-2 font-display text-h3 ${dark ? "text-ivory-100" : "text-(--on-page-heading)"}`}>{v.title}</h3>
-          {v.description && <p className={`mt-3 ${dark ? "text-emerald-100" : "text-(--on-page-muted)"}`}>{v.description}</p>}
+          <h3 className={`mt-2 font-display text-h3 ${dark ? "text-(--on-band)" : "text-(--on-page-heading)"}`}>{v.title}</h3>
+          {v.description && <p className={`mt-3 ${dark ? "text-(--on-band-muted)" : "text-(--on-page-muted)"}`}>{v.description}</p>}
         </li>
       ))}
     </ol>
@@ -46,7 +46,7 @@ export function IconValueList({ items, icons }: { items: ValueItem[]; icons?: re
     <ul className={`mt-10 grid gap-y-10 sm:grid-cols-2 ${list.length >= 5 ? "md:grid-cols-3" : ""} ${cols}`}>
       {list.map((v, i) => (
         <li key={v._key ?? i} className="flex flex-col items-center px-4 text-center lg:border-l lg:border-(--line-subtle) lg:first:border-l-0">
-          <Icon name={valueIcon(v.icon ?? icons?.[i], i)} className="size-10 text-emerald-800" />
+          <Icon name={valueIcon(v.icon ?? icons?.[i], i)} className="size-10 text-(--on-page-heading)" />
           <h3 className="mt-4 text-sm font-semibold uppercase tracking-wide text-(--on-page-heading)">{v.title}</h3>
           {v.description && <p className="mt-2 max-w-64 text-sm leading-relaxed text-(--on-page-muted)">{v.description}</p>}
         </li>
@@ -63,9 +63,9 @@ export function StatList({ stats, lang, tone = "light" }: { stats: HighlightStat
   return (
     <dl className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4">
       {list.map((s, i) => (
-        <div key={s._key ?? i} className={`flex flex-col border-t pt-5 ${dark ? "border-emerald-700" : "border-(--line-subtle)"}`}>
-          <dt className={`text-sm ${dark ? "text-emerald-100" : "text-(--on-page-muted)"}`}>{s.label}</dt>
-          <dd className={`order-first mt-1 font-display text-stat ${dark ? "text-gold-300" : "text-(--on-page-heading)"}`}>{s.value}</dd>
+        <div key={s._key ?? i} className={`flex flex-col border-t pt-5 ${dark ? "border-(--line-band)" : "border-(--line-subtle)"}`}>
+          <dt className={`text-sm ${dark ? "text-(--on-band-muted)" : "text-(--on-page-muted)"}`}>{s.label}</dt>
+          <dd className={`order-first mt-1 font-display text-stat ${dark ? "text-(--on-band-accent)" : "text-(--on-page-heading)"}`}>{s.value}</dd>
           {s.pending && (
             <dd className="mt-2">
               <PendingLabel tone={tone}>{UI[lang].pending.confirm}</PendingLabel>
@@ -80,11 +80,11 @@ export function StatList({ stats, lang, tone = "light" }: { stats: HighlightStat
 /** Dải kêu gọi cuối trang trên nền band (token --surface-band). */
 export function CtaBand({ name = "cta", title, body, children }: { name?: string; title: string; body?: string | null; children: ReactNode }) {
   return (
-    <section data-section={name} className="surface-dark bg-(--surface-band) text-ivory-100">
+    <section data-section={name} className="surface-dark bg-(--surface-band) text-(--on-band)">
       <div className="container-page flex flex-wrap items-center justify-between gap-8 py-14">
         <div className="max-w-(--container-prose)">
           <h2 className="font-display text-h2">{title}</h2>
-          {body && <p className="mt-2 text-emerald-100">{body}</p>}
+          {body && <p className="mt-2 text-(--on-band-muted)">{body}</p>}
         </div>
         <div className="flex flex-wrap items-center gap-6">{children}</div>
       </div>
@@ -123,7 +123,7 @@ export function ProjectItem({ project, lang, large = false, headingLevel = "h3" 
           </p>
         )}
         <p className="mt-2">
-          <span className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold uppercase tracking-wide text-emerald-800" aria-hidden="true">
+          <span className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold uppercase tracking-wide text-(--on-page-link)" aria-hidden="true">
             {t.viewProject} →
           </span>
         </p>

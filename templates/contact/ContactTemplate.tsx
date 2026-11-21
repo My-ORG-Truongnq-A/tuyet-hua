@@ -33,7 +33,7 @@ export async function ContactTemplate({ lang }: { lang: Lang }) {
     ? [settings.address.streetAddress, settings.address.ward, settings.address.locality, settings.address.region].filter(Boolean).join(", ")
     : null;
   const extras = [
-    settings.email && { k: t.contact.email, v: <a href={`mailto:${settings.email}`} className="break-all text-emerald-800 underline-offset-4 hover:underline">{settings.email}</a> },
+    settings.email && { k: t.contact.email, v: <a href={`mailto:${settings.email}`} className="break-all text-(--on-page-link) underline-offset-4 hover:underline">{settings.email}</a> },
     address && { k: t.contact.address, v: address },
     (settings.openingHoursNote || settings.openingHours.length > 0) && {
       k: t.contact.hours,
@@ -44,7 +44,7 @@ export async function ContactTemplate({ lang }: { lang: Lang }) {
       v: (
         <span className="flex flex-wrap gap-x-4">
           {settings.socials.map((s) => (
-            <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer me" className="capitalize text-emerald-800 underline-offset-4 hover:underline">
+            <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer me" className="capitalize text-(--on-page-link) underline-offset-4 hover:underline">
               {s.platform}
             </a>
           ))}

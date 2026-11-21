@@ -82,15 +82,15 @@ export async function TeamTemplate({ lang }: { lang: Lang }) {
         )}
       </Section>
 
-      <Section name="training" tone="alt" heading={t.team.training} empty={!(page.trainingPoints ?? []).some((i) => i.title?.trim())}>
+      <Section name="training" tone="alt" titleStyle="ornament" heading={t.team.training} empty={!(page.trainingPoints ?? []).some((i) => i.title?.trim())}>
         <ValueList items={page.trainingPoints ?? []} />
       </Section>
 
-      <Section name="stats" heading={t.team.stats} empty={!page.stats?.length}>
+      <Section name="stats" titleStyle="ornament" heading={t.team.stats} empty={!page.stats?.length}>
         <StatList stats={page.stats} lang={lang} />
       </Section>
 
-      <Section name="gallery" heading={t.team.gallery} empty={!lead}>
+      <Section name="gallery" titleStyle="ornament" heading={t.team.gallery} empty={!lead}>
         {pendingCount > 0 && (
           <p className="mt-4">
             <PendingLabel>{t.pending.confirm}</PendingLabel>

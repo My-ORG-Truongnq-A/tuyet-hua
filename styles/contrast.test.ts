@@ -67,6 +67,12 @@ const SEMANTIC_PAIRS: Pair[] = [
   ["--on-page-muted", "--surface-quote", 4.5],
   ["--on-page-heading", "--surface-quote", 4.5],
   ["--on-page-accent", "--surface-quote", 4.5],
+  // Chữ trên dải nền tối (khối band, trang trong — T6.3) và liên kết trong nội dung
+  ["--on-band", "--surface-band", 4.5],
+  ["--on-band-muted", "--surface-band", 4.5],
+  ["--on-band-accent", "--surface-band", 4.5],
+  ["--on-page-link", "--surface-page", 4.5],
+  ["--on-page-link", "--surface-alt", 4.5],
   ["--cta-fg", "--cta-bg", 4.5],
   ["--cta-fg", "--cta-bg-hover", 4.5],
   ["--focus-ring", "--surface-page", 3],

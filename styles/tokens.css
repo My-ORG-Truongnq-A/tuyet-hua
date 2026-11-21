@@ -176,6 +176,13 @@
   --on-page-accent: var(--color-gold-700);
   --line-subtle: var(--color-stone-200);
   --line-accent: var(--color-gold-500);
+  /* Chữ / vạch trên dải nền tối (--surface-band) và liên kết trong nội dung — trang trong dùng token này,
+     không viết màu tay (T6.3). Cùng giá trị cho mọi phương án (dải tối giống nhau ở A và B). */
+  --on-band: var(--color-ivory-100);
+  --on-band-muted: var(--color-emerald-100);
+  --on-band-accent: var(--color-gold-300);
+  --line-band: var(--color-emerald-700);
+  --on-page-link: var(--color-emerald-800);
   --cta-bg: var(--color-gold-400);
   --cta-bg-hover: var(--color-gold-300);
   --cta-fg: var(--color-emerald-950);

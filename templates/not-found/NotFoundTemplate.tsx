@@ -21,7 +21,7 @@ export async function NotFoundTemplate({ lang }: { lang: Lang }) {
       <ul className="mt-3 grid max-w-(--container-prose) gap-1 sm:grid-cols-2">
         {links.map((l) => (
           <li key={l.href}>
-            <a href={l.href} className="group inline-flex min-h-11 items-center gap-2 font-medium text-emerald-800">
+            <a href={l.href} className="group inline-flex min-h-11 items-center gap-2 font-medium text-(--on-page-link)">
               {l.label}
               <Icon name="arrow" className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
