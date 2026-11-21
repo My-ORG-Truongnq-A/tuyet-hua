@@ -47,6 +47,10 @@ export const viOverlays: Overlay[] = [
         "Tôi tư vấn bất động sản đầu tư, dòng tiền và nghỉ dưỡng tại Hạ Long – Quảng Ninh, đồng thời quản lý và đào tạo đội ngũ kinh doanh Khối TP55.",
       ),
       "story.aboutLinkLabel": "Đọc câu chuyện đầy đủ",
+      // Hai dòng «Lĩnh vực / Tập trung» khối Về tôi — từ brief (yeu-cau-du-an.md), trước đây tạm ở ui-strings (T6.5)
+      "story.expertise": "Tư vấn, phân phối bất động sản đầu tư",
+      "story.focus": "Tập trung: BĐS dòng tiền, BĐS nghỉ dưỡng và các dự án Vinhomes",
+      "hero.pillarNotes": ["Thị trường · pháp lý · tài chính", "Phù hợp mục tiêu của bạn", "Trước, trong và sau giao dịch"],
       "hero.headline":
         "Tư vấn giải pháp bất động sản phù hợp với nhu cầu, tài chính và mục tiêu của bạn. Đồng hành trước, trong và sau giao dịch để cùng bạn giữ giá trị bền vững.",
       "whyMe.heading": "Giá trị tôi mang đến",
@@ -67,6 +71,7 @@ export const viOverlays: Overlay[] = [
         "Tôi tin thành công bền vững đến từ một đội ngũ giỏi và văn hoá đồng hành. Bên cạnh vai trò tư vấn, tôi quản lý, đào tạo và phát triển đội ngũ kinh doanh Khối TP55, chia sẻ kiến thức và kinh nghiệm thực chiến mỗi ngày.",
       ),
       "trustSection.testimonialsHeading": "Khách hàng nói về Tuyết",
+      "trustSection.tags": ["Đào tạo thực chiến", "Chia sẻ kiến thức", "Kỹ năng tư vấn", "Hỗ trợ & đồng hành", "Văn hoá tích cực"],
       "knowledgeSection.heading": "Kiến thức thị trường",
       "knowledgeSection.viewAllLabel": "Xem tất cả bài viết",
       "connectSection.heading": "Kết nối với Tuyết",

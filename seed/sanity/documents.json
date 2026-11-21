@@ -311,7 +311,12 @@
           "_ref": "projectsPage-vi",
           "_type": "reference"
         }
-      }
+      },
+      "pillarNotes": [
+        "Thị trường · pháp lý · tài chính",
+        "Phù hợp mục tiêu của bạn",
+        "Trước, trong và sau giao dịch"
+      ]
     },
     "story": {
       "body": [
@@ -348,6 +353,8 @@
       "quote": "Tôi cũng là khách hàng của chính mình",
       "heading": "Về tôi",
       "highlights": [],
+      "expertise": "Tư vấn, phân phối bất động sản đầu tư",
+      "focus": "Tập trung: BĐS dòng tiền, BĐS nghỉ dưỡng và các dự án Vinhomes",
       "aboutLinkLabel": "Đọc câu chuyện đầy đủ"
     },
     "whyMe": {
@@ -422,6 +429,13 @@
       ],
       "image": null,
       "stats": [],
+      "tags": [
+        "Đào tạo thực chiến",
+        "Chia sẻ kiến thức",
+        "Kỹ năng tư vấn",
+        "Hỗ trợ & đồng hành",
+        "Văn hoá tích cực"
+      ],
       "heading": "Phát triển đội ngũ – Kiến tạo thành công",
       "teamLinkLabel": "Tham gia đội ngũ cùng Tuyết",
       "testimonialsHeading": "Khách hàng nói về Tuyết"
@@ -781,7 +795,12 @@
           "_ref": "projectsPage-en",
           "_type": "reference"
         }
-      }
+      },
+      "pillarNotes": [
+        "Market · legal · finance",
+        "Fits your goals",
+        "Before, during and after the deal"
+      ]
     },
     "story": {
       "body": [
@@ -818,6 +837,8 @@
       "quote": "I am also my own client",
       "heading": "About me",
       "highlights": [],
+      "expertise": "Investment real estate advisory and distribution",
+      "focus": "Focus: cash-flow and holiday real estate, Vinhomes projects",
       "aboutLinkLabel": "Read the full story"
     },
     "whyMe": {
@@ -892,6 +913,13 @@
       ],
       "image": null,
       "stats": [],
+      "tags": [
+        "Hands-on training",
+        "Knowledge sharing",
+        "Advisory skills",
+        "Support & mentoring",
+        "Positive culture"
+      ],
       "heading": "Growing the team – Building success",
       "teamLinkLabel": "Join the team with Tuyết",
       "testimonialsHeading": "What clients say about Tuyết"

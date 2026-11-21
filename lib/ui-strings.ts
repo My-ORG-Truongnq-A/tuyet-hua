@@ -47,7 +47,6 @@ type Strings = {
    * pillarNotes = dòng phụ dưới 3 trụ cột hero (theo 3 vế tagline); expertise / focus = 2 dòng thông tin ở «Về tôi» (từ brief);
    * trustTags = nhãn kỹ năng dưới ảnh đội ngũ.
    */
-  homeExtra: { pillarNotes: [string, string, string]; expertise: string; focus: string; trustTags: string[] };
   notFound: { eyebrow: string; title: string; body: string; links: string };
   error: { title: string; body: string; retry: string };
   homeAbout: string;
@@ -137,12 +136,6 @@ export const UI: Record<Lang, Strings> = {
       testimonial: "Chờ cảm nhận khách hàng (cần khách đồng ý hiển thị tên và lời nhận xét)",
     },
     homeEyebrow: { leader: "Leader & người đào tạo" },
-    homeExtra: {
-      pillarNotes: ["Thị trường · pháp lý · tài chính", "Phù hợp mục tiêu của bạn", "Trước, trong và sau giao dịch"],
-      expertise: "Tư vấn, phân phối bất động sản đầu tư",
-      focus: "Tập trung: BĐS dòng tiền, BĐS nghỉ dưỡng và các dự án Vinhomes",
-      trustTags: ["Đào tạo thực chiến", "Chia sẻ kiến thức", "Kỹ năng tư vấn", "Hỗ trợ & đồng hành", "Văn hoá tích cực"],
-    },
     notFound: {
       eyebrow: "Lỗi 404",
       title: "Không tìm thấy trang",
@@ -277,12 +270,6 @@ export const UI: Record<Lang, Strings> = {
       testimonial: "Client testimonial pending (requires the client's consent to show name and words)",
     },
     homeEyebrow: { leader: "Leader & mentor" },
-    homeExtra: {
-      pillarNotes: ["Market · legal · finance", "Fits your goals", "Before, during and after the deal"],
-      expertise: "Investment real estate advisory and distribution",
-      focus: "Focus: cash-flow and holiday real estate, Vinhomes projects",
-      trustTags: ["Hands-on training", "Knowledge sharing", "Advisory skills", "Support & mentoring", "Positive culture"],
-    },
     notFound: {
       eyebrow: "Error 404",
       title: "Page not found",

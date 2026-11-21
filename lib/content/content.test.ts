@@ -117,6 +117,18 @@ describe("nguồn seed: chạy CHÍNH truy vấn Sanity bằng groq-js (fixture 
     expect(await q(real, POST_COUNT_QUERY, { lang: "vi" })).toBe(0);
     expect(await q(real, TESTIMONIALS_QUERY, { lang: "vi" })).toEqual([]);
   });
+
+  it("seed thật: chữ phụ trang chủ nằm trong CMS cả vi và en (T6.5, REQ-06)", async () => {
+    type Home = { hero: { pillarNotes: string[] }; story: { expertise: string; focus: string }; trustSection: { tags: string[] } };
+    for (const lang of ["vi", "en"]) {
+      const home = await q<Home>(real, PAGE_QUERY, { type: "homePage", lang });
+      expect(home.hero.pillarNotes).toHaveLength(3);
+      expect(home.story.expertise).toBeTruthy();
+      expect(home.story.focus).toBeTruthy();
+      expect(home.trustSection.tags.length).toBeGreaterThan(0);
+      expect(home.trustSection.tags.length).toBeLessThanOrEqual(8);
+    }
+  });
 });
 
 describe("hậu xử lý chung cho seed và Sanity", () => {

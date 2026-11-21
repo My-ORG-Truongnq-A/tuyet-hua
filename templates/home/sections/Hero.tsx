@@ -93,15 +93,18 @@ export function Hero({
 
           {tagline && (
             <ul className="mt-9 grid gap-4 sm:grid-cols-3 sm:gap-4">
-              {tagline.map((p, i) => (
-                <li key={i} className="flex items-start gap-2.5">
-                  <Icon name={pillarIcons[i]!} className="size-7 shrink-0 text-(--on-hero-accent)" />
-                  <span className="text-sm leading-snug">
-                    <span className="block font-semibold">{sentence(p, lang)}</span>
-                    <span className="block text-xs text-(--on-hero-muted)">{t.homeExtra.pillarNotes[i]}</span>
-                  </span>
-                </li>
-              ))}
+              {tagline.map((p, i) => {
+                const note = hero?.pillarNotes?.[i]?.trim();
+                return (
+                  <li key={i} className="flex items-start gap-2.5">
+                    <Icon name={pillarIcons[i]!} className="size-7 shrink-0 text-(--on-hero-accent)" />
+                    <span className="text-sm leading-snug">
+                      <span className="block font-semibold">{sentence(p, lang)}</span>
+                      {note && <span className="block text-xs text-(--on-hero-muted)">{note}</span>}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
           )}
         </div>

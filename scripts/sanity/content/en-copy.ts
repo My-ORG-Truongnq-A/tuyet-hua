@@ -44,6 +44,9 @@ export const enOverlays: Overlay[] = [
         "I advise on investment, cash-flow and holiday real estate in Hạ Long – Quảng Ninh, and I manage and train the TP55 Division sales team.",
       ),
       "story.aboutLinkLabel": "Read the full story",
+      "story.expertise": "Investment real estate advisory and distribution",
+      "story.focus": "Focus: cash-flow and holiday real estate, Vinhomes projects",
+      "hero.pillarNotes": ["Market · legal · finance", "Fits your goals", "Before, during and after the deal"],
       "hero.headline":
         "Real estate advice that fits your needs, finances and goals. I stay with you before, during and after the transaction to help you keep lasting value.",
       "whyMe.heading": "The value I bring",
@@ -66,6 +69,7 @@ export const enOverlays: Overlay[] = [
       ),
       "trustSection.testimonialsHeading": "What clients say about Tuyết",
       "trustSection.teamLinkLabel": "Join the team with Tuyết",
+      "trustSection.tags": ["Hands-on training", "Knowledge sharing", "Advisory skills", "Support & mentoring", "Positive culture"],
       "knowledgeSection.heading": "Market insights",
       "knowledgeSection.viewAllLabel": "View all articles",
       "connectSection.heading": "Connect with Tuyết",

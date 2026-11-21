@@ -24,15 +24,15 @@ export function Story({ lang, story, settings }: { lang: Lang; story: HomePage["
   const hasBody = hasBlocks(story?.body);
   const empty = !story?.quote && !hasBody && !story?.highlights?.length;
   if (empty) return null;
-  // 5 dòng như mockup: chức danh | công ty (siteSettings.jobTitle) · lĩnh vực · trọng tâm (brief, tạm ở ui-strings) · khu vực
+  // 5 dòng như mockup: chức danh | công ty (siteSettings.jobTitle) · lĩnh vực · trọng tâm (homePage.story) · khu vực — dòng trống tự ẩn
   const facts: { icon: IconName; text: string }[] = [
     ...(settings.jobTitle ?? "")
       .split("|")
       .map((s) => s.trim())
       .filter(Boolean)
       .map((text, i) => ({ icon: (i === 0 ? "people" : "building") as IconName, text })),
-    { icon: "handshake", text: t.homeExtra.expertise },
-    { icon: "target", text: t.homeExtra.focus },
+    ...(story?.expertise?.trim() ? [{ icon: "handshake" as IconName, text: story.expertise.trim() }] : []),
+    ...(story?.focus?.trim() ? [{ icon: "target" as IconName, text: story.focus.trim() }] : []),
     ...(settings.area ? [{ icon: "pin" as IconName, text: settings.area }] : []),
   ];
   return (

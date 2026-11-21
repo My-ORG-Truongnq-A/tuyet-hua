@@ -37,6 +37,7 @@ export function Trust({
 }) {
   const t = UI[lang];
   const photos = (gallery ?? []).filter((g) => g?.image).slice(0, 3);
+  const tags = (section?.tags ?? []).map((s) => s?.trim()).filter((s): s is string => Boolean(s));
   const hasBody = hasBlocks(section?.body);
   const heading = section?.heading ?? t.sections.trust;
   return (
@@ -91,15 +92,17 @@ export function Trust({
             ))
           )}
         </div>
-        {/* Nhãn kỹ năng dưới ảnh (mockup) — chữ nhỏ có điểm vàng, không phải thẻ */}
-        <ul className="mt-5 flex flex-wrap justify-between gap-x-6 gap-y-2 text-xs text-(--on-page-muted)">
-          {t.homeExtra.trustTags.map((tag) => (
-            <li key={tag} className="flex items-center gap-2">
-              <span aria-hidden="true" className="size-1.5 rotate-45 bg-gold-500" />
-              {tag}
-            </li>
-          ))}
-        </ul>
+        {/* Nhãn kỹ năng dưới ảnh (mockup) — chữ nhỏ có điểm vàng, không phải thẻ; số nhãn theo CMS, trống → ẩn */}
+        {tags.length > 0 && (
+          <ul className="mt-5 flex flex-wrap justify-between gap-x-6 gap-y-2 text-xs text-(--on-page-muted)">
+            {tags.map((tag, i) => (
+              <li key={`${i}-${tag}`} className="flex items-center gap-2">
+                <span aria-hidden="true" className="size-1.5 rotate-45 bg-gold-500" />
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )}
         </div>
       </div>
 

@@ -4,13 +4,15 @@ import type { ValueItem } from "../shared/blocks";
 
 /** Kiểu dữ liệu homePage (content_model) sau lớp dữ liệu — đã gắn ảnh, đã qua gate CONTENT_MODE. */
 export type HomePage = PageDocument & {
-  hero?: { image?: Figure | null; headline?: string | null; subline?: string | null; primaryCta?: LinkValue | null; secondaryCta?: LinkValue | null } | null;
+  hero?: { image?: Figure | null; headline?: string | null; subline?: string | null; primaryCta?: LinkValue | null; secondaryCta?: LinkValue | null; pillarNotes?: string[] | null } | null;
   story?: {
     heading?: string | null;
     quote?: string | null;
     body?: PortableValue;
     image?: Figure | null;
     highlights?: HighlightStat[] | null;
+    expertise?: string | null;
+    focus?: string | null;
     aboutLinkLabel?: string | null;
   } | null;
   whyMe?: { heading?: string | null; intro?: string | null; items?: ValueItem[] | null } | null;
@@ -20,6 +22,7 @@ export type HomePage = PageDocument & {
     body?: PortableValue;
     image?: Figure | null;
     stats?: HighlightStat[] | null;
+    tags?: string[] | null;
     teamLinkLabel?: string | null;
     testimonialsHeading?: string | null;
   } | null;

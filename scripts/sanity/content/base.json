@@ -300,7 +300,8 @@
           "_ref": "projectsPage-vi",
           "_type": "reference"
         }
-      }
+      },
+      "pillarNotes": []
     },
     "story": {
       "body": null,
@@ -308,6 +309,8 @@
       "quote": "Tôi cũng là khách hàng của chính mình",
       "heading": null,
       "highlights": [],
+      "expertise": null,
+      "focus": null,
       "aboutLinkLabel": null
     },
     "whyMe": {
@@ -324,6 +327,7 @@
       "body": null,
       "image": null,
       "stats": [],
+      "tags": [],
       "heading": null,
       "teamLinkLabel": "Tham gia đội ngũ cùng Tuyết",
       "testimonialsHeading": null
