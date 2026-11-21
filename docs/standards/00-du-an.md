@@ -2,7 +2,7 @@
 
 > Mẫu điền cho **từng website**. Agent đọc tệp này đầu tiên.
 > Ô nào chưa có thông tin thì ghi `missing_info`, kèm người cần hỏi. KHÔNG tự điền ([ND-05](04-noi-dung-cms.md#nd-05)).
-> Nguồn: `facts.json`, brief `note/yeu-cau-du-an.md`, `requirements.json` (YC-01…YC-16), `mockup.json`, `build_plan.json` — điền ngày 20/11/2026.
+> Nguồn: `facts.json`, brief `note/yeu-cau-du-an.md`, `requirements.json` (YC-01…YC-16), `mockup.json`, `build_plan.json` — điền ngày 20/11/2026, cập nhật 21/11/2026 (mockup vòng 4, token lần 3).
 
 ## 1. Doanh nghiệp (nguồn cho `siteSettings`, [GEO-03](03-geo.md#geo-03))
 
@@ -38,7 +38,7 @@
 | Trường | Giá trị |
 |---|---|
 | Độ trung thành: giữ nguyên / làm mới / thiết kế lại | Thiết kế mới theo mockup khách (`design.source = mockup`) |
-| Mockup đã duyệt (link, ngày, người duyệt) | 2 phương án: A «Bám mockup — Emerald & khung vòm» (pa1), B «Hồ sơ biên tập — nền ngà» (pa2). **G2 chưa ghi phương án được chọn (Q-58)** — khung chỉ làm phần chung |
+| Mockup đã duyệt (link, ngày, người duyệt) | Mockup vòng 4 (21/11/2026, `mockup.json`, dựng thẳng trong code — commit T6.1): A «Bám mockup — hero emerald, chân dung tách nền bên phải» (pa1, đề xuất), B «Hero ngà, chân dung trái; khối dưới hero giống A» (pa2). Token: `design_tokens.json` lần 3 → `styles/tokens.css` (`:root` = pa1, `data-variant="pa2"` = B, `.surface-dark` ép nút champagne trên dải tối). **G2 chưa ghi phương án được chọn (Q-58)** — chưa gỡ lớp phương án nào (T6.2 chờ) |
 | Phạm vi motion: không / nhẹ (mặc định) / nhiều | Nhẹ (`subtle`): chữ hero «rise», hover 200ms; chỉ opacity / transform; tắt khi reduced-motion |
 | Font (≤ 2 họ, đủ glyph Việt) | Playfair Display (tiêu đề) + Be Vietnam Pro (thân), next/font tự host, subset vietnamese + latin |
 | Chiến lược ảnh: ảnh khách / AI / stock / kết hợp | Ảnh khách (`client_photos`); ảnh trong mockup khách là AI → không dùng. Cần ảnh chân dung ≥ 1200px (MI-06), xác nhận quyền dùng ảnh có người khác / logo (MI-07, MI-14) |
