@@ -4,11 +4,13 @@
  * Tệp field-status.json cạnh tệp seed (nếu có):
  *   pendingRequired: trường bắt buộc đang chờ khách (được trống);
  *   expectedIssues: lỗi CHỦ ĐÍCH của fixture (ví dụ cảm nhận chưa đồng ý để kiểm bộ lọc) — không dùng cho seed thật.
+ * Ảnh chân dung hero (homePage-*.hero.image): CẢNH BÁO khi không tách nền hoặc rộng < 1200 px (T6.6, MI-06) — không chặn.
  */
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import type { SeedAsset } from "../lib/content/seed-assets";
 import { checkSeed } from "../sanity/lib/seed-check";
+import { heroImageWarnings, inspectImage } from "./images/hero-check";
 
 const root = process.cwd();
 const argIndex = process.argv.indexOf("--file");
@@ -38,7 +40,22 @@ async function main() {
     console.error(`[seed:validate] seed/${file}: ${issues.length} lỗi`);
     process.exit(1);
   }
+  await warnHeroImages(docs as { _id: string; _type: string; hero?: { image?: { image?: { _sanityAsset?: string; asset?: { _ref?: string } } } } }[], assets);
   console.log(`[seed:validate] seed/${file}: ${(docs as unknown[]).length} document hợp lệ`);
+}
+
+async function warnHeroImages(
+  docs: { _id: string; _type: string; hero?: { image?: { image?: { _sanityAsset?: string; asset?: { _ref?: string } } } } }[],
+  assets: SeedAsset[],
+) {
+  for (const doc of docs) {
+    if (doc._type !== "homePage" || doc._id.startsWith("drafts.")) continue;
+    const ref = doc.hero?.image?.image?._sanityAsset ?? doc.hero?.image?.image?.asset?._ref;
+    const asset = assets.find((a) => a._sanityAsset === ref || a.assetId === ref);
+    if (!asset) continue;
+    const info = await inspectImage(readFileSync(join(root, "seed/sanity/assets", asset.file)));
+    for (const w of heroImageWarnings(info)) console.warn(`⚠ ${doc._id} › hero.image (${asset.file}): ${w}`);
+  }
 }
 
 void main();

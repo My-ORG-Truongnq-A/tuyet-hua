@@ -21,6 +21,16 @@ export type SeedAsset = {
   sha256: string;
   ext: string;
   bytes: number;
+  /** Ảnh phái sinh (ví dụ bản tách nền): tệp ảnh gốc khách gửi — cùng trạng thái quyền dùng (T6.6). */
+  derivedFrom?: string;
+};
+
+/**
+ * Ảnh phái sinh trong seed/sanity/assets/ → ảnh gốc. Ảnh gốc giữ nguyên byte; bản phái sinh là tệp riêng và
+ * mọi figure dùng nó phải cùng cờ usageApproved với figure dùng ảnh gốc (seed:validate kiểm).
+ */
+export const DERIVED_ASSETS: Readonly<Record<string, string>> = {
+  "portrait-navy-cutout.png": "portrait-navy.jpg",
 };
 
 /** Thư mục ảnh seed, tương đối gốc repo. */
@@ -78,6 +88,7 @@ export function seedAssetEntry(file: string, buf: Buffer): SeedAsset {
     sha256: createHash("sha256").update(buf).digest("hex"),
     ext: extension,
     bytes: buf.length,
+    ...(DERIVED_ASSETS[file] ? { derivedFrom: DERIVED_ASSETS[file] } : {}),
   };
 }
 

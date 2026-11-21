@@ -1,6 +1,7 @@
 import { renderToStaticMarkup } from "react-dom/server";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { normalizeSiteSettings } from "@/lib/content/site-settings";
+import { env } from "@/lib/env";
 import { Hero } from "./Hero";
 import { Story } from "./Story";
 import { Trust } from "./Trust";
@@ -57,5 +58,45 @@ describe("Trust — nhãn kỹ năng (trustSection.tags)", () => {
     const html = renderToStaticMarkup(<Trust lang="vi" section={{ tags: [] }} testimonials={[]} />);
     expect(html).not.toContain("rotate-45 bg-gold-500");
     expect(html).not.toContain("Đào tạo thực chiến");
+  });
+});
+
+describe("Hero — ảnh chân dung LCP (T6.6)", () => {
+  const mode = env.contentMode;
+  afterEach(() => {
+    (env as { contentMode: string }).contentMode = mode;
+  });
+  const portrait = {
+    _type: "figure",
+    alt: "Chân dung mẫu",
+    image: { _type: "image", asset: { _ref: "image-x-630x945-png", url: "/seed-assets/portrait.png", width: 630, height: 945 } },
+  };
+
+  it("có ảnh: eager + fetchpriority high + width/height, không lớp hiệu ứng vào", () => {
+    const html = renderToStaticMarkup(<Hero lang="vi" settings={settings} hero={{ image: portrait as never }} />);
+    const img = html.match(/<img[^>]*alt="Chân dung mẫu"[^>]*>/)?.[0] ?? "";
+    expect(img).toMatch(/loading="eager"/);
+    expect(img).toMatch(/fetchPriority="high"/i);
+    expect(img).toMatch(/width="630"/);
+    expect(img).toMatch(/height="945"/);
+    expect(img).not.toMatch(/animate-|opacity-0/);
+  });
+
+  it("release, ảnh chưa xác nhận (lớp dữ liệu đã bỏ) → không cột chân dung / quầng sáng; còn H1, tagline, CTA Zalo", () => {
+    (env as { contentMode: string }).contentMode = "release";
+    const html = renderToStaticMarkup(<Hero lang="vi" settings={{ ...settings, zaloPhone: "0359361359" }} hero={{ image: null }} />);
+    expect(html).toContain('data-portrait="none"');
+    expect(html).not.toContain("--gradient-halo");
+    expect(html).not.toContain("data-pending");
+    expect(html).toMatch(/<h1[^>]*>.*Nguyễn Văn Mẫu<\/h1>/s);
+    expect(html).toContain("Ba vế");
+    expect(html).toMatch(/href="https:\/\/zalo\.me\/0359361359"/);
+  });
+
+  it("preview, chưa có ảnh → giữ ô chờ ảnh để người duyệt thấy chỗ trống", () => {
+    (env as { contentMode: string }).contentMode = "preview";
+    const html = renderToStaticMarkup(<Hero lang="vi" settings={settings} hero={{ image: null }} />);
+    expect(html).not.toContain('data-portrait="none"');
+    expect(html).toContain("data-pending");
   });
 });

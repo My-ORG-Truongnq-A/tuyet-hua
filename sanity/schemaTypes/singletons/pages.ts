@@ -1,5 +1,5 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
-import { checkHeroImageSize, checkRoleShares } from "../../lib/rules";
+import { checkHeroCutout, checkHeroImageSize, checkRoleShares } from "../../lib/rules";
 import { contentGroup, languageField, seoField, seoGroup } from "../../lib/fields";
 
 /**
@@ -46,9 +46,12 @@ export const homePage = defineType({
           name: "image",
           title: "Ảnh chân dung (thấy rõ mặt)",
           type: "figure",
+          description:
+            "Ảnh chân dung ĐÃ TÁCH NỀN: PNG / WebP nền trong suốt, rộng ≥ 1200 px. Ảnh nền trắng sẽ lộ khối trắng trên nền xanh. Ảnh tách nền dựng từ ảnh gốc dùng cùng trạng thái «Đã xác nhận quyền dùng» với ảnh gốc.",
           validation: (r) => [
             r.required(),
             r.custom((v: { image?: never } | undefined) => checkHeroImageSize(v?.image)).warning(),
+            r.custom((v: { image?: never } | undefined) => checkHeroCutout(v?.image)).warning(),
           ],
         }),
         defineField({ name: "headline", title: "Dòng tiêu đề", type: "string", description: "Trống → dùng họ tên." }),

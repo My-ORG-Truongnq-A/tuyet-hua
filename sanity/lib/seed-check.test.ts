@@ -37,6 +37,13 @@ describe("seed:validate (CM-02, ND-10)", () => {
     expect(find(docs, "siteSettings").contact.email).toBeNull();
   });
 
+  it("ảnh phái sinh phải cùng cờ quyền dùng với ảnh gốc (T6.6)", async () => {
+    const list = clone();
+    find(list, "homePage-vi").hero.image.usageApproved = true; // bản tách nền; ảnh gốc ở trang Giới thiệu vẫn false
+    const out = await messages(list);
+    expect(out.some((m) => m.startsWith("homePage-vi hero.image") && /phái sinh/.test(m))).toBe(true);
+  });
+
   it("thiếu trường bắt buộc → lỗi; trường chờ khách trong field-status → bỏ qua", async () => {
     const list = clone();
     delete find(list, "siteSettings").personName;

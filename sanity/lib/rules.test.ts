@@ -6,6 +6,7 @@ import {
   checkGa4Id,
   checkGtmId,
   checkHHmm,
+  checkHeroCutout,
   checkHeroImageSize,
   checkHttpsUrl,
   checkMaxLength,
@@ -120,6 +121,14 @@ describe("luật validate thuần của schema", () => {
     expect(favicon({ asset: { _ref: "image-abc-600x512-png" } })).toMatch(/vuông/);
     expect(checkHeroImageSize({ asset: { _ref: "image-abc-630x945-jpg" } })).toMatch(/2000/);
     expect(checkHeroImageSize({ asset: { _ref: "image-abc-1600x2400-jpg" } })).toBe(true);
+  });
+
+  it("ảnh hero tách nền (T6.6): JPG không có nền trong suốt hoặc rộng < 1200 px → cảnh báo", () => {
+    expect(checkHeroCutout({ asset: { _ref: "image-abc-1600x2400-jpg" } })).toMatch(/trong suốt/);
+    expect(checkHeroCutout({ asset: { _ref: "image-abc-630x945-png" } })).toMatch(/1200/);
+    expect(checkHeroCutout({ asset: { _ref: "image-abc-1200x1800-png" } })).toBe(true);
+    expect(checkHeroCutout({ asset: { _ref: "image-abc-1400x2000-webp" } })).toBe(true);
+    expect(checkHeroCutout(undefined)).toBe(true);
   });
 });
 

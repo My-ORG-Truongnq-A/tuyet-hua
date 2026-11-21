@@ -249,5 +249,54 @@ export async function checkSeed({ docs, assets, pendingRequired = [] }: SeedChec
   for (const r of allRefs) {
     if (!ids.has(r.ref)) issues.push({ id: r.id, path: r.path, message: `_ref «${r.ref}» trỏ tới document không có trong seed` });
   }
+  issues.push(...checkDerivedRights(list, assets));
+  return issues;
+}
+
+type FigureUse = { id: string; path: string; file: string; approved: boolean };
+
+/** Mọi figure (object có `image` trỏ tới ảnh seed) trong một giá trị, kèm đường dẫn và cờ usageApproved. */
+function collectFigures(value: unknown, path: string, id: string, fileOf: (ref: string) => string | undefined, out: FigureUse[]) {
+  if (Array.isArray(value)) {
+    value.forEach((v, i) => {
+      const key = (v as { _key?: unknown } | null)?._key;
+      collectFigures(v, `${path}[${typeof key === "string" ? key : i}]`, id, fileOf, out);
+    });
+    return;
+  }
+  if (!value || typeof value !== "object") return;
+  const obj = value as Record<string, unknown>;
+  const image = obj.image as { _sanityAsset?: string; asset?: { _ref?: string } } | undefined;
+  const ref = image?._sanityAsset ?? image?.asset?._ref;
+  const file = ref ? fileOf(ref) : undefined;
+  const isFigure = Boolean(file) && (obj._type === "figure" || "usageApproved" in obj);
+  if (isFigure) out.push({ id, path, file: file!, approved: obj.usageApproved === true });
+  for (const [k, v] of Object.entries(obj)) {
+    if (!(isFigure && k === "image")) collectFigures(v, path ? `${path}.${k}` : k, id, fileOf, out);
+  }
+}
+
+/**
+ * Ảnh phái sinh (assets.json `derivedFrom`, ví dụ bản tách nền) kế thừa quyền dùng của ảnh gốc (T6.6): figure dùng bản
+ * phái sinh phải cùng cờ usageApproved với figure dùng ảnh gốc — không được «xác nhận» riêng bản tách nền.
+ */
+export function checkDerivedRights(docs: SeedDoc[], assets: SeedAsset[]): SeedIssue[] {
+  const byRef = new Map(assets.flatMap((a) => [[a._sanityAsset, a.file] as const, [a.assetId, a.file] as const]));
+  const derived = new Map(assets.filter((a) => a.derivedFrom).map((a) => [a.file, a.derivedFrom!] as const));
+  const uses: FigureUse[] = [];
+  for (const doc of docs) if (doc && typeof doc._id === "string") collectFigures(doc, "", doc._id, (r) => byRef.get(r), uses);
+  const issues: SeedIssue[] = [];
+  for (const u of uses) {
+    const original = derived.get(u.file);
+    if (!original) continue;
+    const originals = uses.filter((o) => o.file === original);
+    if (originals.some((o) => o.approved !== u.approved)) {
+      issues.push({
+        id: u.id,
+        path: u.path,
+        message: `ảnh phái sinh «${u.file}» phải cùng cờ quyền dùng (usageApproved) với ảnh gốc «${original}»`,
+      });
+    }
+  }
   return issues;
 }

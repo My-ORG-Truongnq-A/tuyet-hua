@@ -52,22 +52,24 @@
       "original": "seed/sanity/assets/portrait-navy-cutout.png",
       "originalBytes": 462631,
       "source": "client_photos",
+      "derivedFrom": "seed/sanity/assets/portrait-navy.jpg",
+      "hasAlpha": true,
       "variants": [
         {
           "file": "/images/portrait-navy-cutout-480.webp",
           "width": 480,
           "height": 720,
-          "quality": 95,
-          "ssim": 0,
-          "bytes": 60814
+          "quality": 65,
+          "ssim": 0.9804,
+          "bytes": 24550
         },
         {
           "file": "/images/portrait-navy-cutout-630.webp",
           "width": 630,
           "height": 945,
-          "quality": 95,
-          "ssim": 0,
-          "bytes": 87060
+          "quality": 76,
+          "ssim": 0.9802,
+          "bytes": 32230
         }
       ]
     },

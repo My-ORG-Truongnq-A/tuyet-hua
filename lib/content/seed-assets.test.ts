@@ -38,6 +38,14 @@ describe("ảnh seed (BP-05)", () => {
     }
   });
 
+  it("ảnh phái sinh ghi nguồn gốc (T6.6): bản tách nền ← chân dung gốc", () => {
+    const manifest = JSON.parse(readFileSync(join(root, "seed/sanity/assets.json"), "utf8")) as SeedAsset[];
+    const cutout = manifest.find((a) => a.file === "portrait-navy-cutout.png");
+    expect(cutout?.derivedFrom).toBe("portrait-navy.jpg");
+    expect(manifest.find((a) => a.file === "portrait-navy.jpg")?.derivedFrom).toBeUndefined();
+    for (const a of manifest) if (a.derivedFrom) expect(manifest.some((o) => o.file === a.derivedFrom)).toBe(true);
+  });
+
   it("_sanityAsset → asset._ref + document sanity.imageAsset (như sanity dataset import)", () => {
     const asset = seedAssetEntry("og.png", png(1200, 630));
     const docs = materializeSeedAssets(

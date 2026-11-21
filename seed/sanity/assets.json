@@ -27,7 +27,8 @@
     "url": "/seed-assets/portrait-navy-cutout.png",
     "sha256": "4a5208905feb71a2e58a7382709b620767c965ddca4c5fc278cfee69b1430229",
     "ext": "png",
-    "bytes": 462631
+    "bytes": 462631,
+    "derivedFrom": "portrait-navy.jpg"
   },
   {
     "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy.jpg",

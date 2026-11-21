@@ -175,6 +175,15 @@ export function checkHeroImageSize(image: ImageValue): RuleResult {
   return Math.max(dims.width, dims.height) >= 2000 ? true : "Ảnh hero nên có cạnh dài ≥ 2000 px để hiển thị sắc nét.";
 }
 
+/** Chân dung hero phải tách nền (T6.6): JPG không có kênh trong suốt; rộng < 1200 px thì mềm trên màn hình nét. */
+export function checkHeroCutout(image: ImageValue): RuleResult {
+  const ref = image?.asset?._ref;
+  const dims = imageDimensionsFromRef(ref);
+  if (!ref || !dims) return true;
+  if (ref.endsWith("-jpg")) return "Ảnh JPG không có nền trong suốt — hãy tải ảnh chân dung đã tách nền (PNG / WebP).";
+  return dims.width >= 1200 ? true : `Ảnh hero nên rộng ≥ 1200 px (ảnh đang rộng ${dims.width} px).`;
+}
+
 /**
  * Slug duy nhất trong cùng loại + ngôn ngữ (CM-06). Cùng câu GROQ chạy trên Sanity (Studio)
  * và trên seed (seed:validate, test) — khác ngôn ngữ thì được trùng.

@@ -2,7 +2,8 @@ import { CtaLink } from "@/components/cta/CtaLink";
 import { Figure } from "@/components/media/Figure";
 import { Icon, type IconName } from "@/components/ui/Icon";
 import type { SiteSettings } from "@/lib/content/site-settings";
-import type { Lang } from "@/lib/env";
+import { env, type Lang } from "@/lib/env";
+import { resolveFigure } from "@/lib/image";
 import { resolveLink } from "@/lib/links";
 import { pathFor } from "@/lib/routes";
 import { UI } from "@/lib/ui-strings";
@@ -32,7 +33,9 @@ const sentence = (s: string, lang: Lang) => {
  *   chạm đáy hero, không khung — như mockup.
  * - PA2 (`pa2:`): nền ngà, chân dung tách nền TRÁI đứng trên khối emerald bo vòm, chữ phải.
  * Ảnh chân dung là ảnh LCP: eager + fetchpriority high, KHÔNG hiệu ứng. H1 = personName (SEO, e2e).
- * Ảnh hero trong CMS cần là ảnh đã tách nền (PNG/WebP trong suốt) — ghi ở art_direction (rủi ro).
+ * Ảnh hero trong CMS cần là ảnh đã tách nền (PNG/WebP trong suốt) — Studio + seed:validate cảnh báo (T6.6).
+ * Release mà ảnh chưa xác nhận quyền dùng (lớp dữ liệu đã bỏ ảnh) → bỏ cả cột chân dung (không quầng sáng / khung trống);
+ * hero còn H1, tagline, CTA Zalo trên một cột.
  */
 export function Hero({
   lang,
@@ -49,6 +52,7 @@ export function Hero({
   const secondary = resolveLink(hero?.secondaryCta, ctx) ?? { href: pathFor("projects", lang), label: null, kind: "internal" as const, external: false };
   const tagline = splitTagline(settings.tagline);
   const pillarIcons: IconName[] = ["chart", "diamond", "people"];
+  const showPortrait = Boolean(resolveFigure(hero?.image)) || env.contentMode === "preview";
   return (
     <section
       data-section="hero"
@@ -57,7 +61,12 @@ export function Hero({
     >
       <BayArt />
 
-      <div className="container-page grid gap-6 pt-6 lg:min-h-(--hero-min-h) lg:grid-cols-[1.05fr_0.95fr] lg:gap-6 lg:pt-0 pa2:lg:grid-cols-[0.9fr_1.1fr] pa2:lg:gap-12">
+      <div
+        data-portrait={showPortrait ? undefined : "none"}
+        className={`container-page grid gap-6 pt-6 lg:min-h-(--hero-min-h) lg:pt-0 ${
+          showPortrait ? "lg:grid-cols-[1.05fr_0.95fr] lg:gap-6 pa2:lg:grid-cols-[0.9fr_1.1fr] pa2:lg:gap-12" : "lg:max-w-4xl"
+        }`}
+      >
         <div className="pb-10 lg:self-center lg:py-14 pa2:lg:order-2">
           <h1 id="hero-title" className="flex items-center gap-3 text-eyebrow font-semibold uppercase text-(--on-hero-muted) [overflow-wrap:anywhere]">
             <span aria-hidden="true" className="h-px w-8 shrink-0 bg-(--line-accent)" />
@@ -110,19 +119,21 @@ export function Hero({
         </div>
 
         {/* Chân dung tách nền: PA1 phải, chạm đáy hero, không khung; PA2 trái, đứng trên khối emerald bo vòm */}
-        <div className="relative order-first mx-auto w-full max-w-52 self-end sm:max-w-64 lg:order-none lg:mr-0 lg:max-w-[30rem] pa2:mt-4 pa2:lg:order-1 pa2:lg:mr-auto pa2:lg:ml-0 pa2:lg:mt-12 pa2:lg:max-w-[28rem]">
-          <span aria-hidden="true" className="absolute inset-x-[6%] top-[14%] bottom-0 -z-10 hidden rounded-(--radius-arch) bg-emerald-800 ring-1 ring-gold-500/60 ring-offset-8 ring-offset-ivory-50 pa2:block" />
-          <span aria-hidden="true" className="absolute inset-x-[8%] top-[12%] bottom-0 -z-10 rounded-full bg-(image:--gradient-halo) pa2:hidden" />
-          <Figure
-            figure={hero?.image}
-            lang={lang}
-            hero
-            sizes="(min-width: 1024px) 30rem, (min-width: 640px) 16rem, 13rem"
-            imgClassName="aspect-[630/780] h-auto object-cover object-top"
-            placeholder={t.pending.image}
-            caption={false}
-          />
-        </div>
+        {showPortrait && (
+          <div className="relative order-first mx-auto w-full max-w-52 self-end sm:max-w-64 lg:order-none lg:mr-0 lg:max-w-[30rem] pa2:mt-4 pa2:lg:order-1 pa2:lg:mr-auto pa2:lg:ml-0 pa2:lg:mt-12 pa2:lg:max-w-[28rem]">
+            <span aria-hidden="true" className="absolute inset-x-[6%] top-[14%] bottom-0 -z-10 hidden rounded-(--radius-arch) bg-emerald-800 ring-1 ring-gold-500/60 ring-offset-8 ring-offset-ivory-50 pa2:block" />
+            <span aria-hidden="true" className="absolute inset-x-[8%] top-[12%] bottom-0 -z-10 rounded-full bg-(image:--gradient-halo) pa2:hidden" />
+            <Figure
+              figure={hero?.image}
+              lang={lang}
+              hero
+              sizes="(min-width: 1024px) 30rem, (min-width: 640px) 16rem, 13rem"
+              imgClassName="aspect-[630/780] h-auto object-cover object-top"
+              placeholder={t.pending.image}
+              caption={false}
+            />
+          </div>
+        )}
       </div>
     </section>
   );
