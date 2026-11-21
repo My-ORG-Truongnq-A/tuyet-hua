@@ -10,7 +10,7 @@ const BASE =
   "inline-flex min-h-11 items-center justify-center gap-2 rounded-sm px-5 text-sm font-semibold uppercase tracking-wide transition-colors duration-200";
 
 const VARIANT = {
-  primary: `${BASE} bg-(--cta-bg) text-(--cta-fg) shadow-soft hover:bg-(--cta-bg-hover)`,
+  primary: `${BASE} bg-(--cta-bg) bg-(image:--cta-image) text-(--cta-fg) shadow-soft hover:bg-(--cta-bg-hover) hover:bg-none`,
   secondary: `${BASE} border border-current hover:bg-current/10`,
 } as const;
 

@@ -15,6 +15,21 @@
     "bytes": 162699
   },
   {
+    "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy-cutout.png",
+    "assetId": "image-2b5c7043103b167209ff97c4ce778c4ca4418334-630x945-png",
+    "file": "portrait-navy-cutout.png",
+    "sha1hash": "2b5c7043103b167209ff97c4ce778c4ca4418334",
+    "width": 630,
+    "height": 945,
+    "extension": "png",
+    "mimeType": "image/png",
+    "size": 462631,
+    "url": "/seed-assets/portrait-navy-cutout.png",
+    "sha256": "4a5208905feb71a2e58a7382709b620767c965ddca4c5fc278cfee69b1430229",
+    "ext": "png",
+    "bytes": 462631
+  },
+  {
     "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy.jpg",
     "assetId": "image-39950a22ae3a57af7d2df7e75492304621330819-630x945-jpg",
     "file": "portrait-navy.jpg",

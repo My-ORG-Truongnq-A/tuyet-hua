@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { PendingLabel } from "@/components/content/PendingLabel";
 import { TextLink } from "@/components/cta/CtaLink";
 import { Figure } from "@/components/media/Figure";
+import { Icon, valueIcon } from "@/components/ui/Icon";
 import type { HighlightStat, PostListItem, ProjectListItem } from "@/lib/content/types";
 import type { Lang } from "@/lib/env";
 import { pathFor } from "@/lib/routes";
@@ -30,6 +31,27 @@ export function ValueList({ items, tone = "light", columns = 3 }: { items: Value
         </li>
       ))}
     </ol>
+  );
+}
+
+/**
+ * Danh sách giá trị kiểu mockup: cột căn giữa, icon nét mảnh, tiêu đề chữ hoa nhỏ, vạch ngăn dọc mảnh (desktop).
+ * Icon = valueItem.icon hoặc mặc định theo vị trí (`icons` cho thứ tự riêng).
+ */
+export function IconValueList({ items, icons }: { items: ValueItem[]; icons?: readonly string[] }) {
+  const list = items.filter((i) => i.title?.trim());
+  if (!list.length) return null;
+  const cols = ["", "", "lg:grid-cols-2", "lg:grid-cols-3", "lg:grid-cols-4", "lg:grid-cols-5"][list.length] ?? "lg:grid-cols-6";
+  return (
+    <ul className={`mt-10 grid gap-y-10 sm:grid-cols-2 ${list.length >= 5 ? "md:grid-cols-3" : ""} ${cols}`}>
+      {list.map((v, i) => (
+        <li key={v._key ?? i} className="flex flex-col items-center px-4 text-center lg:border-l lg:border-(--line-subtle) lg:first:border-l-0">
+          <Icon name={valueIcon(v.icon ?? icons?.[i], i)} className="size-10 text-emerald-800" />
+          <h3 className="mt-4 text-sm font-semibold uppercase tracking-wide text-(--on-page-heading)">{v.title}</h3>
+          {v.description && <p className="mt-2 max-w-64 text-sm leading-relaxed text-(--on-page-muted)">{v.description}</p>}
+        </li>
+      ))}
+    </ul>
   );
 }
 

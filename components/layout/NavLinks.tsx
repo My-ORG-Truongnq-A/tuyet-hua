@@ -11,7 +11,7 @@ export function NavLinks({ items, variant }: { items: NavItem[]; variant: "bar" 
   const isCurrent = (href: string) => pathname === href || (href !== "/" && href !== "/en" && pathname.startsWith(`${href}/`));
   if (variant === "bar") {
     return (
-      <ul className="flex items-center gap-7 text-sm font-medium">
+      <ul className="flex items-center gap-6 text-sm font-medium whitespace-nowrap uppercase tracking-wide">
         {items.map((n) => (
           <li key={n.href}>
             <a

@@ -9,7 +9,7 @@ export type SectionTone = "page" | "alt" | "band";
 const TONE: Record<SectionTone, string> = {
   page: "",
   alt: "bg-(--surface-alt)",
-  band: "surface-dark bg-(--surface-band) text-ivory-100",
+  band: "surface-dark bg-(--surface-band) bg-(image:--surface-band-image) text-ivory-100",
 };
 
 export function Section({
@@ -21,6 +21,7 @@ export function Section({
   intro,
   aside,
   align = "start",
+  titleStyle = "default",
   empty = false,
   className = "",
   children,
@@ -34,6 +35,8 @@ export function Section({
   /** Phần bên phải tiêu đề (vd. liên kết «Xem tất cả»). */
   aside?: ReactNode;
   align?: "start" | "center";
+  /** `ornament` = tiêu đề chữ hoa giữa hai vạch vàng, căn giữa (kiểu tiêu đề khối của mockup). */
+  titleStyle?: "default" | "ornament";
   empty?: boolean;
   className?: string;
   children?: ReactNode;
@@ -41,23 +44,41 @@ export function Section({
   if (empty) return null;
   const headingId = heading ? `${id ?? name}-title` : undefined;
   const dark = tone === "band";
+  const ornament = titleStyle === "ornament";
+  const centered = align === "center" || ornament;
   return (
     <section id={id} data-section={name} aria-labelledby={headingId} className={`${TONE[tone]} ${className}`}>
       <div className="container-page section-y">
         {(heading || eyebrow) && (
           <header
-            className={`flex flex-wrap items-end justify-between gap-x-8 gap-y-4 ${align === "center" ? "flex-col items-center text-center" : ""}`}
+            className={`flex flex-wrap gap-x-8 gap-y-4 ${centered ? "flex-col items-center text-center" : "items-end justify-between"}`}
           >
-            <div className="max-w-(--container-prose)">
+            <div className={ornament ? "w-full" : "max-w-(--container-prose)"}>
               {eyebrow && (
                 <p className={`text-eyebrow font-semibold uppercase ${dark ? "text-gold-300" : "text-(--on-page-accent)"}`}>{eyebrow}</p>
               )}
-              {heading && (
+              {heading && !ornament && (
                 <h2 id={headingId} className={`mt-3 font-display text-h2 ${dark ? "text-ivory-100" : "text-(--on-page-heading)"}`}>
                   {heading}
                 </h2>
               )}
-              {intro && <div className={`mt-4 text-lead ${dark ? "text-emerald-100" : "text-(--on-page-muted)"}`}>{intro}</div>}
+              {heading && ornament && (
+                <h2
+                  id={headingId}
+                  className={`flex items-center justify-center gap-4 font-display text-h3 uppercase tracking-title sm:gap-6 ${
+                    dark ? "text-gold-300" : "text-(--on-page-heading)"
+                  }`}
+                >
+                  <span aria-hidden="true" className="h-px w-8 shrink-0 bg-gold-500 sm:w-24 lg:w-40" />
+                  <span className="min-w-0 [overflow-wrap:anywhere]">{heading}</span>
+                  <span aria-hidden="true" className="h-px w-8 shrink-0 bg-gold-500 sm:w-24 lg:w-40" />
+                </h2>
+              )}
+              {intro && (
+                <div className={`mt-4 text-lead ${ornament ? "mx-auto max-w-(--container-prose)" : ""} ${dark ? "text-emerald-100" : "text-(--on-page-muted)"}`}>
+                  {intro}
+                </div>
+              )}
             </div>
             {aside}
           </header>

@@ -280,9 +280,9 @@
         "_type": "figure",
         "image": {
           "_type": "image",
-          "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy.jpg"
+          "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy-cutout.png"
         },
-        "rightsNote": "MI-06, MI-07: chờ xác nhận quyền dùng; độ phân giải thấp cho hero",
+        "rightsNote": "MI-06, MI-07: chờ xác nhận quyền dùng; độ phân giải thấp cho hero; bản tách nền (PNG trong suốt) dựng từ portrait-navy.jpg cho hero emerald theo mockup",
         "usageApproved": false
       },
       "subline": null,

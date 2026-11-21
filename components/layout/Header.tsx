@@ -49,7 +49,7 @@ export function Header({
               <span className="block font-display text-lg leading-tight text-balance sm:text-2xl">{settings.brandName}</span>
               {settings.jobTitle && (
                 <span className="hidden text-micro font-medium uppercase tracking-caps text-(--on-hero-accent) sm:block">
-                  {settings.jobTitle}
+                  {settings.jobTitle.split("|")[0]?.trim()}
                 </span>
               )}
             </>
@@ -66,7 +66,7 @@ export function Header({
           <div className="hidden text-(--on-hero-muted) sm:block">
             <LangSwitch lang={lang} languages={languages} label={t.langSwitch} />
           </div>
-          <ZaloButton phone={settings.zaloPhone} label={zaloLabel} className="hidden sm:inline-flex" />
+          <ZaloButton phone={settings.zaloPhone} label={zaloLabel} className="max-sm:hidden" />
           <div className="xl:hidden">
             <MobileMenu items={links} openLabel={t.openMenu} closeLabel={t.closeMenu} navLabel={t.mainNav}>
               <ZaloButton phone={settings.zaloPhone} label={zaloLabel} className="w-full" />

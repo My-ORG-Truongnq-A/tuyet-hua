@@ -1,7 +1,7 @@
 import { Section } from "@/components/content/Section";
 import type { Lang } from "@/lib/env";
 import { UI } from "@/lib/ui-strings";
-import { ValueList, type ValueItem } from "../shared/blocks";
+import { IconValueList, type ValueItem } from "../shared/blocks";
 
 export type ProjectValueProposition = { headline?: string | null; values?: ValueItem[] | null; keyMessage?: string | null } | null | undefined;
 
@@ -14,12 +14,13 @@ export function ValueProposition({ lang, value }: { lang: Lang; value: ProjectVa
   return (
     <Section
       name="valueProposition"
-      align="center"
+      titleStyle="ornament"
       eyebrow={UI[lang].project.valueEyebrow}
       heading={value?.headline}
       empty={!value?.headline && !values.length}
     >
-      <ValueList items={values} />
+      {/* Tạo dòng tiền · An cư & nghỉ dưỡng · Giá trị dài hạn */}
+      <IconValueList items={values} icons={["chart", "building", "diamond"]} />
       {value?.keyMessage && (
         <p className="mx-auto mt-14 max-w-(--container-prose) text-center font-display text-h3 italic text-(--on-page-heading)">
           {value.keyMessage}

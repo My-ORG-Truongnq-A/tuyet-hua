@@ -2,6 +2,9 @@
 @import "tailwindcss" source(none);
 @import "../styles/tokens.css";
 
+/* Biến thể theo phương án (G2): `pa2:` chỉ áp khi <html data-variant="pa2">. Mặc định (không thuộc tính) = pa1. */
+@custom-variant pa2 (&:where([data-variant="pa2"] *));
+
 @source "../app";
 @source "../components";
 @source "../lib";

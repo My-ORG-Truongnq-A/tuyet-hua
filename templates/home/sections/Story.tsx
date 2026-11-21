@@ -1,51 +1,95 @@
 import { PendingLabel } from "@/components/content/PendingLabel";
 import { RichText } from "@/components/content/RichText";
-import { Section } from "@/components/content/Section";
+import { TextLink } from "@/components/cta/CtaLink";
 import { Figure } from "@/components/media/Figure";
+import { PendingImage } from "@/components/media/PendingImage";
+import { Icon, type IconName } from "@/components/ui/Icon";
+import type { SiteSettings } from "@/lib/content/site-settings";
 import type { Lang } from "@/lib/env";
 import { hasBlocks } from "@/lib/portable-text";
 import { pathFor } from "@/lib/routes";
 import { UI } from "@/lib/ui-strings";
-import { StatList, TextLink } from "../../shared/blocks";
+import { StatList } from "../../shared/blocks";
 import type { HomePage } from "../home.data";
 
 /**
- * Về tôi + brand story (T4.3): câu chuyện «Tôi cũng là khách hàng của chính mình» từ homePage.story.quote,
- * số liệu nổi bật qua gate (release ẩn số chưa xác nhận), liên kết → /gioi-thieu.
+ * Về tôi + brand story theo mockup: 3 cột trên desktop —
+ * (1) nhãn «Về tôi» + tên + danh sách thông tin có icon (chỉ từ siteSettings, không thêm dòng khách chưa duyệt);
+ * (2) thẻ trích dẫn nền vàng nhạt «Tôi cũng là khách hàng của chính mình» + câu chuyện + tên ký cuối thẻ;
+ * (3) ảnh câu chuyện (thiếu → ô chờ ảnh ở preview, ghi rõ ảnh cần).
+ * Số liệu nổi bật (nếu có, qua gate) nằm dưới. Liên kết → /gioi-thieu.
  */
-export function Story({ lang, story }: { lang: Lang; story: HomePage["story"] }) {
+export function Story({ lang, story, settings }: { lang: Lang; story: HomePage["story"]; settings: SiteSettings }) {
   const t = UI[lang];
   const hasBody = hasBlocks(story?.body);
   const empty = !story?.quote && !hasBody && !story?.highlights?.length;
+  if (empty) return null;
+  // 5 dòng như mockup: chức danh | công ty (siteSettings.jobTitle) · lĩnh vực · trọng tâm (brief, tạm ở ui-strings) · khu vực
+  const facts: { icon: IconName; text: string }[] = [
+    ...(settings.jobTitle ?? "")
+      .split("|")
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .map((text, i) => ({ icon: (i === 0 ? "people" : "building") as IconName, text })),
+    { icon: "handshake", text: t.homeExtra.expertise },
+    { icon: "target", text: t.homeExtra.focus },
+    ...(settings.area ? [{ icon: "pin" as IconName, text: settings.area }] : []),
+  ];
   return (
-    <Section name="story" heading={story?.heading ?? t.sections.story} empty={empty}>
-      <div className="mt-10 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+    <section data-section="story" aria-labelledby="story-title" className="bg-ivory-50">
+      <div className="container-page section-y grid gap-8 md:grid-cols-2 lg:grid-cols-[0.82fr_0.98fr_1.1fr] lg:items-stretch lg:gap-8">
         <div>
-          {story?.quote && (
-            <blockquote className="border-l-2 border-(--line-accent) pl-5 font-display text-h2 italic text-(--on-page-heading)">
-              “{story.quote}”
-            </blockquote>
-          )}
-          <RichText value={story?.body} lang={lang} className="mt-6 text-lead" />
-          {!hasBody && (
-            <p className="mt-6">
-              <PendingLabel>{t.pending.content}</PendingLabel>
-            </p>
+          <p className="text-eyebrow font-semibold uppercase text-(--on-page-accent)">{story?.heading ?? t.sections.story}</p>
+          <h2 id="story-title" className="mt-3 font-display text-h2 text-(--on-page-heading) [overflow-wrap:anywhere]">
+            {settings.personName}
+          </h2>
+          {facts.length > 0 && (
+            <ul className="mt-5 grid gap-3 text-sm">
+              {facts.map((f) => (
+                <li key={f.text} className="flex items-start gap-3">
+                  <Icon name={f.icon} className="mt-0.5 size-5 shrink-0 text-gold-700" />
+                  <span>{f.text}</span>
+                </li>
+              ))}
+            </ul>
           )}
           <p className="mt-6">
             <TextLink href={pathFor("about", lang)}>{story?.aboutLinkLabel ?? t.homeAbout}</TextLink>
           </p>
         </div>
-        <Figure
-          figure={story?.image}
-          lang={lang}
-          sizes="(min-width: 1024px) 30vw, 100vw"
-          className="overflow-hidden rounded-sm"
-          imgClassName="aspect-[4/3] h-auto object-cover"
-          placeholder={t.pending.image}
-        />
+
+        <figure className="flex flex-col rounded-(--radius-card) bg-(--surface-quote) p-6 shadow-soft ring-1 ring-gold-200 sm:p-7">
+          <Icon name="quote" className="size-8 text-gold-700" />
+          {story?.quote && (
+            <blockquote className="mt-3 font-display text-h3 font-semibold text-(--on-page-heading)">{story.quote}.</blockquote>
+          )}
+          <RichText value={story?.body} lang={lang} className="mt-4 text-sm" />
+          {!hasBody && (
+            <p className="mt-4">
+              <PendingLabel>{t.pending.content}</PendingLabel>
+            </p>
+          )}
+          <figcaption className="mt-auto pt-6 text-right font-display text-h3 italic text-gold-700">{settings.personName}</figcaption>
+        </figure>
+
+        {/* Mockup: 2 ảnh xếp chồng (căn hộ hướng vịnh + chị Tuyết tại dự án). Chưa có ảnh thật → 2 ô chờ ghi rõ ảnh cần. */}
+        <div className="grid gap-3 md:col-span-2 md:grid-cols-2 lg:col-span-1 lg:grid-cols-1 lg:grid-rows-2">
+          <Figure
+            figure={story?.image}
+            lang={lang}
+            sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"
+            className="overflow-hidden rounded-(--radius-card)"
+            imgClassName="aspect-[16/9] h-full object-cover lg:aspect-auto"
+            placeholder={t.pending.storyImage}
+          />
+          <PendingImage note={t.pending.storyImage2} className="aspect-[16/9] rounded-(--radius-card) lg:aspect-auto" />
+        </div>
       </div>
-      <StatList stats={story?.highlights} lang={lang} />
-    </Section>
+      {Boolean(story?.highlights?.length) && (
+        <div className="container-page pb-(--section-y)">
+          <StatList stats={story?.highlights} lang={lang} />
+        </div>
+      )}
+    </section>
   );
 }

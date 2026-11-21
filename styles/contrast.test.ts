@@ -19,6 +19,8 @@ function block(selectorPattern: RegExp): Record<string, string> {
 const theme = block(/@theme\s*{([\s\S]*?)@keyframes/);
 const pa1 = block(/:root,\s*\[data-variant="pa1"\]\s*{([\s\S]*?)}/);
 const pa2 = { ...pa1, ...block(/\[data-variant="pa2"\]\s*{([\s\S]*?)}/) };
+/** Dải nền tối (dự án, kết nối, footer) ép nút champagne ở mọi phương án. */
+const surfaceDark = block(/\.surface-dark\s*{([\s\S]*?)}/);
 
 function resolve(vars: Record<string, string>, name: string, depth = 0): string {
   const raw = vars[name] ?? theme[name];
@@ -58,6 +60,13 @@ const SEMANTIC_PAIRS: Pair[] = [
   ["--on-hero", "--surface-hero-2", 4.5],
   ["--on-hero-muted", "--surface-hero", 4.5],
   ["--on-hero-accent", "--surface-hero", 4.5],
+  ["--on-hero-muted", "--surface-hero-2", 4.5],
+  ["--on-hero-accent", "--surface-hero-2", 4.5],
+  // Thẻ trích dẫn «Tôi cũng là khách hàng…» (nền gold-100)
+  ["--on-page", "--surface-quote", 4.5],
+  ["--on-page-muted", "--surface-quote", 4.5],
+  ["--on-page-heading", "--surface-quote", 4.5],
+  ["--on-page-accent", "--surface-quote", 4.5],
   ["--cta-fg", "--cta-bg", 4.5],
   ["--cta-fg", "--cta-bg-hover", 4.5],
   ["--focus-ring", "--surface-page", 3],
@@ -91,6 +100,25 @@ describe("tương phản token", () => {
       expect(contrast(resolve(pa1, fg), resolve(pa1, bg))).toBeGreaterThanOrEqual(min);
     });
   }
+
+  for (const [name, vars] of [["pa1", pa1], ["pa2", pa2]] as const) {
+    const dark = { ...vars, ...surfaceDark };
+    for (const bg of ["--color-emerald-900", "--color-emerald-950"]) {
+      it(`${name} .surface-dark: nút (--cta-bg / --cta-bg-hover) đặt trên ${bg} vẫn đọc được`, () => {
+        expect(contrast(resolve(dark, "--cta-fg"), resolve(dark, "--cta-bg"))).toBeGreaterThanOrEqual(4.5);
+        expect(contrast(resolve(dark, "--cta-fg"), resolve(dark, "--cta-bg-hover"))).toBeGreaterThanOrEqual(4.5);
+        expect(contrast(resolve(dark, "--focus-ring-on-dark"), resolve(dark, bg))).toBeGreaterThanOrEqual(3);
+        expect(contrast(resolve(dark, "--color-ivory-100"), resolve(dark, bg))).toBeGreaterThanOrEqual(4.5);
+      });
+    }
+  }
+
+  it("nút champagne dùng gradient gold-300 → gold-400 (cả hai đầu đã kiểm với --cta-fg)", () => {
+    const layout = block(/\/\* Biến bố cục[^\n]*\n:root\s*{([\s\S]*?)}/);
+    expect(layout["--gradient-gold"]).toContain("--color-gold-300");
+    expect(layout["--gradient-gold"]).toContain("--color-gold-400");
+    expect(surfaceDark["--cta-image"]).toBe("var(--gradient-gold)");
+  });
 
   it("gold-500 chỉ trang trí: dưới 4.5:1 trên ngà nên không được là token chữ", () => {
     const textTokens = Object.entries(pa1).filter(([k]) => k.startsWith("--on-") || k === "--cta-fg");

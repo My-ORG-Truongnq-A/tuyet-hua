@@ -290,14 +290,14 @@
           "_type": "image",
           "asset": {
             "_type": "reference",
-            "_ref": "image-39950a22ae3a57af7d2df7e75492304621330819-630x945-jpg"
+            "_ref": "image-2b5c7043103b167209ff97c4ce778c4ca4418334-630x945-png"
           }
         },
-        "rightsNote": "MI-06, MI-07: chờ xác nhận quyền dùng; độ phân giải thấp cho hero",
+        "rightsNote": "MI-06, MI-07: chờ xác nhận quyền dùng; độ phân giải thấp cho hero; bản tách nền (PNG trong suốt) dựng từ portrait-navy.jpg cho hero emerald theo mockup",
         "usageApproved": false
       },
       "subline": null,
-      "headline": null,
+      "headline": "Tư vấn giải pháp bất động sản phù hợp với nhu cầu, tài chính và mục tiêu của bạn. Đồng hành trước, trong và sau giao dịch để cùng bạn giữ giá trị bền vững.",
       "primaryCta": {
         "_type": "link",
         "kind": "zalo",
@@ -351,31 +351,55 @@
       "aboutLinkLabel": "Đọc câu chuyện đầy đủ"
     },
     "whyMe": {
-      "intro": "Ba điều tôi giữ khi đồng hành cùng khách hàng, theo đúng tinh thần của lời hứa thương hiệu.",
+      "intro": null,
       "items": [
         {
           "_key": "market",
           "_type": "valueItem",
-          "title": "Thấu hiểu thị trường",
-          "description": "Nhìn thị trường qua ba lớp: thị trường, pháp lý và tài chính, trước khi nói đến sản phẩm."
+          "icon": "target",
+          "title": "Hiểu thị trường",
+          "description": "Nhìn thị trường Hạ Long – Quảng Ninh từ thực tế, để bạn quyết định trên cơ sở rõ ràng."
+        },
+        {
+          "_key": "legal",
+          "_type": "valueItem",
+          "icon": "scale",
+          "title": "Hiểu pháp lý",
+          "description": "Nói rõ pháp lý và quy trình giao dịch trước khi bạn xuống tiền."
+        },
+        {
+          "_key": "client",
+          "_type": "valueItem",
+          "icon": "people",
+          "title": "Hiểu khách hàng",
+          "description": "Lắng nghe nhu cầu, khả năng tài chính và mục tiêu tài sản của bạn trước khi nói đến sản phẩm."
         },
         {
           "_key": "value",
           "_type": "valueItem",
+          "icon": "diamond",
           "title": "Tinh chọn giá trị",
-          "description": "Cùng bạn xác định mục tiêu — bảo toàn tài sản, tạo dòng tiền, an cư và nghỉ dưỡng hay đa dạng hóa danh mục — rồi mới chọn tài sản phù hợp."
+          "description": "Không giới thiệu mọi sản phẩm; chỉ đề xuất tài sản phù hợp với mục tiêu của bạn."
+        },
+        {
+          "_key": "cashflow",
+          "_type": "valueItem",
+          "icon": "chart",
+          "title": "Dòng tiền & giá trị",
+          "description": "Cùng bạn xem khả năng khai thác, tạo dòng tiền và giá trị dài hạn của tài sản."
         },
         {
           "_key": "long-term",
           "_type": "valueItem",
+          "icon": "handshake",
           "title": "Đồng hành bền lâu",
-          "description": "Công việc của tôi không dừng ở lúc ký hợp đồng; tôi tiếp tục đồng hành cùng bạn sau giao dịch."
+          "description": "Đồng hành trước, trong và sau giao dịch, cả khi bạn cần khai thác hay gửi bán."
         }
       ],
-      "heading": "Tại sao chọn tôi"
+      "heading": "Giá trị tôi mang đến"
     },
     "projectsSection": {
-      "intro": "Các dự án tôi đang đồng hành tư vấn, bắt đầu từ Hạ Long Xanh và Làng Vân.",
+      "intro": null,
       "heading": "Dự án đang triển khai",
       "viewAllLabel": "Xem tất cả dự án"
     },
@@ -390,7 +414,7 @@
             {
               "_type": "span",
               "_key": "home-trust-1-s",
-              "text": "Bên cạnh vai trò tư vấn, tôi quản lý, đào tạo và phát triển đội ngũ kinh doanh Khối TP55.",
+              "text": "Tôi tin thành công bền vững đến từ một đội ngũ giỏi và văn hoá đồng hành. Bên cạnh vai trò tư vấn, tôi quản lý, đào tạo và phát triển đội ngũ kinh doanh Khối TP55, chia sẻ kiến thức và kinh nghiệm thực chiến mỗi ngày.",
               "marks": []
             }
           ]
@@ -398,9 +422,9 @@
       ],
       "image": null,
       "stats": [],
-      "heading": "Uy tín & đội ngũ",
+      "heading": "Phát triển đội ngũ – Kiến tạo thành công",
       "teamLinkLabel": "Tham gia đội ngũ cùng Tuyết",
-      "testimonialsHeading": "Cảm nhận từ khách hàng"
+      "testimonialsHeading": "Khách hàng nói về Tuyết"
     },
     "knowledgeSection": {
       "heading": "Kiến thức thị trường",
@@ -414,8 +438,8 @@
       "heading": null
     },
     "connectSection": {
-      "body": "Nhắn Zalo hoặc gọi điện để trao đổi nhu cầu của bạn. Tôi sẽ lắng nghe trước, rồi cùng bạn xem hướng đi phù hợp.",
-      "heading": "Kết nối cùng tôi"
+      "body": "Tôi luôn sẵn sàng lắng nghe và đồng hành cùng bạn trên hành trình tìm kiếm giá trị bất động sản bền vững.",
+      "heading": "Kết nối với Tuyết"
     },
     "seo": {
       "_type": "seo",
@@ -736,14 +760,14 @@
           "_type": "image",
           "asset": {
             "_type": "reference",
-            "_ref": "image-39950a22ae3a57af7d2df7e75492304621330819-630x945-jpg"
+            "_ref": "image-2b5c7043103b167209ff97c4ce778c4ca4418334-630x945-png"
           }
         },
-        "rightsNote": "MI-06, MI-07: chờ xác nhận quyền dùng; độ phân giải thấp cho hero",
+        "rightsNote": "MI-06, MI-07: chờ xác nhận quyền dùng; độ phân giải thấp cho hero; bản tách nền (PNG trong suốt) dựng từ portrait-navy.jpg cho hero emerald theo mockup",
         "usageApproved": false
       },
       "subline": null,
-      "headline": null,
+      "headline": "Real estate advice that fits your needs, finances and goals. I stay with you before, during and after the transaction to help you keep lasting value.",
       "primaryCta": {
         "_type": "link",
         "kind": "zalo",
@@ -797,31 +821,55 @@
       "aboutLinkLabel": "Read the full story"
     },
     "whyMe": {
-      "intro": "Three principles I keep when working with clients, in line with the brand promise.",
+      "intro": null,
       "items": [
         {
           "_key": "market",
           "_type": "valueItem",
-          "title": "Understand the market",
-          "description": "I look at the market through three layers — market, legal and financial — before talking about any product."
+          "icon": "target",
+          "title": "Know the market",
+          "description": "A grounded view of the Hạ Long – Quảng Ninh market, so you decide on a clear basis."
+        },
+        {
+          "_key": "legal",
+          "_type": "valueItem",
+          "icon": "scale",
+          "title": "Know the legal side",
+          "description": "Clear explanations of legal status and transaction steps before you commit any money."
+        },
+        {
+          "_key": "client",
+          "_type": "valueItem",
+          "icon": "people",
+          "title": "Know the client",
+          "description": "I listen to your needs, financial capacity and asset goals before talking about products."
         },
         {
           "_key": "value",
           "_type": "valueItem",
+          "icon": "diamond",
           "title": "Curate real value",
-          "description": "Together we define your goal — preserving wealth, generating cash flow, residential and holiday living, or diversifying your portfolio — and only then choose a suitable asset."
+          "description": "I do not offer every product; I only suggest assets that fit your goals."
+        },
+        {
+          "_key": "cashflow",
+          "_type": "valueItem",
+          "icon": "chart",
+          "title": "Cash flow & value",
+          "description": "Together we look at how an asset can be used, generate cash flow and hold value over time."
         },
         {
           "_key": "long-term",
           "_type": "valueItem",
-          "title": "Stay with you for the long term",
-          "description": "My work does not end at signing; I keep working with you after the transaction."
+          "icon": "handshake",
+          "title": "Long-term partnership",
+          "description": "With you before, during and after the transaction, including when you want to rent out or resell."
         }
       ],
-      "heading": "Why work with me"
+      "heading": "The value I bring"
     },
     "projectsSection": {
-      "intro": "The projects I currently advise on, starting with Hạ Long Xanh and Làng Vân.",
+      "intro": null,
       "heading": "Current projects",
       "viewAllLabel": "View all projects"
     },
@@ -836,7 +884,7 @@
             {
               "_type": "span",
               "_key": "home-trust-en-1-s",
-              "text": "Alongside advising clients, I manage, train and develop the TP55 Division sales team.",
+              "text": "I believe lasting success comes from a capable team and a culture of mutual support. Alongside advising clients, I manage, train and develop the TP55 Division sales team, sharing knowledge and hands-on experience every day.",
               "marks": []
             }
           ]
@@ -844,9 +892,9 @@
       ],
       "image": null,
       "stats": [],
-      "heading": "Credibility & team",
+      "heading": "Growing the team – Building success",
       "teamLinkLabel": "Join the team with Tuyết",
-      "testimonialsHeading": "What clients say"
+      "testimonialsHeading": "What clients say about Tuyết"
     },
     "knowledgeSection": {
       "heading": "Market insights",
@@ -860,8 +908,8 @@
       "heading": null
     },
     "connectSection": {
-      "body": "Message me on Zalo or call to talk about what you need. I will listen first, then we can look at the right direction together.",
-      "heading": "Get in touch"
+      "body": "I am always ready to listen and to walk with you on the journey to lasting real estate value.",
+      "heading": "Connect with Tuyết"
     },
     "seo": {
       "_type": "seo",

@@ -2,6 +2,7 @@ import { Section } from "@/components/content/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getPage, getPosts, getProjects, getTestimonials } from "@/lib/content/pages";
 import { getSiteSettings } from "@/lib/content/site-settings";
+import type { Figure, PageDocument } from "@/lib/content/types";
 import type { Lang } from "@/lib/env";
 import { graph, personNode, webPageNode, websiteNode } from "@/lib/json-ld";
 import { pathFor } from "@/lib/routes";
@@ -23,7 +24,11 @@ import { WhyMe } from "./sections/WhyMe";
  * Giao diện từng khối là PHẦN CHUNG — G2 chưa ghi phương án (Q-58); phương án được chọn thay uiSlot.
  */
 export async function HomeTemplate({ lang }: { lang: Lang }) {
-  const [settings, page] = await Promise.all([getSiteSettings(lang), getPage<HomePage>("homePage", lang)]);
+  const [settings, page, team] = await Promise.all([
+    getSiteSettings(lang),
+    getPage<HomePage>("homePage", lang),
+    getPage<PageDocument & { gallery?: Figure[] | null }>("teamPage", lang),
+  ]);
   const limit = page?.knowledgeSection?.postsLimit ?? DEFAULT_KNOWLEDGE_LIMIT;
   const [projects, posts, testimonials] = await Promise.all([getProjects(lang), getPosts(lang, 1, limit), getTestimonials(lang)]);
   const path = pathFor("home", lang);
@@ -39,10 +44,10 @@ export async function HomeTemplate({ lang }: { lang: Lang }) {
         ])}
       />
       <Hero lang={lang} settings={settings} hero={page?.hero} />
-      <Story lang={lang} story={page?.story} />
+      <Story lang={lang} story={page?.story} settings={settings} />
       <WhyMe lang={lang} whyMe={page?.whyMe} />
       <Projects lang={lang} section={page?.projectsSection} projects={projects} />
-      <Trust lang={lang} section={page?.trustSection} testimonials={testimonials} />
+      <Trust lang={lang} section={page?.trustSection} gallery={team?.gallery} testimonials={testimonials} />
       <Knowledge lang={lang} section={page?.knowledgeSection} posts={posts.items} />
       <Section
         name="services"

@@ -78,7 +78,7 @@ async function og(p: (typeof OG_PAGES)[number], lang: "vi" | "en") {
 
 async function main() {
   const map: Record<string, unknown> = {};
-  const files = ["event-cake.jpg", "portrait-navy.jpg", "talk-sale-event.jpg", "team-office.jpg"];
+  const files = ["event-cake.jpg", "portrait-navy.jpg", "portrait-navy-cutout.png", "talk-sale-event.jpg", "team-office.jpg"];
   const out = (d: string) => { if (!dry) mkdirSync(join(root, d), { recursive: true }); return join(root, d); };
   for (const f of files) {
     const original = readFileSync(join(SRC, f));

@@ -17,7 +17,7 @@ export function ZaloButton({ phone, label, className = "" }: { phone: string | n
       target="_blank"
       rel="noopener noreferrer"
       data-cta="zalo"
-      className={`${BUTTON} bg-(--cta-bg) text-(--cta-fg) shadow-soft hover:bg-(--cta-bg-hover) ${className}`}
+      className={`${BUTTON} bg-(--cta-bg) bg-(image:--cta-image) text-(--cta-fg) shadow-soft hover:bg-(--cta-bg-hover) hover:bg-none ${className}`}
     >
       <ZaloMark /> {label}
     </a>

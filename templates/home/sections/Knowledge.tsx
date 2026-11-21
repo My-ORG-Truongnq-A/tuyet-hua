@@ -19,6 +19,7 @@ export function Knowledge({ lang, section, posts }: { lang: Lang; section: HomeP
       name="knowledge"
       tone="alt"
       heading={section?.heading ?? t.sections.knowledge}
+      titleStyle="ornament"
       empty={empty}
       aside={posts.length ? <TextLink href={pathFor("posts", lang)}>{section?.viewAllLabel ?? t.viewAll}</TextLink> : null}
     >

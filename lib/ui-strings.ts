@@ -26,7 +26,28 @@ type Strings = {
   viewAll: string;
   readMore: string;
   viewProject: string;
-  pending: { confirm: string; content: string; image: string; firstPost: string };
+  pending: {
+    confirm: string;
+    content: string;
+    image: string;
+    firstPost: string;
+    stats: string;
+    storyImage: string;
+    storyImage2: string;
+    teamImage: string;
+    /** Ô số liệu chờ (chỉ preview): giữ bố cục dải số của mockup, KHÔNG hiện số minh hoạ. */
+    statValue: string;
+    statSlots: [string, string, string, string];
+    testimonial: string;
+  };
+  /** Nhãn nhỏ trên tiêu đề khối trang chủ (theo mockup). */
+  homeEyebrow: { leader: string };
+  /**
+   * Chữ phụ của trang chủ theo mockup chưa có trường CMS (ghi «Lệch chuẩn» — chuyển vào siteSettings / homePage ở bước build):
+   * pillarNotes = dòng phụ dưới 3 trụ cột hero (theo 3 vế tagline); expertise / focus = 2 dòng thông tin ở «Về tôi» (từ brief);
+   * trustTags = nhãn kỹ năng dưới ảnh đội ngũ.
+   */
+  homeExtra: { pillarNotes: [string, string, string]; expertise: string; focus: string; trustTags: string[] };
   notFound: { eyebrow: string; title: string; body: string; links: string };
   error: { title: string; body: string; retry: string };
   homeAbout: string;
@@ -101,12 +122,26 @@ export const UI: Record<Lang, Strings> = {
     breadcrumb: "Đường dẫn",
     viewAll: "Xem tất cả",
     readMore: "Đọc tiếp",
-    viewProject: "Xem dự án",
+    viewProject: "Xem chi tiết",
     pending: {
       confirm: "Chờ xác nhận",
       content: "Chờ nội dung",
       image: "Chờ ảnh",
       firstPost: "Chờ bài viết đầu tiên",
+      stats: "Chờ số liệu đã xác nhận: năm kinh nghiệm, số khách đã tư vấn, sản phẩm đã phân phối, sale đã đào tạo",
+      storyImage: "Chờ ảnh thật: căn hộ chị Tuyết đã mua ở Hạ Long Xanh",
+      storyImage2: "Chờ ảnh thật: chị Tuyết tại dự án, hướng vịnh Hạ Long",
+      teamImage: "Chờ ảnh thật: buổi đào tạo / đội ngũ TP55",
+      statValue: "Chờ số",
+      statSlots: ["Năm kinh nghiệm thực chiến", "Khách hàng đã tư vấn và giao dịch", "Sản phẩm đã phân phối", "Sale được đào tạo và phát triển"],
+      testimonial: "Chờ cảm nhận khách hàng (cần khách đồng ý hiển thị tên và lời nhận xét)",
+    },
+    homeEyebrow: { leader: "Leader & người đào tạo" },
+    homeExtra: {
+      pillarNotes: ["Thị trường · pháp lý · tài chính", "Phù hợp mục tiêu của bạn", "Trước, trong và sau giao dịch"],
+      expertise: "Tư vấn, phân phối bất động sản đầu tư",
+      focus: "Tập trung: BĐS dòng tiền, BĐS nghỉ dưỡng và các dự án Vinhomes",
+      trustTags: ["Đào tạo thực chiến", "Chia sẻ kiến thức", "Kỹ năng tư vấn", "Hỗ trợ & đồng hành", "Văn hoá tích cực"],
     },
     notFound: {
       eyebrow: "Lỗi 404",
@@ -227,8 +262,27 @@ export const UI: Record<Lang, Strings> = {
     breadcrumb: "Breadcrumb",
     viewAll: "View all",
     readMore: "Read more",
-    viewProject: "View project",
-    pending: { confirm: "Pending confirmation", content: "Content pending", image: "Photo pending", firstPost: "First article coming soon" },
+    viewProject: "View details",
+    pending: {
+      confirm: "Pending confirmation",
+      content: "Content pending",
+      image: "Photo pending",
+      firstPost: "First article coming soon",
+      stats: "Awaiting confirmed figures: years of experience, clients advised, units distributed, sales staff trained",
+      storyImage: "Real photo pending: Tuyết's own Hạ Long Xanh apartment",
+      storyImage2: "Real photo pending: Tuyết on site, facing Hạ Long Bay",
+      teamImage: "Real photo pending: TP55 training session / team",
+      statValue: "Pending",
+      statSlots: ["Years of hands-on experience", "Clients advised and served", "Units distributed", "Sales staff trained"],
+      testimonial: "Client testimonial pending (requires the client's consent to show name and words)",
+    },
+    homeEyebrow: { leader: "Leader & mentor" },
+    homeExtra: {
+      pillarNotes: ["Market · legal · finance", "Fits your goals", "Before, during and after the deal"],
+      expertise: "Investment real estate advisory and distribution",
+      focus: "Focus: cash-flow and holiday real estate, Vinhomes projects",
+      trustTags: ["Hands-on training", "Knowledge sharing", "Advisory skills", "Support & mentoring", "Positive culture"],
+    },
     notFound: {
       eyebrow: "Error 404",
       title: "Page not found",

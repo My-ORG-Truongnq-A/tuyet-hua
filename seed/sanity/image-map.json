@@ -48,6 +48,29 @@
         }
       ]
     },
+    "portrait-navy-cutout.png": {
+      "original": "seed/sanity/assets/portrait-navy-cutout.png",
+      "originalBytes": 462631,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/portrait-navy-cutout-480.webp",
+          "width": 480,
+          "height": 720,
+          "quality": 95,
+          "ssim": 0,
+          "bytes": 60814
+        },
+        {
+          "file": "/images/portrait-navy-cutout-630.webp",
+          "width": 630,
+          "height": 945,
+          "quality": 95,
+          "ssim": 0,
+          "bytes": 87060
+        }
+      ]
+    },
     "talk-sale-event.jpg": {
       "original": "seed/sanity/assets/talk-sale-event.jpg",
       "originalBytes": 262472,
