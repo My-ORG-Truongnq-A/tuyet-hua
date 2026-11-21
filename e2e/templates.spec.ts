@@ -40,9 +40,16 @@ test("trang chủ: thứ tự khối cố định, H1 = tên, tagline là đoạ
   expect(order.at(-1)).toBe("connect");
   await expect(page.locator("h1")).toHaveText("Hứa Thị Tuyết");
   await expect(page.locator('[data-section="hero"] p', { hasText: "THẤU HIỂU THỊ TRƯỜNG" })).toHaveCount(1);
-  const hero = page.locator('[data-section="hero"] img').first();
-  await expect(hero).toHaveAttribute("loading", "eager");
-  await expect(hero).toHaveAttribute("fetchpriority", "high");
+  if (process.env.CONTENT_MODE === "release") {
+    // Seed thật: chân dung chưa xác nhận quyền dùng → release bỏ cả cột ảnh, không khung trống; CTA Zalo vẫn ở hero (T6.6)
+    await expect(page.locator('[data-section="hero"] [data-portrait="none"]')).toHaveCount(1);
+    await expect(page.locator('[data-section="hero"] img, [data-section="hero"] [data-pending]')).toHaveCount(0);
+    await expect(page.locator('[data-section="hero"] a[href^="https://zalo.me/"]')).not.toHaveCount(0);
+  } else {
+    const hero = page.locator('[data-section="hero"] img').first();
+    await expect(hero).toHaveAttribute("loading", "eager");
+    await expect(hero).toHaveAttribute("fetchpriority", "high");
+  }
   // Dự án chỉ ở khối projects (REQ-01), liên kết tới trang chi tiết
   await expect(page.locator('[data-section="projects"] a[href="/du-an/ha-long-xanh"]')).toHaveCount(1);
   await expect(page.locator('main a[href^="/du-an/"]:not([data-section="projects"] a)')).toHaveCount(0);
