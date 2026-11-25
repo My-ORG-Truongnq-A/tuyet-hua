@@ -82,7 +82,7 @@ export async function postMetadata(lang: Lang, slug: string): Promise<Metadata> 
     description: truncateWords(post.seo?.description || post.excerpt),
     settings,
     translations: await postTranslations(post._id, lang),
-    image: ogImage(post.seo?.ogImage?.asset ? post.seo.ogImage : post.coverImage?.image, settings),
+    image: ogImage([post.seo?.ogImage, post.coverImage?.pending ? null : post.coverImage?.image], settings, "postDetail", lang),
     noindex: post.seo?.noindex === true,
     type: "article",
   });

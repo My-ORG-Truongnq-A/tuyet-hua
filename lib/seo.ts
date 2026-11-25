@@ -47,7 +47,8 @@ export function buildMetadataFor(input: MetadataInput, ctx: MetadataContext): Me
   if (languages.vi) languages["x-default"] = languages.vi;
 
   const indexable = ctx.indexable && !input.noindex;
-  const images = input.image ? [{ ...input.image, url: abs(input.image.url) }] : undefined;
+  // SEO-14: ảnh OG có width / height / alt (alt trống → title trang).
+  const images = input.image ? [{ ...input.image, url: abs(input.image.url), alt: input.image.alt || title }] : undefined;
 
   return {
     metadataBase: new URL(ctx.siteUrl),
@@ -64,7 +65,7 @@ export function buildMetadataFor(input: MetadataInput, ctx: MetadataContext): Me
       locale: OG_LOCALE[lang],
       images,
     },
-    twitter: { card: images ? "summary_large_image" : "summary", title, description },
+    twitter: { card: images ? "summary_large_image" : "summary", title, description, images },
   };
 }
 

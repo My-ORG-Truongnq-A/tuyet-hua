@@ -742,22 +742,20 @@
     }
   },
   "og": {
-    "default:vi": "/og/default-vi.webp",
-    "home:vi": "/og/home-vi.webp",
-    "about:vi": "/og/about-vi.webp",
-    "projects:vi": "/og/projects-vi.webp",
-    "team:vi": "/og/team-vi.webp",
-    "articles:vi": "/og/articles-vi.webp",
-    "contact:vi": "/og/contact-vi.webp",
-    "legal:vi": "/og/legal-vi.webp",
-    "default:en": "/og/default-en.webp",
-    "home:en": "/og/home-en.webp",
-    "about:en": "/og/about-en.webp",
-    "projects:en": "/og/projects-en.webp",
-    "team:en": "/og/team-en.webp",
-    "articles:en": "/og/articles-en.webp",
-    "contact:en": "/og/contact-en.webp",
-    "legal:en": "/og/legal-en.webp"
+    "home:vi": "/og/home-vi.jpg",
+    "about:vi": "/og/about-vi.jpg",
+    "projects:vi": "/og/projects-vi.jpg",
+    "team:vi": "/og/team-vi.jpg",
+    "articles:vi": "/og/articles-vi.jpg",
+    "contact:vi": "/og/contact-vi.jpg",
+    "legal:vi": "/og/legal-vi.jpg",
+    "home:en": "/og/home-en.jpg",
+    "about:en": "/og/about-en.jpg",
+    "projects:en": "/og/projects-en.jpg",
+    "team:en": "/og/team-en.jpg",
+    "articles:en": "/og/articles-en.jpg",
+    "contact:en": "/og/contact-en.jpg",
+    "legal:en": "/og/legal-en.jpg"
   },
   "logo": "NEEDS_INPUT"
 }

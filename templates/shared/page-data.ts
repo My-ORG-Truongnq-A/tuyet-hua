@@ -5,6 +5,7 @@ import type { ImageField, PageDocument } from "@/lib/content/types";
 import { env, type Lang } from "@/lib/env";
 import { breadcrumbNode } from "@/lib/json-ld";
 import { navLabel } from "@/lib/navigation";
+import { ogCard, ogFromImage } from "@/lib/og";
 import { pathFor, type PageKey } from "@/lib/routes";
 import { buildMetadata, type MetadataInput } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site-url";
@@ -21,10 +22,21 @@ export type DescriptionKey = keyof (typeof UI)["vi"]["seo"]["descriptions"];
 
 export const otherLang = (lang: Lang): Lang => (lang === "vi" ? "en" : "vi");
 
-/** Ảnh OG: ảnh SEO của trang → ảnh mặc định siteSettings. */
-export function ogImage(image: ImageField | null | undefined, settings: SiteSettings): MetadataInput["image"] {
-  const a = image?.asset?.url ? image.asset : settings.seo.ogImage?.asset;
-  return a?.url ? { url: a.url, width: a.width, height: a.height } : null;
+/**
+ * Ảnh OG (SEO-14, JPEG 1200×630): ảnh riêng theo thứ tự ưu tiên (seo.ogImage → ảnh đại diện / ảnh bìa)
+ * → ảnh mặc định siteSettings → thẻ soạn sẵn của loại trang. Luôn có ảnh; alt để trống thì buildMetadata lấy title.
+ */
+export function ogImage(
+  own: (ImageField | null | undefined)[],
+  settings: SiteSettings,
+  page: PageKey,
+  lang: Lang,
+): NonNullable<MetadataInput["image"]> {
+  for (const image of [...own, settings.seo.ogImage]) {
+    const og = ogFromImage(image, "");
+    if (og) return og;
+  }
+  return ogCard(page, lang, "");
 }
 
 /** Mô tả: seo.description → đoạn mở đầu → mẫu seo_plan (điền từ CMS) → mặc định siteSettings. */
@@ -56,7 +68,7 @@ export async function staticPageMetadata({ type, key, lang, descKey, ogType }: S
     description: pageDescription(lang, settings, descKey, [seo?.description, typeof page.intro === "string" ? page.intro : null]),
     settings,
     translations: hasOther ? { [other]: pathFor(key, other) } : {},
-    image: ogImage(seo?.ogImage, settings),
+    image: ogImage([seo?.ogImage], settings, key, lang),
     noindex: seo?.noindex === true,
     type: ogType,
   });

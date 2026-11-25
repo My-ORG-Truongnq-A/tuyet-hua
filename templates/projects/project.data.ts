@@ -64,7 +64,7 @@ export async function projectMetadata(lang: Lang, slug: string): Promise<Metadat
     description: pageDescription(lang, settings, "project", [project.seo?.description, project.summary], { title: project.title }),
     settings,
     translations: await projectTranslations(project._id, lang),
-    image: ogImage(project.seo?.ogImage?.asset ? project.seo.ogImage : project.heroImage?.image, settings),
+    image: ogImage([project.seo?.ogImage, project.heroImage?.pending ? null : project.heroImage?.image], settings, "projectDetail", lang),
     noindex: project.seo?.noindex === true,
   });
 }

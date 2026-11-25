@@ -26,7 +26,7 @@ export async function homeMetadata(lang: Lang): Promise<Metadata> {
     description: page?.seo?.description,
     settings,
     translations: hasOther ? { [other]: pathFor("home", other) } : {},
-    image: ogImage(page?.seo?.ogImage, settings),
+    image: ogImage([page?.seo?.ogImage], settings, "home", lang),
     noindex: page?.seo?.noindex === true,
     type: "profile",
   });

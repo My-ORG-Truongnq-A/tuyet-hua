@@ -36,6 +36,14 @@ describe("buildMetadataFor (T1.5, SEO)", () => {
     expect(m.metadataBase?.toString()).toBe("https://tuyethua.vn/");
   });
 
+  it("ảnh OG tuyệt đối kèm width / height / alt (trống → title), có cả twitter:image (SEO-14)", () => {
+    const image = { url: "/og/about-vi.jpg", width: 1200, height: 630, alt: "" };
+    const m = buildMetadataFor({ lang: "vi", path: "/gioi-thieu", title: "Giới thiệu", settings, image }, ctx);
+    const og = { url: "https://tuyethua.vn/og/about-vi.jpg", width: 1200, height: 630, alt: "Giới thiệu | Hứa Thị Tuyết" };
+    expect((m.openGraph as { images?: unknown }).images).toEqual([og]);
+    expect(m.twitter).toMatchObject({ card: "summary_large_image", images: [og] });
+  });
+
   it("hreflang vi + en + x-default chỉ khi có bản dịch thật", () => {
     const both = buildMetadataFor({ lang: "vi", path: "/gioi-thieu", title: "X", settings, translations: { en: "/en/about" } }, ctx);
     expect(both.alternates?.languages).toEqual({
