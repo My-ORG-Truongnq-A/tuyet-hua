@@ -756,7 +756,10 @@
     "title": "Bài viết",
     "intro": "Kiến thức về thị trường, pháp lý, tài chính và kinh nghiệm đồng hành cùng khách hàng, viết ngắn gọn và dễ áp dụng.",
     "emptyStateText": "Các bài viết đầu tiên sẽ sớm được đăng tại đây.",
-    "seo": null
+    "seo": {
+      "_type": "seo",
+      "description": "Bài viết của Hứa Thị Tuyết về thị trường bất động sản, pháp lý, tài chính và kinh nghiệm đồng hành cùng khách hàng — ngắn gọn, dễ hiểu, dễ áp dụng."
+    }
   },
   {
     "_id": "contactPage-vi",
@@ -906,7 +909,10 @@
       "kind": "zalo",
       "label": "Kết nối Zalo"
     },
-    "seo": null
+    "seo": {
+      "_type": "seo",
+      "description": "Làng Vân là dự án đang triển khai mà Hứa Thị Tuyết đồng hành tư vấn. Thông tin chi tiết sẽ được cập nhật; nhắn Zalo để được tư vấn trực tiếp về dự án."
+    }
   },
   {
     "_id": "homePage-en",
@@ -1397,7 +1403,7 @@
     "seo": {
       "_type": "seo",
       "title": "Insights | Hứa Thị Tuyết",
-      "description": "Short, practical articles on the real estate market, legal and financial topics by Hứa Thị Tuyết."
+      "description": "Articles by Hứa Thị Tuyết on the real estate market, legal and financial topics, and experience working with clients — short, practical and easy to apply."
     }
   },
   {
@@ -1542,7 +1548,10 @@
       "kind": "zalo",
       "label": "Connect on Zalo"
     },
-    "seo": null
+    "seo": {
+      "_type": "seo",
+      "description": "Làng Vân is a project in development that Hứa Thị Tuyết advises on. Detailed information will be added soon; message on Zalo for direct advice on the project."
+    }
   },
   {
     "_id": "translation-metadata-homePage",

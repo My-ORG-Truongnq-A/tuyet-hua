@@ -134,6 +134,11 @@ export const viOverlays: Overlay[] = [
       intro:
         "Kiến thức về thị trường, pháp lý, tài chính và kinh nghiệm đồng hành cùng khách hàng, viết ngắn gọn và dễ áp dụng.",
       emptyStateText: "Các bài viết đầu tiên sẽ sớm được đăng tại đây.",
+      seo: {
+        _type: "seo",
+        description:
+          "Bài viết của Hứa Thị Tuyết về thị trường bất động sản, pháp lý, tài chính và kinh nghiệm đồng hành cùng khách hàng — ngắn gọn, dễ hiểu, dễ áp dụng.",
+      },
     },
   },
   {
@@ -156,6 +161,13 @@ export const viOverlays: Overlay[] = [
   },
   {
     id: "project-lang-van-vi",
-    set: { summary: "Dự án đang triển khai mà tôi đồng hành tư vấn. Thông tin chi tiết sẽ được cập nhật." },
+    set: {
+      summary: "Dự án đang triển khai mà tôi đồng hành tư vấn. Thông tin chi tiết sẽ được cập nhật.",
+      seo: {
+        _type: "seo",
+        description:
+          "Làng Vân là dự án đang triển khai mà Hứa Thị Tuyết đồng hành tư vấn. Thông tin chi tiết sẽ được cập nhật; nhắn Zalo để được tư vấn trực tiếp về dự án.",
+      },
+    },
   },
 ];

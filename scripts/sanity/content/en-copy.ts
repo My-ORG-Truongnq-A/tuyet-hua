@@ -165,7 +165,8 @@ export const enOverlays: Overlay[] = [
       seo: {
         _type: "seo",
         title: "Insights | Hứa Thị Tuyết",
-        description: "Short, practical articles on the real estate market, legal and financial topics by Hứa Thị Tuyết.",
+        description:
+          "Articles by Hứa Thị Tuyết on the real estate market, legal and financial topics, and experience working with clients — short, practical and easy to apply.",
       },
     },
   },
@@ -211,6 +212,11 @@ export const enOverlays: Overlay[] = [
       "heroImage.caption": "Illustration only; real project photos to follow",
       "heroImage.credit": "Vector illustration made for this website",
       summary: "A project in development that I advise on. Detailed information will be added.",
+      seo: {
+        _type: "seo",
+        description:
+          "Làng Vân is a project in development that Hứa Thị Tuyết advises on. Detailed information will be added soon; message on Zalo for direct advice on the project.",
+      },
       "cta.label": "Connect on Zalo",
     },
   },
