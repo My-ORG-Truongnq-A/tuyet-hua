@@ -18,6 +18,7 @@
     "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm build",
     "schema:check": "sanity schema validate --level error",
     "images:build": "tsx scripts/images/build-images.ts",
+    "images:illustrations": "tsx scripts/images/illustrations.ts",
     "seed:assets": "tsx scripts/seed-assets.ts",
     "seed:validate": "tsx scripts/seed-validate.ts",
     "seed:ndjson": "tsx scripts/seed-to-ndjson.ts",

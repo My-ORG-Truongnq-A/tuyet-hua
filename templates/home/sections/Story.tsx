@@ -2,7 +2,6 @@ import { PendingLabel } from "@/components/content/PendingLabel";
 import { RichText } from "@/components/content/RichText";
 import { TextLink } from "@/components/cta/CtaLink";
 import { Figure } from "@/components/media/Figure";
-import { PendingImage } from "@/components/media/PendingImage";
 import { Icon, type IconName } from "@/components/ui/Icon";
 import type { SiteSettings } from "@/lib/content/site-settings";
 import type { Lang } from "@/lib/env";
@@ -72,7 +71,7 @@ export function Story({ lang, story, settings }: { lang: Lang; story: HomePage["
           <figcaption className="mt-auto pt-6 text-right font-display text-h3 italic text-gold-700">{settings.personName}</figcaption>
         </figure>
 
-        {/* Mockup: 2 ảnh xếp chồng (căn hộ hướng vịnh + chị Tuyết tại dự án). Chưa có ảnh thật → 2 ô chờ ghi rõ ảnh cần. */}
+        {/* Mockup: 2 ảnh xếp chồng (story.image + story.secondaryImage). Thiếu ảnh → ô chờ ghi rõ ảnh cần (chỉ preview). */}
         <div className="grid gap-3 md:col-span-2 md:grid-cols-2 lg:col-span-1 lg:grid-cols-1 lg:grid-rows-2">
           <Figure
             figure={story?.image}
@@ -82,7 +81,14 @@ export function Story({ lang, story, settings }: { lang: Lang; story: HomePage["
             imgClassName="aspect-[16/9] h-full object-cover lg:aspect-auto"
             placeholder={t.pending.storyImage}
           />
-          <PendingImage note={t.pending.storyImage2} className="aspect-[16/9] rounded-(--radius-card) lg:aspect-auto" />
+          <Figure
+            figure={story?.secondaryImage}
+            lang={lang}
+            sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"
+            className="overflow-hidden rounded-(--radius-card)"
+            imgClassName="aspect-[16/9] h-full object-cover lg:aspect-auto"
+            placeholder={t.pending.storyImage2}
+          />
         </div>
       </div>
       {Boolean(story?.highlights?.length) && (

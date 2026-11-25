@@ -13,7 +13,7 @@ describe("seed:ndjson (T2.9)", () => {
   });
 
   it("ảnh seed dùng asset._ref image-<sha1>-<w>x<h>-<ext> (hợp đồng content-migration)", () => {
-    expect(toNdjson(docs)).toMatch(/"_ref":"image-[0-9a-f]{40}-630x945-jpg"/);
+    expect(toNdjson(docs)).toMatch(/"_ref":"image-[0-9a-f]{40}-1707x2560-jpg"/);
   });
 
   it("từ chối dữ liệu không phải mảng; mảng rỗng → chuỗi rỗng", () => {

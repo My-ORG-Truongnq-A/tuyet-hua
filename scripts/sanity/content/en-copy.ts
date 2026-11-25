@@ -27,6 +27,7 @@ const SEO_DESCRIPTION =
   "Hứa Thị Tuyết advises on investment, cash-flow and holiday real estate in Ha Long, Quang Ninh, and stays with clients before and after every transaction.";
 
 const ALT_PORTRAIT = "Portrait of Hứa Thị Tuyết in a navy blue suit, arms folded";
+const CAPTION_HA_LONG_CREDIT = "Photo: Vyacheslav Argenberg, CC BY 4.0";
 
 export const enOverlays: Overlay[] = [
   {
@@ -34,6 +35,9 @@ export const enOverlays: Overlay[] = [
     set: {
       title: "Home",
       "hero.image.alt": ALT_PORTRAIT,
+      "story.image.alt": "Hứa Thị Tuyết and colleagues looking at the scale model of a real estate project",
+      "story.secondaryImage.alt": "Ha Long Bay in the mist, limestone islands reflected in the water",
+      "story.secondaryImage.caption": `Illustration: Ha Long Bay. ${CAPTION_HA_LONG_CREDIT}`,
       "hero.primaryCta.label": "Talk with Tuyết",
       "hero.secondaryCta.label": "Explore projects",
       "story.quote": "I am also my own client",
@@ -128,9 +132,15 @@ export const enOverlays: Overlay[] = [
     set: {
       title: "Training & Team",
       intro: "Besides advising clients, I spend my time managing, training and developing the TP55 Division sales team.",
-      "gallery.0.alt": "Hứa Thị Tuyết and a colleague holding a cake on the stage of an event",
-      "gallery.1.alt": "Hứa Thị Tuyết with two speakers at a talk on premium real estate",
-      "gallery.2.alt": "Hứa Thị Tuyết posing with the sales team in the office",
+      "heroImage.alt": "Hứa Thị Tuyết teaching a real estate sales skills course",
+      "gallery.0.alt": "Hứa Thị Tuyết presenting at a workshop on client profiles and needs",
+      "gallery.1.alt": "The sales team in a group photo at the company office",
+      "gallery.2.alt": "Speakers and participants in a group photo after a workshop",
+      "gallery.3.alt": "Hứa Thị Tuyết with two speakers at a talk on premium real estate",
+      "gallery.4.alt": "A talk show sharing sales experience with the sales team",
+      "gallery.5.alt": "An in-house training session for the sales team at the office",
+      "gallery.6.alt": "Hứa Thị Tuyết and a colleague holding a cake on the stage of an event",
+      "gallery.7.alt": "Hứa Thị Tuyết posing with the sales team in the office",
       "leaderSection.heading": "Leadership role",
       "leaderSection.body": pt(
         "team-leader-en",
@@ -163,6 +173,7 @@ export const enOverlays: Overlay[] = [
     id: "contactPage-vi",
     set: {
       title: "Contact",
+      "image.alt": "Portrait of Hứa Thị Tuyết in a navy blue suit, smiling, hands clasped",
       intro: "Message me on Zalo or call to talk about what you need, or to learn about joining the team.",
       seo: {
         _type: "seo",
@@ -175,6 +186,8 @@ export const enOverlays: Overlay[] = [
   {
     id: "project-ha-long-xanh-vi",
     set: {
+      "heroImage.alt": "Ha Long Bay seen from above, with limestone islands and boats on the water",
+      "heroImage.caption": `Illustration of the Ha Long Bay area, not a photo of the project. ${CAPTION_HA_LONG_CREDIT}`,
       summary:
         "The view of someone who owns and invests at Hạ Long Xanh: one asset, three values — cash flow, residential & holiday living, and long-term value.",
       "valueProposition.headline": "ONE ASSET – THREE VALUES",
@@ -194,6 +207,9 @@ export const enOverlays: Overlay[] = [
   {
     id: "project-lang-van-vi",
     set: {
+      "heroImage.alt": "Illustration of mountains, clouds and water in emerald tones",
+      "heroImage.caption": "Illustration only; real project photos to follow",
+      "heroImage.credit": "Vector illustration made for this website",
       summary: "A project in development that I advise on. Detailed information will be added.",
       "cta.label": "Connect on Zalo",
     },

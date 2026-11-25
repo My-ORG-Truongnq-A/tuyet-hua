@@ -4,7 +4,7 @@
  *   pnpm images:build --dry    — chỉ in kế hoạch, không ghi
  * Chọn chất lượng WebP thấp nhất có SSIM >= 0.98 (scripts/images/webp.ts); ảnh tách nền giữ kênh trong suốt (T6.6).
  */
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
 import { DERIVED_ASSETS } from "../../lib/content/seed-assets";
@@ -21,13 +21,16 @@ const IVORY = "#FAF7F0";
 const OG_PAGES: { slug: string; vi: string; en: string; photo: string }[] = [
   { slug: "default", vi: "Hứa Thị Tuyết", en: "Hứa Thị Tuyết", photo: "portrait-navy.jpg" },
   { slug: "home", vi: "Hứa Thị Tuyết — Tư vấn bất động sản", en: "Hứa Thị Tuyết — Real estate advisor", photo: "portrait-navy.jpg" },
-  { slug: "about", vi: "Giới thiệu", en: "About", photo: "talk-sale-event.jpg" },
-  { slug: "projects", vi: "Dự án", en: "Projects", photo: "team-office.jpg" },
-  { slug: "team", vi: "Đào tạo đội ngũ", en: "Team training", photo: "team-office.jpg" },
-  { slug: "articles", vi: "Bài viết", en: "Articles", photo: "event-cake.jpg" },
-  { slug: "contact", vi: "Liên hệ", en: "Contact", photo: "portrait-navy.jpg" },
+  { slug: "about", vi: "Giới thiệu", en: "About", photo: "portrait-bni.jpg" },
+  { slug: "projects", vi: "Dự án", en: "Projects", photo: "stock-ha-long-bay-above.jpg" },
+  { slug: "team", vi: "Đào tạo đội ngũ", en: "Team training", photo: "bootcamp-training.jpg" },
+  { slug: "articles", vi: "Bài viết", en: "Articles", photo: "workshop-presenting.jpg" },
+  { slug: "contact", vi: "Liên hệ", en: "Contact", photo: "portrait-bni.jpg" },
   { slug: "legal", vi: "Chính sách bảo mật", en: "Privacy policy", photo: "portrait-navy.jpg" },
 ];
+
+/** Nguồn ảnh theo tiền tố tên tệp: stock-* = ảnh tự do (Wikimedia, CC BY 4.0), illus-* = minh hoạ tự dựng, còn lại = ảnh khách. */
+const sourceOf = (f: string) => (f.startsWith("stock-") ? "free_stock_cc_by_4" : f.startsWith("illus-") ? "illustration" : "client_photos");
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 
@@ -42,7 +45,7 @@ async function og(p: (typeof OG_PAGES)[number], lang: "vi" | "en") {
 
 async function main() {
   const map: Record<string, unknown> = {};
-  const files = ["event-cake.jpg", "portrait-navy.jpg", "portrait-navy-cutout.png", "talk-sale-event.jpg", "team-office.jpg"];
+  const files = readdirSync(SRC).filter((f) => /\.(jpe?g|png|webp)$/i.test(f)).sort();
   const out = (d: string) => { if (!dry) mkdirSync(join(root, d), { recursive: true }); return join(root, d); };
   for (const f of files) {
     const original = readFileSync(join(SRC, f));
@@ -59,7 +62,7 @@ async function main() {
     map[f] = {
       original: `seed/sanity/assets/${f}`,
       originalBytes: original.length,
-      source: "client_photos",
+      source: sourceOf(f),
       ...(derivedFrom ? { derivedFrom: `seed/sanity/assets/${derivedFrom}`, hasAlpha: meta.hasAlpha === true } : {}),
       variants,
     };
@@ -83,7 +86,7 @@ async function main() {
   };
   if (!dry) {
     writeFileSync(join(root, "public/manifest.webmanifest"), `${JSON.stringify(manifest, null, 2)}\n`);
-    writeFileSync(join(root, "seed/sanity/image-map.json"), `${JSON.stringify({ strategy: "client_photos", ssimMin: SSIM_MIN, images: map, og: ogMap, logo: "NEEDS_INPUT" }, null, 2)}\n`);
+    writeFileSync(join(root, "seed/sanity/image-map.json"), `${JSON.stringify({ strategy: "client_photos + free_stock + illustration", ssimMin: SSIM_MIN, images: map, og: ogMap, logo: "NEEDS_INPUT" }, null, 2)}\n`);
   }
   console.log(JSON.stringify({ dry, images: map, og: Object.keys(ogMap).length }, null, 1).slice(0, 3000));
 }

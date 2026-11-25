@@ -52,7 +52,7 @@ describe("nguồn seed: chạy CHÍNH truy vấn Sanity bằng groq-js (fixture 
 
   it("ảnh seed thành asset giống Sanity: asset-> có url /seed-assets và kích thước thật (BP-05)", async () => {
     const url = await q<{ url: string; w: number }>(full, `*[_id == "homePage-vi"][0].hero.image.image.asset->{ url, "w": metadata.dimensions.width }`);
-    expect(url).toEqual({ url: "/seed-assets/portrait-navy.jpg", w: 630 });
+    expect(url).toEqual({ url: "/seed-assets/portrait-navy.jpg", w: 1707 });
   });
 
   it("settings", async () => {
@@ -145,7 +145,7 @@ describe("hậu xử lý chung cho seed và Sanity", () => {
     expect(ids).toHaveLength(2);
     const infos = await q<ImageAssetInfo[]>(full, IMAGE_ASSETS_QUERY, { ids });
     const out = attachImageAssets(page, infos) as { gallery: { image: { asset: ImageAssetInfo } }[] };
-    expect(out.gallery[0]!.image.asset).toMatchObject({ url: "/seed-assets/team-office.jpg", width: 1260, height: 945 });
+    expect(out.gallery[0]!.image.asset).toMatchObject({ url: "/seed-assets/team-office.jpg", width: 2568, height: 1926 });
     expect(JSON.stringify(out)).not.toMatch(/rightsNote/);
   });
 });

@@ -10,6 +10,7 @@ export type HomePage = PageDocument & {
     quote?: string | null;
     body?: PortableValue;
     image?: Figure | null;
+    secondaryImage?: Figure | null;
     highlights?: HighlightStat[] | null;
     expertise?: string | null;
     focus?: string | null;

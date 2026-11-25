@@ -57,7 +57,9 @@ export function Figure({
           </PendingLabel>
         )}
       </div>
-      {caption && img.caption && <figcaption className="mt-2 text-xs text-(--on-page-muted)">{img.caption}</figcaption>}
+      {caption && img.caption && (
+        <figcaption className={`mt-2 text-xs ${tone === "dark" ? "text-(--on-hero-muted)" : "text-(--on-page-muted)"}`}>{img.caption}</figcaption>
+      )}
     </figure>
   );
 }

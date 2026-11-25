@@ -41,11 +41,10 @@ describe("inspectImage + heroImageWarnings", () => {
     expect(heroImageWarnings(await inspectImage(await cutout(630, 945))).join()).toMatch(/1200/);
   });
 
-  it("ảnh hero của seed thật: có kênh trong suốt; còn nhỏ (630 px) → chỉ cảnh báo độ rộng (MI-06)", async () => {
+  it("ảnh hero của seed thật: có kênh trong suốt, rộng ≥ 1200 px (MI-06 — dựng từ bản gốc 1707 px) → không cảnh báo", async () => {
     const info = await inspectImage(readFileSync(join(root, "seed/sanity/assets/portrait-navy-cutout.png")));
-    const warnings = heroImageWarnings(info);
-    expect(warnings).toHaveLength(1);
-    expect(warnings[0]).toMatch(/1200/);
+    expect(info.width).toBeGreaterThanOrEqual(1200);
+    expect(heroImageWarnings(info)).toEqual([]);
   });
 });
 

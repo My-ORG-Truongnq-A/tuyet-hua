@@ -29,11 +29,23 @@ describe("seed:validate (CM-02, ND-10)", () => {
     expect(docs.map((d) => d._id).sort()).toEqual([...vi, ...en, ...meta].sort());
   });
 
-  it("seed không chứa số liệu / feedback / email minh hoạ (REQ-21) và ảnh đều chờ xác nhận", () => {
+  it("seed không chứa số liệu / feedback / email minh hoạ (REQ-21); ảnh khách đều chờ xác nhận", () => {
     expect(docs.some((d) => d._type === "testimonial" || d._type === "post")).toBe(false);
     const text = JSON.stringify(docs);
     expect(text).not.toMatch(/"confirmed":\s*true/);
-    expect(text).not.toMatch(/"usageApproved":\s*true/);
+    // Chỉ ảnh tự do (stock-*, CC BY — có credit) và minh hoạ tự dựng (illus-*) được bật quyền dùng; ảnh khách chờ MI-07.
+    const fileOf = new Map(assets.map((a) => [a.assetId, a.file]));
+    const approved: string[] = [];
+    const walk = (v: unknown): void => {
+      if (Array.isArray(v)) return v.forEach(walk);
+      if (!v || typeof v !== "object") return;
+      const o = v as { _type?: string; usageApproved?: boolean; image?: { asset?: { _ref?: string } } };
+      if (o._type === "figure" && o.usageApproved) approved.push(fileOf.get(o.image?.asset?._ref ?? "") ?? "?");
+      Object.values(o).forEach(walk);
+    };
+    walk(docs);
+    expect(approved.length).toBeGreaterThan(0);
+    for (const file of approved) expect(file).toMatch(/^(stock|illus)-/);
     expect(find(docs, "siteSettings").contact.email).toBeNull();
   });
 

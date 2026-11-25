@@ -48,7 +48,10 @@ export async function TeamTemplate({ lang }: { lang: Lang }) {
   const joinLink: ResolvedLink | null = joinHref
     ? { href: joinHref, label: join.label, kind: join.kind, external: join.kind !== "phone" }
     : null;
+  // Ảnh lớn + 2 ảnh xếp chồng bên phải; ảnh còn lại xuống lưới 3 cột bên dưới (không kéo dài cột phải).
   const [lead, ...rest] = gallery;
+  const side = rest.slice(0, 2);
+  const more = rest.slice(2);
 
   return (
     <>
@@ -98,14 +101,23 @@ export async function TeamTemplate({ lang }: { lang: Lang }) {
         )}
         <div className="mt-10 grid gap-3 sm:grid-cols-[1.6fr_1fr]">
           <Figure figure={lead} lang={lang} sizes="(min-width: 640px) 60vw, 100vw" imgClassName="aspect-[4/3] h-auto rounded-sm object-cover" />
-          {rest.length > 0 && (
+          {side.length > 0 && (
             <div className="grid gap-3">
-              {rest.map((f, i) => (
+              {side.map((f, i) => (
                 <Figure key={f._key ?? i} figure={f} lang={lang} sizes="(min-width: 640px) 38vw, 100vw" imgClassName="aspect-[4/3] h-auto rounded-sm object-cover" />
               ))}
             </div>
           )}
         </div>
+        {more.length > 0 && (
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {more.map((f, i) => (
+              <li key={f._key ?? i}>
+                <Figure figure={f} lang={lang} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" imgClassName="aspect-[4/3] h-auto rounded-sm object-cover" />
+              </li>
+            ))}
+          </ul>
+        )}
       </Section>
 
       <CtaBand name="join" title={page.joinCtaHeading ?? t.team.join} body={settings.area}>

@@ -41,7 +41,7 @@
 | Mockup đã duyệt (link, ngày, người duyệt) | Mockup vòng 4 (21/11/2026, `mockup.json`, dựng thẳng trong code — commit T6.1): A «Bám mockup — hero emerald, chân dung tách nền bên phải» (pa1, đề xuất), B «Hero ngà, chân dung trái; khối dưới hero giống A» (pa2). Token: `design_tokens.json` lần 3 → `styles/tokens.css` (`:root` = pa1, `data-variant="pa2"` = B, `.surface-dark` ép nút champagne trên dải tối). **G2 chưa ghi phương án được chọn (Q-58)** — chưa gỡ lớp phương án nào (T6.2 chờ) |
 | Phạm vi motion: không / nhẹ (mặc định) / nhiều | Nhẹ (`subtle`): chữ hero «rise», hover 200ms; chỉ opacity / transform; tắt khi reduced-motion |
 | Font (≤ 2 họ, đủ glyph Việt) | Playfair Display (tiêu đề) + Be Vietnam Pro (thân), next/font tự host, subset vietnamese + latin |
-| Chiến lược ảnh: ảnh khách / AI / stock / kết hợp | Ảnh khách (`client_photos`); ảnh trong mockup khách là AI → không dùng. Cần ảnh chân dung ≥ 1200px (MI-06), xác nhận quyền dùng ảnh có người khác / logo (MI-07, MI-14) |
+| Chiến lược ảnh: ảnh khách / AI / stock / kết hợp | Kết hợp: ảnh khách (`client_photos`, bộ 105 ảnh gửi 21/11/2026 — đã chọn 12, xem `seed/sanity/image-map.json`) + ảnh tự do `stock-*` (Wikimedia Commons, CC BY 4.0, có ghi nguồn ở chú thích) + minh hoạ vector tự dựng `illus-*` (`pnpm images:illustrations`) cho chỗ khách chưa có ảnh. Ảnh trong mockup khách là AI → không dùng. Chân dung gốc 1707×2560 đã có (MI-06 xong). Chưa dùng: banner vinh danh / doanh số (chờ xác nhận thành tích, YC-13), ảnh chuyển khoản / phiếu đặt cọc (dữ liệu tài chính cá nhân), ảnh có dấu «Meta AI». Còn chờ xác nhận quyền dùng ảnh có người khác / logo (MI-07, MI-14) |
 
 ## 4. Lead & tracking
 
@@ -71,7 +71,7 @@
 | 1 | Chọn phương án giao diện A (pa1) hay B (pa2), kèm mức icon / thẻ (G2, Q-58, MI-08) | Người vận hành / khách | Chờ |
 | 2 | Có làm bản tiếng Anh không, ai dịch (MI-01) | Khách | Chờ |
 | 3 | Logo gốc (MI-05); duyệt mã màu đề xuất (MI-24) | Khách | Chờ |
-| 4 | Chân dung độ phân giải cao (MI-06); quyền dùng ảnh có người khác, ghim BNI, logo Trường Phát (MI-07, MI-14) | Khách | Chờ |
+| 4 | ~~Chân dung độ phân giải cao (MI-06)~~ đã có (21/11/2026); quyền dùng ảnh có người khác, ghim BNI, logo Trường Phát (MI-07, MI-14); ảnh thật dự án Hạ Long Xanh / Làng Vân (đang dùng ảnh minh hoạ) | Khách | Chờ (MI-06 xong) |
 | 5 | Tiểu sử, số liệu thành tích, feedback có đồng ý đăng tên, nội dung + ảnh dự án Hạ Long Xanh / Làng Vân, bài viết đầu tiên (MI-04, MI-13, MI-22) | Khách | Chờ |
 | 6 | Email liên hệ (MI-10); mạng xã hội; khu vực / địa chỉ hiển thị | Khách | Chờ |
 | 7 | Dịch vụ là khối hay trang riêng; có trang Đối tác không (MI-03) | Khách | Chờ |
@@ -102,4 +102,5 @@ Mỗi lần làm khác luật **NÊN** hoặc **PHẢI** đều ghi vào đây. 
 | Kế hoạch T5.6 (MI-16) | Đã dựng dataLayer cho nút Zalo / gọi (`click_zalo`, `click_phone`) trước khi khách trả lời MI-16 | Theo chỉ dẫn bước tracking. Sự kiện chỉ nằm trong bộ nhớ trình duyệt, không gửi đi đâu cho tới khi có ID trên production; không PII | Chờ duyệt |
 | LD-05 (PHẢI — phần nguồn truy cập) | UTM **first-touch** (bộ utm_* đầu tiên, 30 ngày, không ghi đè) lưu `localStorage` key `th_first_touch` thay vì cookie «last non-direct»; không lưu click ID | Site không có form lead nên LD-05 không áp trọn; người vận hành yêu cầu first-touch. `localStorage` không gửi lên server theo mỗi request; click ID để GA4 / GTM tự đọc từ URL | Chờ duyệt |
 | Kế hoạch T1.7 (CSP) | Khi tracking bật (production + ID) CSP thêm `https://www.googletagmanager.com` (script), `*.google-analytics.com`, `*.analytics.google.com`, `*.googletagmanager.com` (connect / img); không bật thì CSP giữ nguyên, không host ngoài | Cần cho GTM / GA4; tính lúc build từ cùng hàm `resolveTracking` với chỗ nhúng | Chờ duyệt |
-| Ảnh hero (client_photos) | Hero dùng `portrait-navy-cutout.png`, bản tách nền (alpha) làm từ `portrait-navy.jpg` bằng flood-fill nền trắng. Ảnh gốc giữ nguyên byte; bản tách nền chỉ là bản phái sinh | Mockup đặt chân dung trực tiếp trên nền emerald, không khung | Chờ duyệt |
+| Ảnh hero (client_photos) | Hero dùng `portrait-navy-cutout.png` (1280×1920), bản tách nền (alpha) làm từ `portrait-navy.jpg` (bản gốc 1707×2560 khách gửi 21/11/2026) bằng flood-fill nền trắng. Ảnh gốc giữ nguyên byte; bản tách nền chỉ là bản phái sinh | Mockup đặt chân dung trực tiếp trên nền emerald, không khung | Chờ duyệt |
+| Chiến lược ảnh (client_photos) | Thêm ảnh tự do `stock-ha-long-bay-*.jpg` (Wikimedia Commons, Vyacheslav Argenberg, CC BY 4.0) cho ảnh đại diện Hạ Long Xanh và ô ảnh thứ hai khối «Về tôi»; minh hoạ vector `illus-lang-van.png` cho Làng Vân. Chú thích ghi rõ «minh hoạ, không phải ảnh dự án» + nguồn; hai loại này bật `usageApproved` (giấy phép cho phép), ảnh khách vẫn chờ MI-07 | Khách chưa có ảnh dự án thật; người vận hành cho phép «tạo hoặc lấy ảnh mẫu tự do» (22/11/2026). Thay khi có ảnh thật | Chờ duyệt |

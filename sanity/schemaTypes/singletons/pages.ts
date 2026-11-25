@@ -78,7 +78,13 @@ export const homePage = defineType({
         defineField({ name: "heading", title: "Tiêu đề", type: "string" }),
         defineField({ name: "quote", title: "Câu chuyện thương hiệu (một câu)", type: "string" }),
         defineField({ name: "body", title: "Nội dung", type: "blockContentLite" }),
-        defineField({ name: "image", title: "Ảnh", type: "figure" }),
+        defineField({ name: "image", title: "Ảnh", type: "figure", description: "Ô ảnh trên (mockup: căn hộ / chị Tuyết tại dự án)." }),
+        defineField({
+          name: "secondaryImage",
+          title: "Ảnh thứ hai",
+          type: "figure",
+          description: "Ô ảnh dưới (mockup: hướng vịnh Hạ Long). Ảnh tự do / minh hoạ phải ghi nguồn ở Chú thích.",
+        }),
         stats("highlights", "Kinh nghiệm – thành tích"),
         defineField({
           name: "expertise",

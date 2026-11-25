@@ -15,7 +15,7 @@ const png = (w: number, h: number) => {
 describe("ảnh seed (BP-05)", () => {
   it("đọc kích thước JPEG thật của ảnh khách", () => {
     const buf = readFileSync(join(root, "seed/sanity/assets/portrait-navy.jpg"));
-    expect(imageSize(buf)).toEqual({ width: 630, height: 945, extension: "jpg" });
+    expect(imageSize(buf)).toEqual({ width: 1707, height: 2560, extension: "jpg" });
   });
 
   it("đọc kích thước PNG; từ chối định dạng lạ", () => {
