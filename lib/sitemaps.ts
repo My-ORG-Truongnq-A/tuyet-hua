@@ -29,13 +29,39 @@ function isoDate(v: string | null | undefined): string | null {
   return Number.isNaN(d.getTime()) ? null : d.toISOString();
 }
 
-export function sitemapIndexXml(siteUrl: string, names: string[], lastModified?: string | null): string {
-  const lastmod = isoDate(lastModified);
-  const items = names
-    .map(
-      (n) =>
-        `  <sitemap><loc>${esc(`${siteUrl}/sitemaps/${n}.xml`)}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}</sitemap>`,
-    )
+export type SitemapIndexItem = { name: string; lastModified?: string | null };
+
+/**
+ * Sitemap con đưa vào index (SEO-06): bỏ tệp không có URL nào (vd. chưa có bài viết), lastmod = mục mới nhất
+ * (thiếu thì `fallback`). `entries: null` = không đọc được nội dung → vẫn giữ tên, không làm rơi URL thật vì lỗi tạm.
+ */
+export function sitemapIndexItems(
+  sources: { name: string; entries: SitemapEntry[] | null }[],
+  fallback?: string | null,
+): SitemapIndexItem[] {
+  const out: SitemapIndexItem[] = [];
+  for (const { name, entries } of sources) {
+    if (entries === null) {
+      out.push({ name, lastModified: fallback ?? null });
+      continue;
+    }
+    if (entries.length === 0) continue;
+    let latest: string | null = null;
+    for (const e of entries) {
+      const d = isoDate(e.lastModified);
+      if (d && (!latest || d > latest)) latest = d;
+    }
+    out.push({ name, lastModified: latest ?? fallback ?? null });
+  }
+  return out;
+}
+
+export function sitemapIndexXml(siteUrl: string, sitemaps: SitemapIndexItem[]): string {
+  const items = sitemaps
+    .map(({ name, lastModified }) => {
+      const lastmod = isoDate(lastModified);
+      return `  <sitemap><loc>${esc(`${siteUrl}/sitemaps/${name}.xml`)}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}</sitemap>`;
+    })
     .join("\n");
   return `${XML_HEAD}<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${items}\n</sitemapindex>\n`;
 }
@@ -58,8 +84,5 @@ export function urlsetXml(siteUrl: string, entries: SitemapEntry[]): string {
     .join("\n");
   return `${XML_HEAD}<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${body}\n</urlset>\n`;
 }
-
-/** Các sitemap con (app/sitemaps/<tên>.xml). */
-export const SITEMAPS = ["pages", "projects", "posts"];
 
 export const XML_HEADERS = { "Content-Type": "application/xml; charset=utf-8" } as const;
