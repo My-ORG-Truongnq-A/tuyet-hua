@@ -96,7 +96,11 @@ test("404: slug dự án / bài không có, ?trang sai → HTTP 404; ?trang sai 
 
 test("sitemap tách loại: dự án có URL tuyệt đối, không có ?trang", async ({ request, baseURL }) => {
   const index = await (await request.get("/sitemap.xml")).text();
-  for (const n of ["pages", "projects", "posts"]) expect(index).toContain(`${baseURL}/sitemaps/${n}.xml`);
+  for (const n of ["pages", "projects"]) expect(index).toContain(`${baseURL}/sitemaps/${n}.xml`);
+  // SEO-06: sitemap index chỉ liệt kê sitemap con có URL — chưa có bài viết thì không trỏ tới posts.xml, và tệp đó trả 404.
+  const posts = await request.get("/sitemaps/posts.xml");
+  if (index.includes(`${baseURL}/sitemaps/posts.xml`)) expect(posts.status()).toBe(200);
+  else expect(posts.status()).toBe(404);
   const projects = await (await request.get("/sitemaps/projects.xml")).text();
   expect(projects).toContain(`<loc>${baseURL}/du-an/ha-long-xanh</loc>`);
   const pages = await (await request.get("/sitemaps/pages.xml")).text();
