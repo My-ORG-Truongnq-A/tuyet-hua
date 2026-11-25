@@ -86,3 +86,24 @@ export function urlsetXml(siteUrl: string, entries: SitemapEntry[]): string {
 }
 
 export const XML_HEADERS = { "Content-Type": "application/xml; charset=utf-8" } as const;
+
+/**
+ * Phản hồi sitemap con: có URL → 200; rỗng → 404 noindex (SEO-06: không phơi danh mục rỗng, index cũng bỏ tệp này);
+ * `null` = không đọc được nội dung → 200 urlset rỗng hợp lệ (không 500, không báo «không tồn tại» vì lỗi tạm).
+ */
+export function urlsetResponse(siteUrl: string, entries: SitemapEntry[] | null): Response {
+  if (entries && entries.length === 0) {
+    return new Response("Not found", { status: 404, headers: { "Content-Type": "text/plain; charset=utf-8", "X-Robots-Tag": "noindex" } });
+  }
+  return new Response(urlsetXml(siteUrl, entries ?? []), { headers: XML_HEADERS });
+}
+
+/** Đọc mục sitemap; lỗi → null + ghi log (route sitemap không trả 500). */
+export async function loadEntries(label: string, load: () => Promise<SitemapEntry[]>): Promise<SitemapEntry[] | null> {
+  try {
+    return await load();
+  } catch (error) {
+    console.error(`[sitemap] không đọc được ${label}`, error);
+    return null;
+  }
+}

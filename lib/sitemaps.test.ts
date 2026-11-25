@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { sitemapIndexItems, sitemapIndexXml, urlsetXml } from "./sitemaps";
+import { sitemapIndexItems, sitemapIndexXml, urlsetResponse, urlsetXml } from "./sitemaps";
 
 const SITE = "https://tuyethua.vn";
 
@@ -28,6 +28,19 @@ describe("sitemaps (SEO, T5.2)", () => {
 
   it("index giữ sitemap con khi không đọc được nội dung (không làm rơi URL thật vì lỗi tạm)", () => {
     expect(sitemapIndexItems([{ name: "posts", entries: null }], null)).toEqual([{ name: "posts", lastModified: null }]);
+  });
+
+  it("sitemap con: có URL → 200; rỗng → 404 (không phơi danh mục rỗng); lỗi đọc → 200 urlset rỗng hợp lệ", async () => {
+    const ok = urlsetResponse(SITE, [{ path: "/du-an/a" }]);
+    expect(ok.status).toBe(200);
+    expect(ok.headers.get("Content-Type")).toContain("application/xml");
+    expect(await ok.text()).toContain("<loc>https://tuyethua.vn/du-an/a</loc>");
+    const empty = urlsetResponse(SITE, []);
+    expect(empty.status).toBe(404);
+    expect(empty.headers.get("X-Robots-Tag")).toBe("noindex");
+    const failed = urlsetResponse(SITE, null);
+    expect(failed.status).toBe(200);
+    expect(await failed.text()).toContain("<urlset");
   });
 
   it("urlset: loc tuyệt đối, lastmod, escape ký tự XML", () => {
