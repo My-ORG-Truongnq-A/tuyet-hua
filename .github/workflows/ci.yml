@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: ci
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      # Build/test luôn chạy seed, không gọi Sanity (KT-01, gói Free).
+      SANITY_SOURCE: seed
+      ALLOW_INDEXING: "0"
+      LEADS_DRY_RUN: "1"
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm lint
+      - run: pnpm test
+      # Kiểm schema + seed offline (CM-01, CM-02, ND-10) — không gọi Sanity
+      - run: pnpm schema:check
+      - run: pnpm seed:assets --check
+      - run: pnpm seed:validate
+      - run: pnpm seed:validate --file fixtures/seed-full.json
+      - run: pnpm seed:validate --file fixtures/seed-empty.json
+      - run: pnpm build

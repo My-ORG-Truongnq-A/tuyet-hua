@@ -1,0 +1,96 @@
+/* Chỉ quét mã site — không quét Studio / node_modules (GD-02). */
+@import "tailwindcss" source(none);
+@import "../styles/tokens.css";
+
+/* Biến thể theo phương án (G2): `pa2:` chỉ áp khi <html data-variant="pa2">. Mặc định (không thuộc tính) = pa1. */
+@custom-variant pa2 (&:where([data-variant="pa2"] *));
+
+@source "../app";
+@source "../components";
+@source "../lib";
+@source "../templates";
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: var(--header-h); /* GD-03: anchor không bị header che */
+    background: var(--surface-page);
+    color: var(--on-page);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    min-height: 100dvh;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance; /* GD-03 */
+    overflow-wrap: break-word;
+  }
+  p,
+  li {
+    text-wrap: pretty;
+  }
+  b,
+  strong {
+    font-weight: 600; /* HN-04: không > 700 */
+  }
+  img,
+  svg,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+  :focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+  /* Vùng nền tối: đổi vòng focus sang gold-300 cho đủ tương phản. */
+  .surface-dark {
+    --focus-ring: var(--focus-ring-on-dark);
+  }
+  .surface-hero {
+    --focus-ring: var(--focus-ring-hero);
+  }
+}
+
+/* Reveal (T3.9): chỉ opacity / transform; token --duration-reveal, --reveal-distance (= 0 khi reduced-motion). */
+@layer base {
+  [data-reveal="pending"] {
+    opacity: 0;
+    transform: translateY(var(--reveal-distance));
+  }
+  [data-reveal="shown"] {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity var(--duration-reveal) var(--ease-calm),
+      transform var(--duration-reveal) var(--ease-calm);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-page);
+  padding-inline: var(--gutter);
+}
+
+@utility section-y {
+  padding-block: var(--section-y);
+}

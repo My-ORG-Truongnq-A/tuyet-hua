@@ -1,0 +1,1788 @@
+[
+  {
+    "_id": "siteSettings",
+    "_type": "siteSettings",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "brandName": "Hứa Thị Tuyết",
+    "personName": "Hứa Thị Tuyết",
+    "jobTitle": {
+      "_type": "localeString",
+      "en": "Sales Director – TP55 Division | Trường Phát Group",
+      "vi": "Giám đốc Kinh doanh – Khối TP55 | Trường Phát Group"
+    },
+    "tagline": {
+      "_type": "localeString",
+      "en": "UNDERSTAND THE MARKET. CURATE REAL VALUE. STAY FOR THE LONG TERM.",
+      "vi": "THẤU HIỂU THỊ TRƯỜNG. TINH CHỌN GIÁ TRỊ. ĐỒNG HÀNH BỀN LÂU."
+    },
+    "logo": null,
+    "favicon": null,
+    "contact": {
+      "email": null,
+      "phone": "0359 361 359",
+      "address": null,
+      "zaloPhone": null,
+      "serviceArea": {
+        "_type": "localeString",
+        "en": "Hạ Long – Quảng Ninh",
+        "vi": "Hạ Long – Quảng Ninh"
+      },
+      "socialLinks": [],
+      "openingHours": [],
+      "openingHoursNote": null
+    },
+    "ui": {
+      "notFound": {
+        "body": {
+          "_type": "localeText",
+          "en": "The page you are looking for may have moved or no longer exists. You can go back to the home page, or message me on Zalo for help.",
+          "vi": "Trang bạn tìm có thể đã đổi địa chỉ hoặc không còn tồn tại. Bạn có thể quay về trang chủ, hoặc nhắn Zalo để được hỗ trợ."
+        },
+        "title": {
+          "_type": "localeString",
+          "en": "Page not found",
+          "vi": "Không tìm thấy trang"
+        }
+      },
+      "joinTeamCta": {
+        "href": null,
+        "kind": "zalo",
+        "label": {
+          "_type": "localeString",
+          "en": "Join the team with Tuyết",
+          "vi": "Tham gia đội ngũ cùng Tuyết"
+        }
+      },
+      "callCtaLabel": {
+        "_type": "localeString",
+        "en": "Call",
+        "vi": "Gọi điện"
+      },
+      "zaloCtaLabel": {
+        "_type": "localeString",
+        "en": "Connect on Zalo",
+        "vi": "Kết nối Zalo"
+      },
+      "readMoreLabel": {
+        "_type": "localeString",
+        "en": "Read more",
+        "vi": "Xem thêm"
+      },
+      "consultCtaLabel": {
+        "_type": "localeString",
+        "en": "Talk with Tuyết",
+        "vi": "Tư vấn cùng Tuyết"
+      },
+      "breadcrumbHomeLabel": {
+        "_type": "localeString",
+        "en": "Home",
+        "vi": "Trang chủ"
+      },
+      "languageSwitchLabel": {
+        "_type": "localeString",
+        "en": null,
+        "vi": null
+      }
+    },
+    "seoDefaults": {
+      "ogImage": null,
+      "description": {
+        "_type": "localeText",
+        "en": "Hứa Thị Tuyết advises on investment, cash-flow and holiday real estate in Ha Long, Quang Ninh, and stays with clients before and after every transaction.",
+        "vi": "Hứa Thị Tuyết tư vấn bất động sản đầu tư, dòng tiền và nghỉ dưỡng tại Hạ Long – Quảng Ninh, đồng hành cùng khách hàng trước và sau giao dịch."
+      },
+      "titleTemplate": {
+        "_type": "localeString",
+        "en": "%s | Hứa Thị Tuyết",
+        "vi": "%s | Hứa Thị Tuyết"
+      }
+    },
+    "blog": {
+      "postsPerPage": null
+    },
+    "integrations": {
+      "ga4Id": null,
+      "gtmId": null,
+      "gscVerification": null
+    },
+    "redirects": []
+  },
+  {
+    "_id": "header",
+    "_type": "header",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "navItems": [
+      {
+        "_key": "home",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Home",
+          "vi": "Trang chủ"
+        },
+        "target": "home",
+        "visible": true
+      },
+      {
+        "_key": "about",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "About",
+          "vi": "Giới thiệu"
+        },
+        "target": "about",
+        "visible": true
+      },
+      {
+        "_key": "projects",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Projects",
+          "vi": "Dự án"
+        },
+        "target": "projects",
+        "visible": true
+      },
+      {
+        "_key": "team",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Training & Team",
+          "vi": "Đào tạo & Đội ngũ"
+        },
+        "target": "team",
+        "visible": true
+      },
+      {
+        "_key": "articles",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Insights",
+          "vi": "Bài viết"
+        },
+        "target": "articles",
+        "visible": true
+      },
+      {
+        "_key": "contact",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Contact",
+          "vi": "Liên hệ"
+        },
+        "target": "contact",
+        "visible": true
+      }
+    ],
+    "showLanguageSwitch": true
+  },
+  {
+    "_id": "footer",
+    "_type": "footer",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "navItems": [
+      {
+        "_key": "home",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Home",
+          "vi": "Trang chủ"
+        },
+        "target": "home",
+        "visible": true
+      },
+      {
+        "_key": "about",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "About",
+          "vi": "Giới thiệu"
+        },
+        "target": "about",
+        "visible": true
+      },
+      {
+        "_key": "projects",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Projects",
+          "vi": "Dự án"
+        },
+        "target": "projects",
+        "visible": true
+      },
+      {
+        "_key": "team",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Training & Team",
+          "vi": "Đào tạo & Đội ngũ"
+        },
+        "target": "team",
+        "visible": true
+      },
+      {
+        "_key": "articles",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Insights",
+          "vi": "Bài viết"
+        },
+        "target": "articles",
+        "visible": true
+      },
+      {
+        "_key": "contact",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Contact",
+          "vi": "Liên hệ"
+        },
+        "target": "contact",
+        "visible": true
+      }
+    ],
+    "legalItems": [
+      {
+        "_key": "privacy",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Privacy policy",
+          "vi": "Chính sách bảo mật"
+        },
+        "target": "privacy",
+        "visible": true
+      }
+    ],
+    "copyrightText": {
+      "_type": "localeString",
+      "en": "© Hứa Thị Tuyết. All rights reserved.",
+      "vi": "© Hứa Thị Tuyết. Bảo lưu mọi quyền."
+    }
+  },
+  {
+    "_id": "homePage-vi",
+    "_type": "homePage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Trang chủ",
+    "hero": {
+      "image": {
+        "alt": "Chân dung Hứa Thị Tuyết mặc vest xanh navy, khoanh tay",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-1f9269e99fb9714dcd0984d5a318ce2329874ced-1280x1920-png"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc 1707×2560). MI-07: chờ xác nhận quyền dùng; bản tách nền (PNG trong suốt, 1280 px) dựng từ portrait-navy.jpg cho hero emerald theo mockup",
+        "usageApproved": false
+      },
+      "subline": null,
+      "headline": "Tư vấn giải pháp bất động sản phù hợp với nhu cầu, tài chính và mục tiêu của bạn. Đồng hành trước, trong và sau giao dịch để cùng bạn giữ giá trị bền vững.",
+      "primaryCta": {
+        "_type": "link",
+        "kind": "zalo",
+        "label": "Tư vấn cùng Tuyết"
+      },
+      "secondaryCta": {
+        "_type": "link",
+        "kind": "internal",
+        "label": "Tìm hiểu dự án",
+        "internal": {
+          "_ref": "projectsPage-vi",
+          "_type": "reference"
+        }
+      },
+      "pillarNotes": [
+        "Thị trường · pháp lý · tài chính",
+        "Phù hợp mục tiêu của bạn",
+        "Trước, trong và sau giao dịch"
+      ]
+    },
+    "story": {
+      "body": [
+        {
+          "_type": "block",
+          "_key": "home-story-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "home-story-1-s",
+              "text": "Tôi trực tiếp mua, sở hữu và đầu tư bất động sản, đặc biệt tại Hạ Long Xanh. Vì vậy, mỗi lời tư vấn tôi đưa ra đều đặt mình vào vị trí của người đang cân nhắc một quyết định lớn.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "home-story-2",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "home-story-2-s",
+              "text": "Tôi tư vấn bất động sản đầu tư, dòng tiền và nghỉ dưỡng tại Hạ Long – Quảng Ninh, đồng thời quản lý và đào tạo đội ngũ kinh doanh Khối TP55.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "alt": "Hứa Thị Tuyết cùng đồng nghiệp xem sa bàn một dự án bất động sản",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-519724495c03c12f54254440dab9b5f2c582be19-2560x1920-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07: có người khác trong ảnh; sa bàn là dự án khác, không phải Hạ Long Xanh",
+        "usageApproved": false
+      },
+      "secondaryImage": {
+        "alt": "Vịnh Hạ Long trong sương, núi đá vôi soi bóng xuống mặt nước",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-05723cdde9aa74a22d51d3d0adcb79dd23e540a8-1920x1280-jpg"
+          }
+        },
+        "caption": "Minh hoạ: vịnh Hạ Long. Ảnh: Vyacheslav Argenberg, CC BY 4.0",
+        "credit": "Vyacheslav Argenberg / Wikimedia Commons, CC BY 4.0",
+        "rightsNote": "Ảnh tự do (Wikimedia Commons, CC BY 4.0) — bắt buộc giữ ghi nguồn; thay khi có ảnh căn hộ / dự án thật",
+        "usageApproved": true
+      },
+      "quote": "Tôi cũng là khách hàng của chính mình",
+      "heading": "Về tôi",
+      "highlights": [],
+      "expertise": "Tư vấn, phân phối bất động sản đầu tư",
+      "focus": "Tập trung: BĐS dòng tiền, BĐS nghỉ dưỡng và các dự án Vinhomes",
+      "aboutLinkLabel": "Đọc câu chuyện đầy đủ"
+    },
+    "whyMe": {
+      "intro": null,
+      "items": [
+        {
+          "_key": "market",
+          "_type": "valueItem",
+          "icon": "target",
+          "title": "Hiểu thị trường",
+          "description": "Nhìn thị trường Hạ Long – Quảng Ninh từ thực tế, để bạn quyết định trên cơ sở rõ ràng."
+        },
+        {
+          "_key": "legal",
+          "_type": "valueItem",
+          "icon": "scale",
+          "title": "Hiểu pháp lý",
+          "description": "Nói rõ pháp lý và quy trình giao dịch trước khi bạn xuống tiền."
+        },
+        {
+          "_key": "client",
+          "_type": "valueItem",
+          "icon": "people",
+          "title": "Hiểu khách hàng",
+          "description": "Lắng nghe nhu cầu, khả năng tài chính và mục tiêu tài sản của bạn trước khi nói đến sản phẩm."
+        },
+        {
+          "_key": "value",
+          "_type": "valueItem",
+          "icon": "diamond",
+          "title": "Tinh chọn giá trị",
+          "description": "Không giới thiệu mọi sản phẩm; chỉ đề xuất tài sản phù hợp với mục tiêu của bạn."
+        },
+        {
+          "_key": "cashflow",
+          "_type": "valueItem",
+          "icon": "chart",
+          "title": "Dòng tiền & giá trị",
+          "description": "Cùng bạn xem khả năng khai thác, tạo dòng tiền và giá trị dài hạn của tài sản."
+        },
+        {
+          "_key": "long-term",
+          "_type": "valueItem",
+          "icon": "handshake",
+          "title": "Đồng hành bền lâu",
+          "description": "Đồng hành trước, trong và sau giao dịch, cả khi bạn cần khai thác hay gửi bán."
+        }
+      ],
+      "heading": "Giá trị tôi mang đến"
+    },
+    "projectsSection": {
+      "intro": null,
+      "heading": "Dự án đang triển khai",
+      "viewAllLabel": "Xem tất cả dự án"
+    },
+    "trustSection": {
+      "body": [
+        {
+          "_type": "block",
+          "_key": "home-trust-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "home-trust-1-s",
+              "text": "Tôi tin thành công bền vững đến từ một đội ngũ giỏi và văn hoá đồng hành. Bên cạnh vai trò tư vấn, tôi quản lý, đào tạo và phát triển đội ngũ kinh doanh Khối TP55, chia sẻ kiến thức và kinh nghiệm thực chiến mỗi ngày.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": null,
+      "stats": [],
+      "tags": [
+        "Đào tạo thực chiến",
+        "Chia sẻ kiến thức",
+        "Kỹ năng tư vấn",
+        "Hỗ trợ & đồng hành",
+        "Văn hoá tích cực"
+      ],
+      "heading": "Phát triển đội ngũ – Kiến tạo thành công",
+      "teamLinkLabel": "Tham gia đội ngũ cùng Tuyết",
+      "testimonialsHeading": "Khách hàng nói về Tuyết"
+    },
+    "knowledgeSection": {
+      "heading": "Kiến thức thị trường",
+      "postsLimit": null,
+      "viewAllLabel": "Xem tất cả bài viết"
+    },
+    "servicesSection": {
+      "intro": null,
+      "items": [],
+      "enabled": false,
+      "heading": null
+    },
+    "connectSection": {
+      "body": "Tôi luôn sẵn sàng lắng nghe và đồng hành cùng bạn trên hành trình tìm kiếm giá trị bất động sản bền vững.",
+      "heading": "Kết nối với Tuyết"
+    },
+    "seo": {
+      "_type": "seo",
+      "title": "Hứa Thị Tuyết – Tư vấn bất động sản Hạ Long, Quảng Ninh",
+      "description": "Hứa Thị Tuyết tư vấn bất động sản đầu tư, dòng tiền và nghỉ dưỡng tại Hạ Long – Quảng Ninh, đồng hành cùng khách hàng trước và sau giao dịch."
+    }
+  },
+  {
+    "_id": "aboutPage-vi",
+    "_type": "aboutPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Giới thiệu về tôi",
+    "heroImage": {
+      "alt": "Chân dung Hứa Thị Tuyết mặc vest xanh navy, khoanh tay",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-eda970c438880ca9d9a754644087c342a848b04b-1707x2560-jpg"
+        }
+      },
+      "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc 1707×2560). MI-07: chờ xác nhận quyền dùng; ghim BNI trên ve áo",
+      "usageApproved": false
+    },
+    "intro": "Tôi là Hứa Thị Tuyết, Giám đốc Kinh doanh Khối TP55 tại Trường Phát Group, tư vấn bất động sản tại Hạ Long – Quảng Ninh và dẫn dắt đội ngũ kinh doanh.",
+    "brandStory": {
+      "body": [
+        {
+          "_type": "block",
+          "_key": "about-story-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "about-story-1-s",
+              "text": "Tôi cũng là khách hàng của chính mình. Tôi trực tiếp mua, sở hữu và đầu tư bất động sản, đặc biệt tại Hạ Long Xanh, nên hiểu cảm giác của người đứng trước một quyết định tài chính lớn: nhiều thông tin, nhiều lựa chọn và nhiều câu hỏi chưa có lời đáp.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "about-story-2",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "about-story-2-s",
+              "text": "Từ trải nghiệm đó, tôi tư vấn theo cách mà chính tôi muốn được tư vấn: nói rõ về thị trường, pháp lý và tài chính; giúp bạn chọn tài sản phù hợp với mục tiêu của mình; và còn ở đó sau khi giao dịch hoàn tất.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "heading": "Tôi cũng là khách hàng của chính mình"
+    },
+    "positioning": {
+      "roles": [
+        {
+          "_key": "advisor",
+          "_type": "roleShare",
+          "share": 60,
+          "title": "Người tư vấn BĐS thực chiến",
+          "description": "Thị trường, pháp lý, tài chính, đồng hành sau giao dịch."
+        },
+        {
+          "_key": "leader",
+          "_type": "roleShare",
+          "share": 40,
+          "title": "Leader & đào tạo",
+          "description": "Quản lý, đào tạo, phát triển đội ngũ kinh doanh TP55."
+        }
+      ],
+      "heading": "Hai vai trò, một hướng đi"
+    },
+    "bio": null,
+    "timeline": [],
+    "achievements": [],
+    "cta": {
+      "_type": "link",
+      "kind": "zalo",
+      "label": "Kết nối Zalo"
+    },
+    "seo": {
+      "_type": "seo",
+      "title": "Giới thiệu về tôi | Hứa Thị Tuyết",
+      "description": "Câu chuyện của Hứa Thị Tuyết: người tư vấn bất động sản thực chiến tại Hạ Long – Quảng Ninh, đồng thời dẫn dắt và đào tạo đội ngũ kinh doanh."
+    }
+  },
+  {
+    "_id": "projectsPage-vi",
+    "_type": "projectsPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Dự án đang triển khai",
+    "intro": "Các dự án tôi đang đồng hành tư vấn. Thông tin từng dự án được cập nhật dần; để được tư vấn theo mục tiêu của riêng bạn, hãy nhắn Zalo.",
+    "seo": null
+  },
+  {
+    "_id": "teamPage-vi",
+    "_type": "teamPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Đào tạo & Đội ngũ",
+    "heroImage": {
+      "alt": "Hứa Thị Tuyết đứng lớp tại khoá đào tạo kỹ năng bán hàng bất động sản",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-a46663867f41a978a629461f0f3b914649bcc1cf-2048x1365-jpg"
+        }
+      },
+      "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: học viên trong ảnh, chữ và logo Trường Phát",
+      "usageApproved": false
+    },
+    "intro": "Ngoài việc tư vấn khách hàng, tôi dành thời gian quản lý, đào tạo và phát triển đội ngũ kinh doanh Khối TP55.",
+    "leaderSection": {
+      "body": [
+        {
+          "_type": "block",
+          "_key": "team-leader-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "team-leader-1-s",
+              "text": "Cùng với tư vấn khách hàng, dẫn dắt và đào tạo đội ngũ là vai trò thứ hai của tôi trong thương hiệu này.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "heading": "Vai trò leader"
+    },
+    "trainingPoints": [],
+    "stats": [],
+    "gallery": [
+      {
+        "_key": "workshop-presenting",
+        "alt": "Hứa Thị Tuyết trình bày tại workshop về chân dung và nhu cầu khách hàng",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-5aab73d4067c8b0c95a92a4d359757854c4f45bd-2048x1365-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: khán giả trong ảnh, logo Trường Phát / OneHub",
+        "usageApproved": false
+      },
+      {
+        "_key": "team-truong-phat",
+        "alt": "Đội ngũ kinh doanh chụp ảnh tập thể tại văn phòng công ty",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-fdf388d97338d08337e5bae28eb35b29740b2684-2560x1920-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: nhiều người trong ảnh, logo Trường Phát",
+        "usageApproved": false
+      },
+      {
+        "_key": "workshop-group",
+        "alt": "Diễn giả và học viên chụp ảnh lưu niệm sau buổi workshop",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-2c96710a64647e022aef6cf6f209e1c9bceeb28f-2048x1366-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: nhiều người trong ảnh, logo Trường Phát / OneHub",
+        "usageApproved": false
+      },
+      {
+        "_key": "talk-sale-event",
+        "alt": "Hứa Thị Tuyết cùng hai diễn giả tại buổi chia sẻ về bất động sản cao cấp",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-8a2aa26684d075941c0e5b8580e86fb7b3400a6c-2048x1366-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc độ phân giải cao). MI-07, MI-14: có logo bên thứ ba trong ảnh",
+        "usageApproved": false
+      },
+      {
+        "_key": "talkshow-audience",
+        "alt": "Buổi talkshow chia sẻ kinh nghiệm bán hàng với đội ngũ kinh doanh",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-7d89a9230244b91800bf1aa25c2c4d98fcdafc1e-2048x1364-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: nhiều người trong ảnh, logo Trường Phát",
+        "usageApproved": false
+      },
+      {
+        "_key": "office-training",
+        "alt": "Buổi đào tạo nội bộ cho đội ngũ kinh doanh tại văn phòng",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-d7edcfd5059772cf5f11c5cf5fc80f4ba4bda091-2560x1920-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07: nhiều người trong ảnh",
+        "usageApproved": false
+      },
+      {
+        "_key": "event-cake",
+        "alt": "Hứa Thị Tuyết cùng đồng nghiệp cầm bánh kem trên sân khấu sự kiện",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-405f1ef5eff3198cc8e7d20c2107982c3831021b-1920x2560-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc độ phân giải cao). MI-07: người trong ảnh chưa xác nhận đồng ý",
+        "usageApproved": false
+      },
+      {
+        "_key": "team-office",
+        "alt": "Hứa Thị Tuyết chụp ảnh cùng đội ngũ kinh doanh tại văn phòng",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-6b52fcdcb30052f092af54441ad76884196e4002-2568x1926-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc độ phân giải cao). MI-07: nhiều người trong ảnh",
+        "usageApproved": false
+      }
+    ],
+    "joinCtaHeading": "Tham gia đội ngũ cùng Tuyết",
+    "seo": {
+      "_type": "seo",
+      "description": "Cách Hứa Thị Tuyết dẫn dắt, đào tạo và phát triển đội ngũ kinh doanh bất động sản; dành cho người muốn học nghề và cùng làm việc lâu dài."
+    }
+  },
+  {
+    "_id": "articlesPage-vi",
+    "_type": "articlesPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Bài viết",
+    "intro": "Kiến thức về thị trường, pháp lý, tài chính và kinh nghiệm đồng hành cùng khách hàng, viết ngắn gọn và dễ áp dụng.",
+    "emptyStateText": "Các bài viết đầu tiên sẽ sớm được đăng tại đây.",
+    "seo": {
+      "_type": "seo",
+      "description": "Bài viết của Hứa Thị Tuyết về thị trường bất động sản, pháp lý, tài chính và kinh nghiệm đồng hành cùng khách hàng — ngắn gọn, dễ hiểu, dễ áp dụng."
+    }
+  },
+  {
+    "_id": "contactPage-vi",
+    "_type": "contactPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Liên hệ",
+    "intro": "Nhắn Zalo hoặc gọi điện để trao đổi nhu cầu của bạn, hoặc tìm hiểu cơ hội tham gia đội ngũ.",
+    "image": {
+      "alt": "Chân dung Hứa Thị Tuyết mặc vest xanh navy, mỉm cười, hai tay đan trước người",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-ba9f04416f5a0ed28c32f7cfb86e793d6f57aa2d-2560x2560-jpg"
+        }
+      },
+      "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07: chờ xác nhận quyền dùng; ghim BNI trên ve áo",
+      "usageApproved": false
+    },
+    "seo": {
+      "_type": "seo",
+      "description": "Kết nối với Hứa Thị Tuyết qua Zalo hoặc điện thoại để được tư vấn bất động sản tại Hạ Long – Quảng Ninh, hoặc tìm hiểu cơ hội tham gia đội ngũ."
+    }
+  },
+  {
+    "_id": "privacyPage-vi",
+    "_type": "privacyPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Chính sách bảo mật",
+    "body": null,
+    "lastUpdated": null,
+    "seo": null
+  },
+  {
+    "_id": "project-ha-long-xanh-vi",
+    "_type": "project",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Hạ Long Xanh",
+    "slug": {
+      "_type": "slug",
+      "current": "ha-long-xanh"
+    },
+    "featured": true,
+    "sortOrder": 1,
+    "summary": "Góc nhìn của người trực tiếp sở hữu và đầu tư tại Hạ Long Xanh: một tài sản, ba giá trị — tạo dòng tiền, an cư & nghỉ dưỡng, giá trị dài hạn.",
+    "heroImage": {
+      "alt": "Vịnh Hạ Long nhìn từ trên cao với các đảo đá vôi và thuyền trên mặt nước",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-efb84d3417b55a9f482ba25b7ac96df889b4da63-1920x1280-jpg"
+        }
+      },
+      "caption": "Minh hoạ khu vực vịnh Hạ Long, không phải ảnh dự án. Ảnh: Vyacheslav Argenberg, CC BY 4.0",
+      "credit": "Vyacheslav Argenberg / Wikimedia Commons, CC BY 4.0",
+      "rightsNote": "Ảnh tự do (Wikimedia Commons, CC BY 4.0) — bắt buộc giữ ghi nguồn; thay khi khách gửi ảnh dự án thật (NEEDS_INPUT)",
+      "usageApproved": true
+    },
+    "location": null,
+    "developer": null,
+    "productTypes": [],
+    "legalStatus": null,
+    "progress": null,
+    "valueProposition": {
+      "_type": "projectValueProposition",
+      "values": [
+        {
+          "_key": "cashflow",
+          "_type": "valueItem",
+          "title": "Tạo dòng tiền"
+        },
+        {
+          "_key": "living",
+          "_type": "valueItem",
+          "title": "An cư & nghỉ dưỡng"
+        },
+        {
+          "_key": "longterm",
+          "_type": "valueItem",
+          "title": "Giá trị dài hạn"
+        }
+      ],
+      "headline": "MỘT TÀI SẢN – BA GIÁ TRỊ",
+      "keyMessage": "Vừa ở. Vừa khai thác. Vừa tích lũy giá trị."
+    },
+    "personalExperience": null,
+    "body": null,
+    "gallery": [],
+    "faqs": [],
+    "cta": {
+      "_type": "link",
+      "kind": "zalo",
+      "label": "Kết nối Zalo"
+    },
+    "seo": null
+  },
+  {
+    "_id": "project-lang-van-vi",
+    "_type": "project",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Làng Vân",
+    "slug": {
+      "_type": "slug",
+      "current": "lang-van"
+    },
+    "featured": false,
+    "sortOrder": 2,
+    "summary": "Dự án đang triển khai mà tôi đồng hành tư vấn. Thông tin chi tiết sẽ được cập nhật.",
+    "heroImage": {
+      "alt": "Minh hoạ núi, mây và mặt nước tông xanh ngọc",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-ecac9edf43e4f7dc29141cc3c01e9edb6d98504f-1600x1000-png"
+        }
+      },
+      "caption": "Ảnh minh hoạ, chờ ảnh thật của dự án",
+      "credit": "Minh hoạ vector dựng cho website (scripts/images/illustrations.ts)",
+      "rightsNote": "Minh hoạ tự dựng, không phải ảnh dự án; thay khi khách gửi ảnh Làng Vân thật (NEEDS_INPUT)",
+      "usageApproved": true
+    },
+    "location": null,
+    "developer": null,
+    "productTypes": [],
+    "legalStatus": null,
+    "progress": null,
+    "valueProposition": null,
+    "personalExperience": null,
+    "body": null,
+    "gallery": [],
+    "faqs": [],
+    "cta": {
+      "_type": "link",
+      "kind": "zalo",
+      "label": "Kết nối Zalo"
+    },
+    "seo": {
+      "_type": "seo",
+      "description": "Làng Vân là dự án đang triển khai mà Hứa Thị Tuyết đồng hành tư vấn. Thông tin chi tiết sẽ được cập nhật; nhắn Zalo để được tư vấn trực tiếp về dự án."
+    }
+  },
+  {
+    "_id": "homePage-en",
+    "_type": "homePage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "en",
+    "title": "Home",
+    "hero": {
+      "image": {
+        "alt": "Portrait of Hứa Thị Tuyết in a navy blue suit, arms folded",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-1f9269e99fb9714dcd0984d5a318ce2329874ced-1280x1920-png"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc 1707×2560). MI-07: chờ xác nhận quyền dùng; bản tách nền (PNG trong suốt, 1280 px) dựng từ portrait-navy.jpg cho hero emerald theo mockup",
+        "usageApproved": false
+      },
+      "subline": null,
+      "headline": "Real estate advice that fits your needs, finances and goals. I stay with you before, during and after the transaction to help you keep lasting value.",
+      "primaryCta": {
+        "_type": "link",
+        "kind": "zalo",
+        "label": "Talk with Tuyết"
+      },
+      "secondaryCta": {
+        "_type": "link",
+        "kind": "internal",
+        "label": "Explore projects",
+        "internal": {
+          "_ref": "projectsPage-en",
+          "_type": "reference"
+        }
+      },
+      "pillarNotes": [
+        "Market · legal · finance",
+        "Fits your goals",
+        "Before, during and after the deal"
+      ]
+    },
+    "story": {
+      "body": [
+        {
+          "_type": "block",
+          "_key": "home-story-en-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "home-story-en-1-s",
+              "text": "I buy, own and invest in real estate myself, especially at Hạ Long Xanh. So every piece of advice I give comes from the position of someone weighing a major decision.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "home-story-en-2",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "home-story-en-2-s",
+              "text": "I advise on investment, cash-flow and holiday real estate in Hạ Long – Quảng Ninh, and I manage and train the TP55 Division sales team.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "alt": "Hứa Thị Tuyết and colleagues looking at the scale model of a real estate project",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-519724495c03c12f54254440dab9b5f2c582be19-2560x1920-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07: có người khác trong ảnh; sa bàn là dự án khác, không phải Hạ Long Xanh",
+        "usageApproved": false
+      },
+      "secondaryImage": {
+        "alt": "Ha Long Bay in the mist, limestone islands reflected in the water",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-05723cdde9aa74a22d51d3d0adcb79dd23e540a8-1920x1280-jpg"
+          }
+        },
+        "caption": "Illustration: Ha Long Bay. Photo: Vyacheslav Argenberg, CC BY 4.0",
+        "credit": "Vyacheslav Argenberg / Wikimedia Commons, CC BY 4.0",
+        "rightsNote": "Ảnh tự do (Wikimedia Commons, CC BY 4.0) — bắt buộc giữ ghi nguồn; thay khi có ảnh căn hộ / dự án thật",
+        "usageApproved": true
+      },
+      "quote": "I am also my own client",
+      "heading": "About me",
+      "highlights": [],
+      "expertise": "Investment real estate advisory and distribution",
+      "focus": "Focus: cash-flow and holiday real estate, Vinhomes projects",
+      "aboutLinkLabel": "Read the full story"
+    },
+    "whyMe": {
+      "intro": null,
+      "items": [
+        {
+          "_key": "market",
+          "_type": "valueItem",
+          "icon": "target",
+          "title": "Know the market",
+          "description": "A grounded view of the Hạ Long – Quảng Ninh market, so you decide on a clear basis."
+        },
+        {
+          "_key": "legal",
+          "_type": "valueItem",
+          "icon": "scale",
+          "title": "Know the legal side",
+          "description": "Clear explanations of legal status and transaction steps before you commit any money."
+        },
+        {
+          "_key": "client",
+          "_type": "valueItem",
+          "icon": "people",
+          "title": "Know the client",
+          "description": "I listen to your needs, financial capacity and asset goals before talking about products."
+        },
+        {
+          "_key": "value",
+          "_type": "valueItem",
+          "icon": "diamond",
+          "title": "Curate real value",
+          "description": "I do not offer every product; I only suggest assets that fit your goals."
+        },
+        {
+          "_key": "cashflow",
+          "_type": "valueItem",
+          "icon": "chart",
+          "title": "Cash flow & value",
+          "description": "Together we look at how an asset can be used, generate cash flow and hold value over time."
+        },
+        {
+          "_key": "long-term",
+          "_type": "valueItem",
+          "icon": "handshake",
+          "title": "Long-term partnership",
+          "description": "With you before, during and after the transaction, including when you want to rent out or resell."
+        }
+      ],
+      "heading": "The value I bring"
+    },
+    "projectsSection": {
+      "intro": null,
+      "heading": "Current projects",
+      "viewAllLabel": "View all projects"
+    },
+    "trustSection": {
+      "body": [
+        {
+          "_type": "block",
+          "_key": "home-trust-en-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "home-trust-en-1-s",
+              "text": "I believe lasting success comes from a capable team and a culture of mutual support. Alongside advising clients, I manage, train and develop the TP55 Division sales team, sharing knowledge and hands-on experience every day.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": null,
+      "stats": [],
+      "tags": [
+        "Hands-on training",
+        "Knowledge sharing",
+        "Advisory skills",
+        "Support & mentoring",
+        "Positive culture"
+      ],
+      "heading": "Growing the team – Building success",
+      "teamLinkLabel": "Join the team with Tuyết",
+      "testimonialsHeading": "What clients say about Tuyết"
+    },
+    "knowledgeSection": {
+      "heading": "Market insights",
+      "postsLimit": null,
+      "viewAllLabel": "View all articles"
+    },
+    "servicesSection": {
+      "intro": null,
+      "items": [],
+      "enabled": false,
+      "heading": null
+    },
+    "connectSection": {
+      "body": "I am always ready to listen and to walk with you on the journey to lasting real estate value.",
+      "heading": "Connect with Tuyết"
+    },
+    "seo": {
+      "_type": "seo",
+      "title": "Hứa Thị Tuyết – Real Estate Advisor in Ha Long, Quang Ninh",
+      "description": "Hứa Thị Tuyết advises on investment, cash-flow and holiday real estate in Ha Long, Quang Ninh, and stays with clients before and after every transaction."
+    }
+  },
+  {
+    "_id": "aboutPage-en",
+    "_type": "aboutPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "en",
+    "title": "About me",
+    "heroImage": {
+      "alt": "Portrait of Hứa Thị Tuyết in a navy blue suit, arms folded",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-eda970c438880ca9d9a754644087c342a848b04b-1707x2560-jpg"
+        }
+      },
+      "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc 1707×2560). MI-07: chờ xác nhận quyền dùng; ghim BNI trên ve áo",
+      "usageApproved": false
+    },
+    "intro": "I am Hứa Thị Tuyết, Sales Director of the TP55 Division at Trường Phát Group. I advise on real estate in Hạ Long – Quảng Ninh and lead a sales team.",
+    "brandStory": {
+      "body": [
+        {
+          "_type": "block",
+          "_key": "about-story-en-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "about-story-en-1-s",
+              "text": "I am also my own client. I buy, own and invest in real estate myself, especially at Hạ Long Xanh, so I know how it feels to face a major financial decision: a lot of information, a lot of options and many questions without answers.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "about-story-en-2",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "about-story-en-2-s",
+              "text": "From that experience I advise the way I would want to be advised: clear about the market, legal and financial sides; helping you choose an asset that fits your own goals; and still there after the transaction is done.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "heading": "I am also my own client"
+    },
+    "positioning": {
+      "roles": [
+        {
+          "_key": "advisor",
+          "_type": "roleShare",
+          "share": 60,
+          "title": "Hands-on real estate advisor",
+          "description": "Market, legal and financial insight, and support after the transaction."
+        },
+        {
+          "_key": "leader",
+          "_type": "roleShare",
+          "share": 40,
+          "title": "Leader & trainer",
+          "description": "Managing, training and developing the TP55 Division sales team."
+        }
+      ],
+      "heading": "Two roles, one direction"
+    },
+    "bio": null,
+    "timeline": [],
+    "achievements": [],
+    "cta": {
+      "_type": "link",
+      "kind": "zalo",
+      "label": "Connect on Zalo"
+    },
+    "seo": {
+      "_type": "seo",
+      "title": "About me | Hứa Thị Tuyết",
+      "description": "The story of Hứa Thị Tuyết: a hands-on real estate advisor in Ha Long, Quang Ninh, who also leads and trains a sales team."
+    }
+  },
+  {
+    "_id": "projectsPage-en",
+    "_type": "projectsPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "en",
+    "title": "Current projects",
+    "intro": "The projects I currently advise on. Project details are being added step by step; for advice based on your own goals, message me on Zalo.",
+    "seo": {
+      "_type": "seo",
+      "title": "Projects | Hứa Thị Tuyết",
+      "description": "Real estate projects advised by Hứa Thị Tuyết in Hạ Long – Quảng Ninh, starting with Hạ Long Xanh and Làng Vân."
+    }
+  },
+  {
+    "_id": "teamPage-en",
+    "_type": "teamPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "en",
+    "title": "Training & Team",
+    "heroImage": {
+      "alt": "Hứa Thị Tuyết teaching a real estate sales skills course",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-a46663867f41a978a629461f0f3b914649bcc1cf-2048x1365-jpg"
+        }
+      },
+      "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: học viên trong ảnh, chữ và logo Trường Phát",
+      "usageApproved": false
+    },
+    "intro": "Besides advising clients, I spend my time managing, training and developing the TP55 Division sales team.",
+    "leaderSection": {
+      "body": [
+        {
+          "_type": "block",
+          "_key": "team-leader-en-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "team-leader-en-1-s",
+              "text": "Alongside advising clients, leading and training the team is my second role in this brand.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "heading": "Leadership role"
+    },
+    "trainingPoints": [],
+    "stats": [],
+    "gallery": [
+      {
+        "_key": "workshop-presenting",
+        "alt": "Hứa Thị Tuyết presenting at a workshop on client profiles and needs",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-5aab73d4067c8b0c95a92a4d359757854c4f45bd-2048x1365-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: khán giả trong ảnh, logo Trường Phát / OneHub",
+        "usageApproved": false
+      },
+      {
+        "_key": "team-truong-phat",
+        "alt": "The sales team in a group photo at the company office",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-fdf388d97338d08337e5bae28eb35b29740b2684-2560x1920-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: nhiều người trong ảnh, logo Trường Phát",
+        "usageApproved": false
+      },
+      {
+        "_key": "workshop-group",
+        "alt": "Speakers and participants in a group photo after a workshop",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-2c96710a64647e022aef6cf6f209e1c9bceeb28f-2048x1366-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: nhiều người trong ảnh, logo Trường Phát / OneHub",
+        "usageApproved": false
+      },
+      {
+        "_key": "talk-sale-event",
+        "alt": "Hứa Thị Tuyết with two speakers at a talk on premium real estate",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-8a2aa26684d075941c0e5b8580e86fb7b3400a6c-2048x1366-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc độ phân giải cao). MI-07, MI-14: có logo bên thứ ba trong ảnh",
+        "usageApproved": false
+      },
+      {
+        "_key": "talkshow-audience",
+        "alt": "A talk show sharing sales experience with the sales team",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-7d89a9230244b91800bf1aa25c2c4d98fcdafc1e-2048x1364-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: nhiều người trong ảnh, logo Trường Phát",
+        "usageApproved": false
+      },
+      {
+        "_key": "office-training",
+        "alt": "An in-house training session for the sales team at the office",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-d7edcfd5059772cf5f11c5cf5fc80f4ba4bda091-2560x1920-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07: nhiều người trong ảnh",
+        "usageApproved": false
+      },
+      {
+        "_key": "event-cake",
+        "alt": "Hứa Thị Tuyết and a colleague holding a cake on the stage of an event",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-405f1ef5eff3198cc8e7d20c2107982c3831021b-1920x2560-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc độ phân giải cao). MI-07: người trong ảnh chưa xác nhận đồng ý",
+        "usageApproved": false
+      },
+      {
+        "_key": "team-office",
+        "alt": "Hứa Thị Tuyết posing with the sales team in the office",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-6b52fcdcb30052f092af54441ad76884196e4002-2568x1926-jpg"
+          }
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc độ phân giải cao). MI-07: nhiều người trong ảnh",
+        "usageApproved": false
+      }
+    ],
+    "joinCtaHeading": "Join the team with Tuyết",
+    "seo": {
+      "_type": "seo",
+      "title": "Training & Team | Hứa Thị Tuyết",
+      "description": "How Hứa Thị Tuyết leads, trains and develops a real estate sales team; for those who want to learn the profession and work together for the long term."
+    }
+  },
+  {
+    "_id": "articlesPage-en",
+    "_type": "articlesPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "en",
+    "title": "Insights",
+    "intro": "Knowledge on the market, legal and financial topics, and experience working with clients, written to be short and easy to apply.",
+    "emptyStateText": "The first articles will be published here soon.",
+    "seo": {
+      "_type": "seo",
+      "title": "Insights | Hứa Thị Tuyết",
+      "description": "Articles by Hứa Thị Tuyết on the real estate market, legal and financial topics, and experience working with clients — short, practical and easy to apply."
+    }
+  },
+  {
+    "_id": "contactPage-en",
+    "_type": "contactPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "en",
+    "title": "Contact",
+    "intro": "Message me on Zalo or call to talk about what you need, or to learn about joining the team.",
+    "image": {
+      "alt": "Portrait of Hứa Thị Tuyết in a navy blue suit, smiling, hands clasped",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-ba9f04416f5a0ed28c32f7cfb86e793d6f57aa2d-2560x2560-jpg"
+        }
+      },
+      "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07: chờ xác nhận quyền dùng; ghim BNI trên ve áo",
+      "usageApproved": false
+    },
+    "seo": {
+      "_type": "seo",
+      "title": "Contact | Hứa Thị Tuyết",
+      "description": "Connect with Hứa Thị Tuyết on Zalo or by phone for real estate advice in Hạ Long – Quảng Ninh, or to learn about joining the team."
+    }
+  },
+  {
+    "_id": "project-ha-long-xanh-en",
+    "_type": "project",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "en",
+    "title": "Hạ Long Xanh",
+    "slug": {
+      "_type": "slug",
+      "current": "ha-long-xanh"
+    },
+    "featured": true,
+    "sortOrder": 1,
+    "summary": "The view of someone who owns and invests at Hạ Long Xanh: one asset, three values — cash flow, residential & holiday living, and long-term value.",
+    "heroImage": {
+      "alt": "Ha Long Bay seen from above, with limestone islands and boats on the water",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-efb84d3417b55a9f482ba25b7ac96df889b4da63-1920x1280-jpg"
+        }
+      },
+      "caption": "Illustration of the Ha Long Bay area, not a photo of the project. Photo: Vyacheslav Argenberg, CC BY 4.0",
+      "credit": "Vyacheslav Argenberg / Wikimedia Commons, CC BY 4.0",
+      "rightsNote": "Ảnh tự do (Wikimedia Commons, CC BY 4.0) — bắt buộc giữ ghi nguồn; thay khi khách gửi ảnh dự án thật (NEEDS_INPUT)",
+      "usageApproved": true
+    },
+    "location": null,
+    "developer": null,
+    "productTypes": [],
+    "legalStatus": null,
+    "progress": null,
+    "valueProposition": {
+      "_type": "projectValueProposition",
+      "values": [
+        {
+          "_key": "cashflow",
+          "_type": "valueItem",
+          "title": "Cash flow"
+        },
+        {
+          "_key": "living",
+          "_type": "valueItem",
+          "title": "Residential & holiday living"
+        },
+        {
+          "_key": "longterm",
+          "_type": "valueItem",
+          "title": "Long-term value"
+        }
+      ],
+      "headline": "ONE ASSET – THREE VALUES",
+      "keyMessage": "Live in it. Put it to work. Build value over time."
+    },
+    "personalExperience": null,
+    "body": null,
+    "gallery": [],
+    "faqs": [],
+    "cta": {
+      "_type": "link",
+      "kind": "zalo",
+      "label": "Connect on Zalo"
+    },
+    "seo": {
+      "_type": "seo",
+      "title": "Hạ Long Xanh | Hứa Thị Tuyết",
+      "description": "Hạ Long Xanh from the view of an owner-investor: one asset, three values — cash flow, residential & holiday living, long-term value."
+    }
+  },
+  {
+    "_id": "project-lang-van-en",
+    "_type": "project",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "en",
+    "title": "Làng Vân",
+    "slug": {
+      "_type": "slug",
+      "current": "lang-van"
+    },
+    "featured": false,
+    "sortOrder": 2,
+    "summary": "A project in development that I advise on. Detailed information will be added.",
+    "heroImage": {
+      "alt": "Illustration of mountains, clouds and water in emerald tones",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-ecac9edf43e4f7dc29141cc3c01e9edb6d98504f-1600x1000-png"
+        }
+      },
+      "caption": "Illustration only; real project photos to follow",
+      "credit": "Vector illustration made for this website",
+      "rightsNote": "Minh hoạ tự dựng, không phải ảnh dự án; thay khi khách gửi ảnh Làng Vân thật (NEEDS_INPUT)",
+      "usageApproved": true
+    },
+    "location": null,
+    "developer": null,
+    "productTypes": [],
+    "legalStatus": null,
+    "progress": null,
+    "valueProposition": null,
+    "personalExperience": null,
+    "body": null,
+    "gallery": [],
+    "faqs": [],
+    "cta": {
+      "_type": "link",
+      "kind": "zalo",
+      "label": "Connect on Zalo"
+    },
+    "seo": {
+      "_type": "seo",
+      "description": "Làng Vân is a project in development that Hứa Thị Tuyết advises on. Detailed information will be added soon; message on Zalo for direct advice on the project."
+    }
+  },
+  {
+    "_id": "translation-metadata-homePage",
+    "_type": "translation.metadata",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "schemaTypes": [
+      "homePage"
+    ],
+    "translations": [
+      {
+        "_key": "vi",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "homePage-vi",
+          "_weak": true
+        }
+      },
+      {
+        "_key": "en",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "homePage-en",
+          "_weak": true
+        }
+      }
+    ]
+  },
+  {
+    "_id": "translation-metadata-aboutPage",
+    "_type": "translation.metadata",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "schemaTypes": [
+      "aboutPage"
+    ],
+    "translations": [
+      {
+        "_key": "vi",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "aboutPage-vi",
+          "_weak": true
+        }
+      },
+      {
+        "_key": "en",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "aboutPage-en",
+          "_weak": true
+        }
+      }
+    ]
+  },
+  {
+    "_id": "translation-metadata-projectsPage",
+    "_type": "translation.metadata",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "schemaTypes": [
+      "projectsPage"
+    ],
+    "translations": [
+      {
+        "_key": "vi",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "projectsPage-vi",
+          "_weak": true
+        }
+      },
+      {
+        "_key": "en",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "projectsPage-en",
+          "_weak": true
+        }
+      }
+    ]
+  },
+  {
+    "_id": "translation-metadata-teamPage",
+    "_type": "translation.metadata",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "schemaTypes": [
+      "teamPage"
+    ],
+    "translations": [
+      {
+        "_key": "vi",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "teamPage-vi",
+          "_weak": true
+        }
+      },
+      {
+        "_key": "en",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "teamPage-en",
+          "_weak": true
+        }
+      }
+    ]
+  },
+  {
+    "_id": "translation-metadata-articlesPage",
+    "_type": "translation.metadata",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "schemaTypes": [
+      "articlesPage"
+    ],
+    "translations": [
+      {
+        "_key": "vi",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "articlesPage-vi",
+          "_weak": true
+        }
+      },
+      {
+        "_key": "en",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "articlesPage-en",
+          "_weak": true
+        }
+      }
+    ]
+  },
+  {
+    "_id": "translation-metadata-contactPage",
+    "_type": "translation.metadata",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "schemaTypes": [
+      "contactPage"
+    ],
+    "translations": [
+      {
+        "_key": "vi",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "contactPage-vi",
+          "_weak": true
+        }
+      },
+      {
+        "_key": "en",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "contactPage-en",
+          "_weak": true
+        }
+      }
+    ]
+  },
+  {
+    "_id": "translation-metadata-project-ha-long-xanh",
+    "_type": "translation.metadata",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "schemaTypes": [
+      "project"
+    ],
+    "translations": [
+      {
+        "_key": "vi",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "project-ha-long-xanh-vi",
+          "_weak": true
+        }
+      },
+      {
+        "_key": "en",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "project-ha-long-xanh-en",
+          "_weak": true
+        }
+      }
+    ]
+  },
+  {
+    "_id": "translation-metadata-project-lang-van",
+    "_type": "translation.metadata",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "schemaTypes": [
+      "project"
+    ],
+    "translations": [
+      {
+        "_key": "vi",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "project-lang-van-vi",
+          "_weak": true
+        }
+      },
+      {
+        "_key": "en",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "project-lang-van-en",
+          "_weak": true
+        }
+      }
+    ]
+  }
+]

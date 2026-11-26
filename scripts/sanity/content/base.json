@@ -1,0 +1,700 @@
+[
+  {
+    "_id": "siteSettings",
+    "_type": "siteSettings",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "brandName": "Hứa Thị Tuyết",
+    "personName": "Hứa Thị Tuyết",
+    "jobTitle": {
+      "_type": "localeString",
+      "en": null,
+      "vi": "Giám đốc Kinh doanh – Khối TP55 | Trường Phát Group"
+    },
+    "tagline": {
+      "_type": "localeString",
+      "en": null,
+      "vi": "THẤU HIỂU THỊ TRƯỜNG. TINH CHỌN GIÁ TRỊ. ĐỒNG HÀNH BỀN LÂU."
+    },
+    "logo": null,
+    "favicon": null,
+    "contact": {
+      "email": null,
+      "phone": "0359 361 359",
+      "address": null,
+      "zaloPhone": null,
+      "serviceArea": {
+        "_type": "localeString",
+        "en": null,
+        "vi": "Hạ Long – Quảng Ninh"
+      },
+      "socialLinks": [],
+      "openingHours": [],
+      "openingHoursNote": null
+    },
+    "ui": {
+      "notFound": {
+        "body": {
+          "_type": "localeText",
+          "en": null,
+          "vi": null
+        },
+        "title": {
+          "_type": "localeString",
+          "en": "Page not found",
+          "vi": "Không tìm thấy trang"
+        }
+      },
+      "joinTeamCta": {
+        "href": null,
+        "kind": "zalo",
+        "label": {
+          "_type": "localeString",
+          "en": null,
+          "vi": "Tham gia đội ngũ cùng Tuyết"
+        }
+      },
+      "callCtaLabel": {
+        "_type": "localeString",
+        "en": null,
+        "vi": null
+      },
+      "zaloCtaLabel": {
+        "_type": "localeString",
+        "en": null,
+        "vi": "Kết nối Zalo"
+      },
+      "readMoreLabel": {
+        "_type": "localeString",
+        "en": null,
+        "vi": null
+      },
+      "consultCtaLabel": {
+        "_type": "localeString",
+        "en": null,
+        "vi": "Tư vấn cùng Tuyết"
+      },
+      "breadcrumbHomeLabel": {
+        "_type": "localeString",
+        "en": "Home",
+        "vi": "Trang chủ"
+      },
+      "languageSwitchLabel": {
+        "_type": "localeString",
+        "en": null,
+        "vi": null
+      }
+    },
+    "seoDefaults": {
+      "ogImage": null,
+      "description": null,
+      "titleTemplate": null
+    },
+    "blog": {
+      "postsPerPage": null
+    },
+    "integrations": {
+      "ga4Id": null,
+      "gtmId": null,
+      "gscVerification": null
+    },
+    "redirects": []
+  },
+  {
+    "_id": "header",
+    "_type": "header",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "navItems": [
+      {
+        "_key": "home",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Home",
+          "vi": "Trang chủ"
+        },
+        "target": "home",
+        "visible": true
+      },
+      {
+        "_key": "about",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "About",
+          "vi": "Giới thiệu"
+        },
+        "target": "about",
+        "visible": true
+      },
+      {
+        "_key": "projects",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Projects",
+          "vi": "Dự án"
+        },
+        "target": "projects",
+        "visible": true
+      },
+      {
+        "_key": "team",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Training & Team",
+          "vi": "Đào tạo & Đội ngũ"
+        },
+        "target": "team",
+        "visible": true
+      },
+      {
+        "_key": "articles",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Insights",
+          "vi": "Bài viết"
+        },
+        "target": "articles",
+        "visible": true
+      },
+      {
+        "_key": "contact",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Contact",
+          "vi": "Liên hệ"
+        },
+        "target": "contact",
+        "visible": true
+      }
+    ],
+    "showLanguageSwitch": false
+  },
+  {
+    "_id": "footer",
+    "_type": "footer",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "navItems": [
+      {
+        "_key": "home",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Home",
+          "vi": "Trang chủ"
+        },
+        "target": "home",
+        "visible": true
+      },
+      {
+        "_key": "about",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "About",
+          "vi": "Giới thiệu"
+        },
+        "target": "about",
+        "visible": true
+      },
+      {
+        "_key": "projects",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Projects",
+          "vi": "Dự án"
+        },
+        "target": "projects",
+        "visible": true
+      },
+      {
+        "_key": "team",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Training & Team",
+          "vi": "Đào tạo & Đội ngũ"
+        },
+        "target": "team",
+        "visible": true
+      },
+      {
+        "_key": "articles",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Insights",
+          "vi": "Bài viết"
+        },
+        "target": "articles",
+        "visible": true
+      },
+      {
+        "_key": "contact",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Contact",
+          "vi": "Liên hệ"
+        },
+        "target": "contact",
+        "visible": true
+      }
+    ],
+    "legalItems": [
+      {
+        "_key": "privacy",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "en": "Privacy policy",
+          "vi": "Chính sách bảo mật"
+        },
+        "target": "privacy",
+        "visible": true
+      }
+    ],
+    "copyrightText": {
+      "_type": "localeString",
+      "en": null,
+      "vi": null
+    }
+  },
+  {
+    "_id": "homePage-vi",
+    "_type": "homePage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Trang chủ",
+    "hero": {
+      "image": {
+        "alt": "Chân dung Hứa Thị Tuyết mặc vest xanh navy, khoanh tay",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy-cutout.png"
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc 1707×2560). MI-07: chờ xác nhận quyền dùng; bản tách nền (PNG trong suốt, 1280 px) dựng từ portrait-navy.jpg cho hero emerald theo mockup",
+        "usageApproved": false
+      },
+      "subline": null,
+      "headline": null,
+      "primaryCta": {
+        "_type": "link",
+        "kind": "zalo",
+        "label": "Tư vấn cùng Tuyết"
+      },
+      "secondaryCta": {
+        "_type": "link",
+        "kind": "internal",
+        "label": "Tìm hiểu dự án",
+        "internal": {
+          "_ref": "projectsPage-vi",
+          "_type": "reference"
+        }
+      },
+      "pillarNotes": []
+    },
+    "story": {
+      "body": null,
+      "image": {
+        "alt": "Hứa Thị Tuyết cùng đồng nghiệp xem sa bàn một dự án bất động sản",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/model-visit.jpg"
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07: có người khác trong ảnh; sa bàn là dự án khác, không phải Hạ Long Xanh",
+        "usageApproved": false
+      },
+      "secondaryImage": {
+        "alt": "Vịnh Hạ Long trong sương, núi đá vôi soi bóng xuống mặt nước",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/stock-ha-long-bay-mist.jpg"
+        },
+        "caption": "Minh hoạ: vịnh Hạ Long. Ảnh: Vyacheslav Argenberg, CC BY 4.0",
+        "credit": "Vyacheslav Argenberg / Wikimedia Commons, CC BY 4.0",
+        "rightsNote": "Ảnh tự do (Wikimedia Commons, CC BY 4.0) — bắt buộc giữ ghi nguồn; thay khi có ảnh căn hộ / dự án thật",
+        "usageApproved": true
+      },
+      "quote": "Tôi cũng là khách hàng của chính mình",
+      "heading": null,
+      "highlights": [],
+      "expertise": null,
+      "focus": null,
+      "aboutLinkLabel": null
+    },
+    "whyMe": {
+      "intro": null,
+      "items": [],
+      "heading": "Tại sao chọn tôi"
+    },
+    "projectsSection": {
+      "intro": null,
+      "heading": "Dự án đang triển khai",
+      "viewAllLabel": null
+    },
+    "trustSection": {
+      "body": null,
+      "image": null,
+      "stats": [],
+      "tags": [],
+      "heading": null,
+      "teamLinkLabel": "Tham gia đội ngũ cùng Tuyết",
+      "testimonialsHeading": null
+    },
+    "knowledgeSection": {
+      "heading": null,
+      "postsLimit": null,
+      "viewAllLabel": null
+    },
+    "servicesSection": {
+      "intro": null,
+      "items": [],
+      "enabled": false,
+      "heading": null
+    },
+    "connectSection": {
+      "body": null,
+      "heading": null
+    },
+    "seo": null
+  },
+  {
+    "_id": "aboutPage-vi",
+    "_type": "aboutPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Giới thiệu về tôi",
+    "heroImage": {
+      "alt": "Chân dung Hứa Thị Tuyết mặc vest xanh navy, khoanh tay",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy.jpg"
+      },
+      "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc 1707×2560). MI-07: chờ xác nhận quyền dùng; ghim BNI trên ve áo",
+      "usageApproved": false
+    },
+    "intro": null,
+    "brandStory": {
+      "body": null,
+      "heading": "Tôi cũng là khách hàng của chính mình"
+    },
+    "positioning": {
+      "roles": [
+        {
+          "_key": "advisor",
+          "_type": "roleShare",
+          "share": 60,
+          "title": "Người tư vấn BĐS thực chiến",
+          "description": "Thị trường, pháp lý, tài chính, đồng hành sau giao dịch."
+        },
+        {
+          "_key": "leader",
+          "_type": "roleShare",
+          "share": 40,
+          "title": "Leader & đào tạo",
+          "description": "Quản lý, đào tạo, phát triển đội ngũ kinh doanh TP55."
+        }
+      ],
+      "heading": null
+    },
+    "bio": null,
+    "timeline": [],
+    "achievements": [],
+    "cta": {
+      "_type": "link",
+      "kind": "zalo",
+      "label": "Kết nối Zalo"
+    },
+    "seo": null
+  },
+  {
+    "_id": "projectsPage-vi",
+    "_type": "projectsPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Dự án đang triển khai",
+    "intro": null,
+    "seo": null
+  },
+  {
+    "_id": "teamPage-vi",
+    "_type": "teamPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Đào tạo & Đội ngũ",
+    "heroImage": {
+      "alt": "Hứa Thị Tuyết đứng lớp tại khoá đào tạo kỹ năng bán hàng bất động sản",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "_sanityAsset": "image@file://./seed/sanity/assets/bootcamp-training.jpg"
+      },
+      "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: học viên trong ảnh, chữ và logo Trường Phát",
+      "usageApproved": false
+    },
+    "intro": null,
+    "leaderSection": {
+      "body": null,
+      "heading": null
+    },
+    "trainingPoints": [],
+    "stats": [],
+    "gallery": [
+      {
+        "_key": "workshop-presenting",
+        "alt": "Hứa Thị Tuyết trình bày tại workshop về chân dung và nhu cầu khách hàng",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/workshop-presenting.jpg"
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: khán giả trong ảnh, logo Trường Phát / OneHub",
+        "usageApproved": false
+      },
+      {
+        "_key": "team-truong-phat",
+        "alt": "Đội ngũ kinh doanh chụp ảnh tập thể tại văn phòng công ty",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/team-truong-phat.jpg"
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: nhiều người trong ảnh, logo Trường Phát",
+        "usageApproved": false
+      },
+      {
+        "_key": "workshop-group",
+        "alt": "Diễn giả và học viên chụp ảnh lưu niệm sau buổi workshop",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/workshop-group.jpg"
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: nhiều người trong ảnh, logo Trường Phát / OneHub",
+        "usageApproved": false
+      },
+      {
+        "_key": "talk-sale-event",
+        "alt": "Hứa Thị Tuyết cùng hai diễn giả tại buổi chia sẻ về bất động sản cao cấp",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/talk-sale-event.jpg"
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc độ phân giải cao). MI-07, MI-14: có logo bên thứ ba trong ảnh",
+        "usageApproved": false
+      },
+      {
+        "_key": "talkshow-audience",
+        "alt": "Buổi talkshow chia sẻ kinh nghiệm bán hàng với đội ngũ kinh doanh",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/talkshow-audience.jpg"
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07, MI-14: nhiều người trong ảnh, logo Trường Phát",
+        "usageApproved": false
+      },
+      {
+        "_key": "office-training",
+        "alt": "Buổi đào tạo nội bộ cho đội ngũ kinh doanh tại văn phòng",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/office-training.jpg"
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07: nhiều người trong ảnh",
+        "usageApproved": false
+      },
+      {
+        "_key": "event-cake",
+        "alt": "Hứa Thị Tuyết cùng đồng nghiệp cầm bánh kem trên sân khấu sự kiện",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/event-cake.jpg"
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc độ phân giải cao). MI-07: người trong ảnh chưa xác nhận đồng ý",
+        "usageApproved": false
+      },
+      {
+        "_key": "team-office",
+        "alt": "Hứa Thị Tuyết chụp ảnh cùng đội ngũ kinh doanh tại văn phòng",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/team-office.jpg"
+        },
+        "rightsNote": "Ảnh khách cung cấp 21/11/2026 (bản gốc độ phân giải cao). MI-07: nhiều người trong ảnh",
+        "usageApproved": false
+      }
+    ],
+    "joinCtaHeading": null,
+    "seo": null
+  },
+  {
+    "_id": "articlesPage-vi",
+    "_type": "articlesPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Bài viết",
+    "intro": null,
+    "emptyStateText": null,
+    "seo": null
+  },
+  {
+    "_id": "contactPage-vi",
+    "_type": "contactPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Liên hệ",
+    "intro": null,
+    "image": {
+      "alt": "Chân dung Hứa Thị Tuyết mặc vest xanh navy, mỉm cười, hai tay đan trước người",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "_sanityAsset": "image@file://./seed/sanity/assets/portrait-bni.jpg"
+      },
+      "rightsNote": "Ảnh khách cung cấp 21/11/2026. MI-07: chờ xác nhận quyền dùng; ghim BNI trên ve áo",
+      "usageApproved": false
+    },
+    "seo": null
+  },
+  {
+    "_id": "privacyPage-vi",
+    "_type": "privacyPage",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Chính sách bảo mật",
+    "body": null,
+    "lastUpdated": null,
+    "seo": null
+  },
+  {
+    "_id": "project-ha-long-xanh-vi",
+    "_type": "project",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Hạ Long Xanh",
+    "slug": {
+      "_type": "slug",
+      "current": "ha-long-xanh"
+    },
+    "featured": true,
+    "sortOrder": 1,
+    "summary": null,
+    "heroImage": {
+      "alt": "Vịnh Hạ Long nhìn từ trên cao với các đảo đá vôi và thuyền trên mặt nước",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "_sanityAsset": "image@file://./seed/sanity/assets/stock-ha-long-bay-above.jpg"
+      },
+      "caption": "Minh hoạ khu vực vịnh Hạ Long, không phải ảnh dự án. Ảnh: Vyacheslav Argenberg, CC BY 4.0",
+      "credit": "Vyacheslav Argenberg / Wikimedia Commons, CC BY 4.0",
+      "rightsNote": "Ảnh tự do (Wikimedia Commons, CC BY 4.0) — bắt buộc giữ ghi nguồn; thay khi khách gửi ảnh dự án thật (NEEDS_INPUT)",
+      "usageApproved": true
+    },
+    "location": null,
+    "developer": null,
+    "productTypes": [],
+    "legalStatus": null,
+    "progress": null,
+    "valueProposition": {
+      "_type": "projectValueProposition",
+      "values": [
+        {
+          "_key": "cashflow",
+          "_type": "valueItem",
+          "title": "Tạo dòng tiền"
+        },
+        {
+          "_key": "living",
+          "_type": "valueItem",
+          "title": "An cư & nghỉ dưỡng"
+        },
+        {
+          "_key": "longterm",
+          "_type": "valueItem",
+          "title": "Giá trị dài hạn"
+        }
+      ],
+      "headline": "MỘT TÀI SẢN – BA GIÁ TRỊ",
+      "keyMessage": "Vừa ở. Vừa khai thác. Vừa tích lũy giá trị."
+    },
+    "personalExperience": null,
+    "body": null,
+    "gallery": [],
+    "faqs": [],
+    "cta": {
+      "_type": "link",
+      "kind": "zalo",
+      "label": "Kết nối Zalo"
+    },
+    "seo": null
+  },
+  {
+    "_id": "project-lang-van-vi",
+    "_type": "project",
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "language": "vi",
+    "title": "Làng Vân",
+    "slug": {
+      "_type": "slug",
+      "current": "lang-van"
+    },
+    "featured": false,
+    "sortOrder": 2,
+    "summary": null,
+    "heroImage": {
+      "alt": "Minh hoạ núi, mây và mặt nước tông xanh ngọc",
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "_sanityAsset": "image@file://./seed/sanity/assets/illus-lang-van.png"
+      },
+      "caption": "Ảnh minh hoạ, chờ ảnh thật của dự án",
+      "credit": "Minh hoạ vector dựng cho website (scripts/images/illustrations.ts)",
+      "rightsNote": "Minh hoạ tự dựng, không phải ảnh dự án; thay khi khách gửi ảnh Làng Vân thật (NEEDS_INPUT)",
+      "usageApproved": true
+    },
+    "location": null,
+    "developer": null,
+    "productTypes": [],
+    "legalStatus": null,
+    "progress": null,
+    "valueProposition": null,
+    "personalExperience": null,
+    "body": null,
+    "gallery": [],
+    "faqs": [],
+    "cta": {
+      "_type": "link",
+      "kind": "zalo",
+      "label": "Kết nối Zalo"
+    },
+    "seo": null
+  }
+]

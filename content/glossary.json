@@ -1,0 +1,21 @@
+{
+  "_note": "Glossary thương hiệu vi → en (skill i18n-content). Tên riêng giữ nguyên; thuật ngữ dịch thống nhất. Nguồn cho scripts/sanity/content/en-copy.ts.",
+  "keep": ["Hứa Thị Tuyết", "Trường Phát Group", "TP55", "Hạ Long Xanh", "Làng Vân", "Hạ Long", "Quảng Ninh", "Vinhomes", "Zalo", "0359 361 359"],
+  "terms": {
+    "Giám đốc Kinh doanh": "Sales Director",
+    "Khối TP55": "TP55 Division",
+    "đội ngũ kinh doanh": "sales team",
+    "Tư vấn bất động sản": "Real estate advisory",
+    "bất động sản đầu tư": "investment real estate",
+    "dòng tiền": "cash flow",
+    "nghỉ dưỡng": "holiday living",
+    "an cư": "residential living",
+    "Thấu hiểu thị trường": "Understand the market",
+    "Tinh chọn giá trị": "Curate real value",
+    "Đồng hành bền lâu": "Stay with you for the long term",
+    "Tôi cũng là khách hàng của chính mình": "I am also my own client",
+    "MỘT TÀI SẢN – BA GIÁ TRỊ": "ONE ASSET – THREE VALUES",
+    "Bài viết": "Insights",
+    "Đào tạo & Đội ngũ": "Training & Team"
+  }
+}

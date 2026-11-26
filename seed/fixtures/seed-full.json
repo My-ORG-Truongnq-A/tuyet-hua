@@ -1,0 +1,885 @@
+[
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "siteSettings",
+    "_type": "siteSettings",
+    "brandName": "Thương hiệu mẫu",
+    "personName": "Nguyễn Văn Mẫu",
+    "jobTitle": {
+      "_type": "localeString",
+      "vi": "Chức danh mẫu",
+      "en": "Sample title"
+    },
+    "tagline": {
+      "_type": "localeString",
+      "vi": "Khẩu hiệu mẫu.",
+      "en": "Sample tagline."
+    },
+    "logo": {
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy.jpg"
+      },
+      "alt": "Logo thương hiệu mẫu",
+      "usageApproved": false,
+      "rightsNote": "FIXTURE"
+    },
+    "contact": {
+      "phone": "0900 000 001",
+      "zaloPhone": "0900 000 002",
+      "email": "lien-he@vi-du.vn",
+      "serviceArea": {
+        "_type": "localeString",
+        "vi": "Khu vực mẫu",
+        "en": "Sample area"
+      },
+      "address": {
+        "_type": "postalAddress",
+        "locality": "Thành phố Mẫu",
+        "region": "Tỉnh Mẫu",
+        "country": "VN"
+      },
+      "openingHours": [
+        {
+          "_key": "t2-t7",
+          "_type": "openingHoursSpec",
+          "days": [
+            "Mo",
+            "Tu",
+            "We",
+            "Th",
+            "Fr",
+            "Sa"
+          ],
+          "opens": "08:00",
+          "closes": "17:30"
+        }
+      ],
+      "socialLinks": [
+        {
+          "_key": "fb",
+          "_type": "socialLink",
+          "platform": "facebook",
+          "url": "https://www.facebook.com/vi-du"
+        }
+      ]
+    },
+    "ui": {
+      "zaloCtaLabel": {
+        "_type": "localeString",
+        "vi": "Kết nối Zalo",
+        "en": "Chat on Zalo"
+      },
+      "callCtaLabel": {
+        "_type": "localeString",
+        "vi": "Gọi điện",
+        "en": "Call"
+      },
+      "consultCtaLabel": {
+        "_type": "localeString",
+        "vi": "Tư vấn",
+        "en": "Consult"
+      },
+      "joinTeamCta": {
+        "label": {
+          "_type": "localeString",
+          "vi": "Tham gia đội ngũ",
+          "en": "Join the team"
+        },
+        "kind": "zalo"
+      },
+      "notFound": {
+        "title": {
+          "_type": "localeString",
+          "vi": "Không tìm thấy trang",
+          "en": "Page not found"
+        },
+        "body": {
+          "_type": "localeText",
+          "vi": "Trang không tồn tại.",
+          "en": "This page does not exist."
+        }
+      }
+    },
+    "seoDefaults": {
+      "titleTemplate": {
+        "_type": "localeString",
+        "vi": "%s | Mẫu",
+        "en": "%s | Sample"
+      },
+      "description": {
+        "_type": "localeText",
+        "vi": "Mô tả mặc định mẫu.",
+        "en": "Default sample description."
+      }
+    },
+    "blog": {
+      "postsPerPage": 2
+    },
+    "redirects": [
+      {
+        "_key": "r1",
+        "_type": "redirect",
+        "from": "/du-an/ten-cu",
+        "to": "/du-an/du-an-mau-1",
+        "permanent": true
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "header",
+    "_type": "header",
+    "navItems": [
+      {
+        "_key": "home",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "vi": "Trang chủ",
+          "en": "Home"
+        },
+        "target": "home",
+        "visible": true
+      },
+      {
+        "_key": "about",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "vi": "Giới thiệu",
+          "en": "About"
+        },
+        "target": "about",
+        "visible": true
+      },
+      {
+        "_key": "projects",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "vi": "Dự án",
+          "en": "Projects"
+        },
+        "target": "projects",
+        "visible": true
+      },
+      {
+        "_key": "team",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "vi": "Đào tạo & Đội ngũ",
+          "en": "Training & Team"
+        },
+        "target": "team",
+        "visible": true
+      },
+      {
+        "_key": "articles",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "vi": "Bài viết",
+          "en": "Insights"
+        },
+        "target": "articles",
+        "visible": true
+      },
+      {
+        "_key": "contact",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "vi": "Liên hệ",
+          "en": "Contact"
+        },
+        "target": "contact",
+        "visible": true
+      }
+    ],
+    "showLanguageSwitch": true
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "footer",
+    "_type": "footer",
+    "navItems": [
+      {
+        "_key": "home",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "vi": "Trang chủ",
+          "en": "Home"
+        },
+        "target": "home",
+        "visible": true
+      },
+      {
+        "_key": "about",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "vi": "Giới thiệu",
+          "en": "About"
+        },
+        "target": "about",
+        "visible": true
+      },
+      {
+        "_key": "projects",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "vi": "Dự án",
+          "en": "Projects"
+        },
+        "target": "projects",
+        "visible": true
+      },
+      {
+        "_key": "team",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "vi": "Đào tạo & Đội ngũ",
+          "en": "Training & Team"
+        },
+        "target": "team",
+        "visible": true
+      },
+      {
+        "_key": "articles",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "vi": "Bài viết",
+          "en": "Insights"
+        },
+        "target": "articles",
+        "visible": true
+      },
+      {
+        "_key": "contact",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "vi": "Liên hệ",
+          "en": "Contact"
+        },
+        "target": "contact",
+        "visible": true
+      }
+    ],
+    "legalItems": [
+      {
+        "_key": "privacy",
+        "_type": "navItem",
+        "label": {
+          "_type": "localeString",
+          "vi": "Chính sách bảo mật",
+          "en": "Privacy policy"
+        },
+        "target": "privacy",
+        "visible": true
+      }
+    ],
+    "copyrightText": {
+      "_type": "localeString",
+      "vi": "Bảo lưu mọi quyền.",
+      "en": "All rights reserved."
+    }
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "homePage-vi",
+    "_type": "homePage",
+    "language": "vi",
+    "title": "Trang chủ",
+    "hero": {
+      "image": {
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy.jpg"
+        },
+        "alt": "Chân dung người mẫu thử",
+        "usageApproved": true,
+        "rightsNote": "FIXTURE"
+      },
+      "primaryCta": {
+        "_type": "link",
+        "kind": "zalo",
+        "label": "Tư vấn"
+      },
+      "secondaryCta": {
+        "_type": "link",
+        "kind": "internal",
+        "label": "Xem dự án",
+        "internal": {
+          "_type": "reference",
+          "_ref": "projectsPage-vi"
+        }
+      }
+    },
+    "story": {
+      "quote": "Câu chuyện mẫu",
+      "highlights": [
+        {
+          "_key": "a",
+          "_type": "highlightStat",
+          "value": "10+",
+          "label": "năm (đã xác nhận)",
+          "confirmed": true,
+          "sourceNote": "FIXTURE"
+        },
+        {
+          "_key": "b",
+          "_type": "highlightStat",
+          "value": "99+",
+          "label": "chưa xác nhận",
+          "confirmed": false
+        }
+      ]
+    },
+    "whyMe": {
+      "heading": "Tại sao chọn tôi",
+      "items": [
+        {
+          "_key": "a",
+          "_type": "valueItem",
+          "title": "Ý mẫu"
+        }
+      ]
+    },
+    "projectsSection": {
+      "heading": "Dự án đang triển khai"
+    },
+    "knowledgeSection": {
+      "heading": "Kiến thức",
+      "postsLimit": 2
+    },
+    "seo": {
+      "_type": "seo",
+      "title": "Trang chủ mẫu",
+      "description": "Mô tả SEO mẫu cho trang chủ, đủ dài để không bị cảnh báo về độ dài tối thiểu."
+    }
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "homePage-en",
+    "_type": "homePage",
+    "language": "en",
+    "title": "Home",
+    "hero": {
+      "image": {
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy.jpg"
+        },
+        "alt": "Portrait of the sample person",
+        "usageApproved": true,
+        "rightsNote": "FIXTURE"
+      }
+    }
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "aboutPage-vi",
+    "_type": "aboutPage",
+    "language": "vi",
+    "title": "Giới thiệu",
+    "heroImage": {
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy.jpg"
+      },
+      "alt": "Chân dung người mẫu thử",
+      "usageApproved": true,
+      "rightsNote": "FIXTURE"
+    },
+    "positioning": {
+      "roles": [
+        {
+          "_key": "a",
+          "_type": "roleShare",
+          "share": 60,
+          "title": "Tư vấn"
+        },
+        {
+          "_key": "b",
+          "_type": "roleShare",
+          "share": 40,
+          "title": "Đào tạo"
+        }
+      ]
+    },
+    "achievements": [
+      {
+        "_key": "a",
+        "_type": "achievement",
+        "title": "Thành tích đã xác nhận",
+        "confirmed": true
+      },
+      {
+        "_key": "b",
+        "_type": "achievement",
+        "title": "Thành tích chưa xác nhận",
+        "confirmed": false
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "projectsPage-vi",
+    "_type": "projectsPage",
+    "language": "vi",
+    "title": "Dự án"
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "teamPage-vi",
+    "_type": "teamPage",
+    "language": "vi",
+    "title": "Đào tạo & Đội ngũ",
+    "gallery": [
+      {
+        "_key": "a",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/team-office.jpg"
+        },
+        "alt": "Đội ngũ tại văn phòng",
+        "usageApproved": true,
+        "rightsNote": "FIXTURE"
+      },
+      {
+        "_key": "b",
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/event-cake.jpg"
+        },
+        "alt": "Sự kiện chưa xác nhận quyền dùng",
+        "usageApproved": false,
+        "rightsNote": "FIXTURE"
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "articlesPage-vi",
+    "_type": "articlesPage",
+    "language": "vi",
+    "title": "Bài viết",
+    "emptyStateText": "Chưa có bài."
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "contactPage-vi",
+    "_type": "contactPage",
+    "language": "vi",
+    "title": "Liên hệ"
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "privacyPage-vi",
+    "_type": "privacyPage",
+    "language": "vi",
+    "title": "Chính sách bảo mật",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "p1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "p1s",
+            "text": "FIXTURE — nội dung mẫu.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "lastUpdated": "2026-11-01"
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "project-du-an-mau-1-vi",
+    "_type": "project",
+    "language": "vi",
+    "title": "Dự án mẫu 1",
+    "slug": {
+      "_type": "slug",
+      "current": "du-an-mau-1"
+    },
+    "featured": true,
+    "sortOrder": 2,
+    "summary": "Tóm tắt dự án mẫu 1.",
+    "heroImage": {
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "_sanityAsset": "image@file://./seed/sanity/assets/talk-sale-event.jpg"
+      },
+      "alt": "Buổi chia sẻ về dự án mẫu",
+      "usageApproved": true,
+      "rightsNote": "FIXTURE"
+    },
+    "valueProposition": {
+      "_type": "projectValueProposition",
+      "headline": "THÔNG ĐIỆP MẪU",
+      "values": [
+        {
+          "_key": "a",
+          "_type": "valueItem",
+          "title": "Giá trị A"
+        }
+      ],
+      "keyMessage": "Câu chốt mẫu."
+    }
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "project-du-an-mau-2-vi",
+    "_type": "project",
+    "language": "vi",
+    "title": "Dự án mẫu 2",
+    "slug": {
+      "_type": "slug",
+      "current": "du-an-mau-2"
+    },
+    "featured": false,
+    "sortOrder": 1
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "project-du-an-mau-3-vi",
+    "_type": "project",
+    "language": "vi",
+    "title": "Dự án mẫu 3",
+    "slug": {
+      "_type": "slug",
+      "current": "du-an-mau-3"
+    },
+    "featured": false,
+    "sortOrder": 3
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "project-du-an-mau-1-en",
+    "_type": "project",
+    "language": "en",
+    "title": "Sample project 1",
+    "slug": {
+      "_type": "slug",
+      "current": "du-an-mau-1"
+    },
+    "featured": true,
+    "sortOrder": 1
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "translation-metadata-project-du-an-mau-1",
+    "_type": "translation.metadata",
+    "schemaTypes": [
+      "project"
+    ],
+    "translations": [
+      {
+        "_key": "vi",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "project-du-an-mau-1-vi",
+          "_weak": true
+        }
+      },
+      {
+        "_key": "en",
+        "_type": "internationalizedArrayReferenceValue",
+        "value": {
+          "_type": "reference",
+          "_ref": "project-du-an-mau-1-en",
+          "_weak": true
+        }
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "drafts.project-du-an-nhap-vi",
+    "_type": "project",
+    "language": "vi",
+    "title": "Dự án nháp",
+    "slug": {
+      "_type": "slug",
+      "current": "du-an-nhap"
+    },
+    "featured": false,
+    "sortOrder": 9
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "post-bai-mau-1-vi",
+    "_type": "post",
+    "language": "vi",
+    "title": "Bài mẫu 1",
+    "slug": {
+      "_type": "slug",
+      "current": "bai-mau-1"
+    },
+    "publishedAt": "2026-10-01T08:00:00Z",
+    "excerpt": "Tóm tắt bài mẫu 1.",
+    "coverImage": {
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "_sanityAsset": "image@file://./seed/sanity/assets/team-office.jpg"
+      },
+      "alt": "Đội ngũ kinh doanh tại văn phòng",
+      "usageApproved": true,
+      "rightsNote": "FIXTURE"
+    },
+    "body": [
+      {
+        "_type": "block",
+        "_key": "h",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "hs",
+            "text": "Mục 1",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "p",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "ps",
+            "text": "Nội dung bài mẫu 1.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "post-bai-mau-2-vi",
+    "_type": "post",
+    "language": "vi",
+    "title": "Bài mẫu 2",
+    "slug": {
+      "_type": "slug",
+      "current": "bai-mau-2"
+    },
+    "publishedAt": "2026-10-15T08:00:00Z",
+    "excerpt": "Tóm tắt bài mẫu 2.",
+    "coverImage": {
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "_sanityAsset": "image@file://./seed/sanity/assets/team-office.jpg"
+      },
+      "alt": "Đội ngũ kinh doanh tại văn phòng",
+      "usageApproved": true,
+      "rightsNote": "FIXTURE"
+    },
+    "body": [
+      {
+        "_type": "block",
+        "_key": "h",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "hs",
+            "text": "Mục 1",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "p",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "ps",
+            "text": "Nội dung bài mẫu 2.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "post-bai-mau-3-vi",
+    "_type": "post",
+    "language": "vi",
+    "title": "Bài mẫu 3",
+    "slug": {
+      "_type": "slug",
+      "current": "bai-mau-3"
+    },
+    "publishedAt": "2026-11-01T08:00:00Z",
+    "excerpt": "Tóm tắt bài mẫu 3.",
+    "coverImage": {
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "_sanityAsset": "image@file://./seed/sanity/assets/team-office.jpg"
+      },
+      "alt": "Đội ngũ kinh doanh tại văn phòng",
+      "usageApproved": true,
+      "rightsNote": "FIXTURE"
+    },
+    "body": [
+      {
+        "_type": "block",
+        "_key": "h",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "hs",
+            "text": "Mục 1",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "p",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "ps",
+            "text": "Nội dung bài mẫu 3.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "post-bai-mau-4-vi",
+    "_type": "post",
+    "language": "vi",
+    "title": "Bài mẫu 4",
+    "slug": {
+      "_type": "slug",
+      "current": "bai-mau-4"
+    },
+    "publishedAt": "2099-01-01T08:00:00Z",
+    "excerpt": "Tóm tắt bài mẫu 4.",
+    "coverImage": {
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "_sanityAsset": "image@file://./seed/sanity/assets/team-office.jpg"
+      },
+      "alt": "Đội ngũ kinh doanh tại văn phòng",
+      "usageApproved": true,
+      "rightsNote": "FIXTURE"
+    },
+    "body": [
+      {
+        "_type": "block",
+        "_key": "h",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "hs",
+            "text": "Mục 1",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "p",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "ps",
+            "text": "Nội dung bài mẫu 4.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "testimonial-a-vi",
+    "_type": "testimonial",
+    "language": "vi",
+    "authorName": "Chị A.",
+    "quote": "Cảm nhận mẫu đã đồng ý.",
+    "consentConfirmed": true,
+    "consentNote": "FIXTURE",
+    "sortOrder": 1
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "testimonial-b-vi",
+    "_type": "testimonial",
+    "language": "vi",
+    "authorName": "Anh B.",
+    "quote": "Cảm nhận mẫu chưa đồng ý.",
+    "consentConfirmed": false,
+    "sortOrder": 2
+  }
+]

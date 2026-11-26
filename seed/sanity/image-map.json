@@ -1,0 +1,761 @@
+{
+  "strategy": "client_photos + free_stock + illustration",
+  "ssimMin": 0.98,
+  "images": {
+    "bootcamp-training.jpg": {
+      "original": "seed/sanity/assets/bootcamp-training.jpg",
+      "originalBytes": 452725,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/bootcamp-training-480.webp",
+          "width": 480,
+          "height": 320,
+          "quality": 83,
+          "ssim": 0.981,
+          "bytes": 25996
+        },
+        {
+          "file": "/images/bootcamp-training-768.webp",
+          "width": 768,
+          "height": 512,
+          "quality": 85,
+          "ssim": 0.9809,
+          "bytes": 55726
+        },
+        {
+          "file": "/images/bootcamp-training-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "quality": 85,
+          "ssim": 0.9816,
+          "bytes": 105464
+        },
+        {
+          "file": "/images/bootcamp-training-1600.webp",
+          "width": 1600,
+          "height": 1066,
+          "quality": 85,
+          "ssim": 0.9807,
+          "bytes": 155692
+        },
+        {
+          "file": "/images/bootcamp-training-2048.webp",
+          "width": 2048,
+          "height": 1365,
+          "quality": 86,
+          "ssim": 0.9801,
+          "bytes": 217120
+        }
+      ]
+    },
+    "event-cake.jpg": {
+      "original": "seed/sanity/assets/event-cake.jpg",
+      "originalBytes": 921790,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/event-cake-480.webp",
+          "width": 480,
+          "height": 640,
+          "quality": 84,
+          "ssim": 0.98,
+          "bytes": 42956
+        },
+        {
+          "file": "/images/event-cake-768.webp",
+          "width": 768,
+          "height": 1024,
+          "quality": 86,
+          "ssim": 0.9802,
+          "bytes": 104870
+        },
+        {
+          "file": "/images/event-cake-1200.webp",
+          "width": 1200,
+          "height": 1600,
+          "quality": 90,
+          "ssim": 0.9867,
+          "bytes": 301760
+        },
+        {
+          "file": "/images/event-cake-1600.webp",
+          "width": 1600,
+          "height": 2133,
+          "quality": 88,
+          "ssim": 0.9807,
+          "bytes": 451000
+        },
+        {
+          "file": "/images/event-cake-1920.webp",
+          "width": 1920,
+          "height": 2560,
+          "quality": 87,
+          "ssim": 0.9821,
+          "bytes": 587236
+        }
+      ]
+    },
+    "illus-lang-van.png": {
+      "original": "seed/sanity/assets/illus-lang-van.png",
+      "originalBytes": 212249,
+      "source": "illustration",
+      "variants": [
+        {
+          "file": "/images/illus-lang-van-480.webp",
+          "width": 480,
+          "height": 300,
+          "quality": 40,
+          "ssim": 0.9805,
+          "bytes": 2366
+        },
+        {
+          "file": "/images/illus-lang-van-768.webp",
+          "width": 768,
+          "height": 480,
+          "quality": 40,
+          "ssim": 0.9847,
+          "bytes": 4172
+        },
+        {
+          "file": "/images/illus-lang-van-1200.webp",
+          "width": 1200,
+          "height": 750,
+          "quality": 40,
+          "ssim": 0.9896,
+          "bytes": 7294
+        },
+        {
+          "file": "/images/illus-lang-van-1600.webp",
+          "width": 1600,
+          "height": 1000,
+          "quality": 40,
+          "ssim": 0.9912,
+          "bytes": 10492
+        }
+      ]
+    },
+    "model-visit.jpg": {
+      "original": "seed/sanity/assets/model-visit.jpg",
+      "originalBytes": 1170253,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/model-visit-480.webp",
+          "width": 480,
+          "height": 360,
+          "quality": 82,
+          "ssim": 0.9805,
+          "bytes": 33084
+        },
+        {
+          "file": "/images/model-visit-768.webp",
+          "width": 768,
+          "height": 576,
+          "quality": 84,
+          "ssim": 0.9819,
+          "bytes": 84656
+        },
+        {
+          "file": "/images/model-visit-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "quality": 85,
+          "ssim": 0.981,
+          "bytes": 202656
+        },
+        {
+          "file": "/images/model-visit-1600.webp",
+          "width": 1600,
+          "height": 1200,
+          "quality": 87,
+          "ssim": 0.982,
+          "bytes": 364602
+        },
+        {
+          "file": "/images/model-visit-2560.webp",
+          "width": 2560,
+          "height": 1920,
+          "quality": 86,
+          "ssim": 0.9827,
+          "bytes": 733032
+        }
+      ]
+    },
+    "office-training.jpg": {
+      "original": "seed/sanity/assets/office-training.jpg",
+      "originalBytes": 723995,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/office-training-480.webp",
+          "width": 480,
+          "height": 360,
+          "quality": 79,
+          "ssim": 0.9805,
+          "bytes": 22336
+        },
+        {
+          "file": "/images/office-training-768.webp",
+          "width": 768,
+          "height": 576,
+          "quality": 79,
+          "ssim": 0.9802,
+          "bytes": 46544
+        },
+        {
+          "file": "/images/office-training-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "quality": 80,
+          "ssim": 0.9813,
+          "bytes": 101230
+        },
+        {
+          "file": "/images/office-training-1600.webp",
+          "width": 1600,
+          "height": 1200,
+          "quality": 81,
+          "ssim": 0.9804,
+          "bytes": 162470
+        },
+        {
+          "file": "/images/office-training-2560.webp",
+          "width": 2560,
+          "height": 1920,
+          "quality": 79,
+          "ssim": 0.9808,
+          "bytes": 310944
+        }
+      ]
+    },
+    "portrait-bni.jpg": {
+      "original": "seed/sanity/assets/portrait-bni.jpg",
+      "originalBytes": 654623,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/portrait-bni-480.webp",
+          "width": 480,
+          "height": 480,
+          "quality": 58,
+          "ssim": 0.9802,
+          "bytes": 8878
+        },
+        {
+          "file": "/images/portrait-bni-768.webp",
+          "width": 768,
+          "height": 768,
+          "quality": 75,
+          "ssim": 0.9802,
+          "bytes": 22576
+        },
+        {
+          "file": "/images/portrait-bni-1200.webp",
+          "width": 1200,
+          "height": 1200,
+          "quality": 86,
+          "ssim": 0.9801,
+          "bytes": 94804
+        },
+        {
+          "file": "/images/portrait-bni-1600.webp",
+          "width": 1600,
+          "height": 1600,
+          "quality": 85,
+          "ssim": 0.9804,
+          "bytes": 160066
+        },
+        {
+          "file": "/images/portrait-bni-2560.webp",
+          "width": 2560,
+          "height": 2560,
+          "quality": 85,
+          "ssim": 0.9809,
+          "bytes": 311982
+        }
+      ]
+    },
+    "portrait-navy-cutout.png": {
+      "original": "seed/sanity/assets/portrait-navy-cutout.png",
+      "originalBytes": 1391023,
+      "source": "client_photos",
+      "derivedFrom": "seed/sanity/assets/portrait-navy.jpg",
+      "hasAlpha": true,
+      "variants": [
+        {
+          "file": "/images/portrait-navy-cutout-480.webp",
+          "width": 480,
+          "height": 720,
+          "quality": 69,
+          "ssim": 0.98,
+          "bytes": 26226
+        },
+        {
+          "file": "/images/portrait-navy-cutout-768.webp",
+          "width": 768,
+          "height": 1152,
+          "quality": 80,
+          "ssim": 0.9805,
+          "bytes": 56186
+        },
+        {
+          "file": "/images/portrait-navy-cutout-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "quality": 79,
+          "ssim": 0.9801,
+          "bytes": 94872
+        },
+        {
+          "file": "/images/portrait-navy-cutout-1280.webp",
+          "width": 1280,
+          "height": 1920,
+          "quality": 78,
+          "ssim": 0.98,
+          "bytes": 85710
+        }
+      ]
+    },
+    "portrait-navy.jpg": {
+      "original": "seed/sanity/assets/portrait-navy.jpg",
+      "originalBytes": 355873,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/portrait-navy-480.webp",
+          "width": 480,
+          "height": 720,
+          "quality": 65,
+          "ssim": 0.9804,
+          "bytes": 12952
+        },
+        {
+          "file": "/images/portrait-navy-768.webp",
+          "width": 768,
+          "height": 1152,
+          "quality": 72,
+          "ssim": 0.9802,
+          "bytes": 27818
+        },
+        {
+          "file": "/images/portrait-navy-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "quality": 78,
+          "ssim": 0.9802,
+          "bytes": 61082
+        },
+        {
+          "file": "/images/portrait-navy-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "quality": 76,
+          "ssim": 0.9803,
+          "bytes": 83588
+        },
+        {
+          "file": "/images/portrait-navy-1707.webp",
+          "width": 1707,
+          "height": 2560,
+          "quality": 70,
+          "ssim": 0.98,
+          "bytes": 84278
+        }
+      ]
+    },
+    "stock-ha-long-bay-above.jpg": {
+      "original": "seed/sanity/assets/stock-ha-long-bay-above.jpg",
+      "originalBytes": 356019,
+      "source": "free_stock_cc_by_4",
+      "variants": [
+        {
+          "file": "/images/stock-ha-long-bay-above-480.webp",
+          "width": 480,
+          "height": 320,
+          "quality": 88,
+          "ssim": 0.9809,
+          "bytes": 16164
+        },
+        {
+          "file": "/images/stock-ha-long-bay-above-768.webp",
+          "width": 768,
+          "height": 512,
+          "quality": 89,
+          "ssim": 0.9821,
+          "bytes": 43242
+        },
+        {
+          "file": "/images/stock-ha-long-bay-above-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "quality": 89,
+          "ssim": 0.9803,
+          "bytes": 105776
+        },
+        {
+          "file": "/images/stock-ha-long-bay-above-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "quality": 90,
+          "ssim": 0.9814,
+          "bytes": 198880
+        },
+        {
+          "file": "/images/stock-ha-long-bay-above-1920.webp",
+          "width": 1920,
+          "height": 1280,
+          "quality": 92,
+          "ssim": 0.9824,
+          "bytes": 401872
+        }
+      ]
+    },
+    "stock-ha-long-bay-mist.jpg": {
+      "original": "seed/sanity/assets/stock-ha-long-bay-mist.jpg",
+      "originalBytes": 252569,
+      "source": "free_stock_cc_by_4",
+      "variants": [
+        {
+          "file": "/images/stock-ha-long-bay-mist-480.webp",
+          "width": 480,
+          "height": 320,
+          "quality": 87,
+          "ssim": 0.9818,
+          "bytes": 7726
+        },
+        {
+          "file": "/images/stock-ha-long-bay-mist-768.webp",
+          "width": 768,
+          "height": 512,
+          "quality": 86,
+          "ssim": 0.981,
+          "bytes": 16726
+        },
+        {
+          "file": "/images/stock-ha-long-bay-mist-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "quality": 88,
+          "ssim": 0.9815,
+          "bytes": 47204
+        },
+        {
+          "file": "/images/stock-ha-long-bay-mist-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "quality": 90,
+          "ssim": 0.9804,
+          "bytes": 105576
+        },
+        {
+          "file": "/images/stock-ha-long-bay-mist-1920.webp",
+          "width": 1920,
+          "height": 1280,
+          "quality": 94,
+          "ssim": 0.9827,
+          "bytes": 357020
+        }
+      ]
+    },
+    "talk-sale-event.jpg": {
+      "original": "seed/sanity/assets/talk-sale-event.jpg",
+      "originalBytes": 490724,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/talk-sale-event-480.webp",
+          "width": 480,
+          "height": 320,
+          "quality": 86,
+          "ssim": 0.9824,
+          "bytes": 30736
+        },
+        {
+          "file": "/images/talk-sale-event-768.webp",
+          "width": 768,
+          "height": 512,
+          "quality": 87,
+          "ssim": 0.9819,
+          "bytes": 64498
+        },
+        {
+          "file": "/images/talk-sale-event-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "quality": 87,
+          "ssim": 0.9808,
+          "bytes": 128160
+        },
+        {
+          "file": "/images/talk-sale-event-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "quality": 87,
+          "ssim": 0.981,
+          "bytes": 208562
+        },
+        {
+          "file": "/images/talk-sale-event-2048.webp",
+          "width": 2048,
+          "height": 1366,
+          "quality": 92,
+          "ssim": 0.9926,
+          "bytes": 354638
+        }
+      ]
+    },
+    "talkshow-audience.jpg": {
+      "original": "seed/sanity/assets/talkshow-audience.jpg",
+      "originalBytes": 519296,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/talkshow-audience-480.webp",
+          "width": 480,
+          "height": 320,
+          "quality": 82,
+          "ssim": 0.9801,
+          "bytes": 26894
+        },
+        {
+          "file": "/images/talkshow-audience-768.webp",
+          "width": 768,
+          "height": 512,
+          "quality": 84,
+          "ssim": 0.9804,
+          "bytes": 57972
+        },
+        {
+          "file": "/images/talkshow-audience-1200.webp",
+          "width": 1200,
+          "height": 799,
+          "quality": 85,
+          "ssim": 0.9807,
+          "bytes": 117796
+        },
+        {
+          "file": "/images/talkshow-audience-1600.webp",
+          "width": 1600,
+          "height": 1066,
+          "quality": 85,
+          "ssim": 0.9804,
+          "bytes": 180088
+        },
+        {
+          "file": "/images/talkshow-audience-2048.webp",
+          "width": 2048,
+          "height": 1364,
+          "quality": 88,
+          "ssim": 0.9801,
+          "bytes": 278856
+        }
+      ]
+    },
+    "team-office.jpg": {
+      "original": "seed/sanity/assets/team-office.jpg",
+      "originalBytes": 872918,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/team-office-480.webp",
+          "width": 480,
+          "height": 360,
+          "quality": 80,
+          "ssim": 0.9802,
+          "bytes": 31926
+        },
+        {
+          "file": "/images/team-office-768.webp",
+          "width": 768,
+          "height": 576,
+          "quality": 83,
+          "ssim": 0.982,
+          "bytes": 72952
+        },
+        {
+          "file": "/images/team-office-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "quality": 84,
+          "ssim": 0.9804,
+          "bytes": 150172
+        },
+        {
+          "file": "/images/team-office-1600.webp",
+          "width": 1600,
+          "height": 1200,
+          "quality": 85,
+          "ssim": 0.9802,
+          "bytes": 233326
+        },
+        {
+          "file": "/images/team-office-2568.webp",
+          "width": 2568,
+          "height": 1926,
+          "quality": 89,
+          "ssim": 0.981,
+          "bytes": 593958
+        }
+      ]
+    },
+    "team-truong-phat.jpg": {
+      "original": "seed/sanity/assets/team-truong-phat.jpg",
+      "originalBytes": 892407,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/team-truong-phat-480.webp",
+          "width": 480,
+          "height": 360,
+          "quality": 79,
+          "ssim": 0.9801,
+          "bytes": 28992
+        },
+        {
+          "file": "/images/team-truong-phat-768.webp",
+          "width": 768,
+          "height": 576,
+          "quality": 81,
+          "ssim": 0.9803,
+          "bytes": 64720
+        },
+        {
+          "file": "/images/team-truong-phat-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "quality": 83,
+          "ssim": 0.9818,
+          "bytes": 144256
+        },
+        {
+          "file": "/images/team-truong-phat-1600.webp",
+          "width": 1600,
+          "height": 1200,
+          "quality": 84,
+          "ssim": 0.9807,
+          "bytes": 234376
+        },
+        {
+          "file": "/images/team-truong-phat-2560.webp",
+          "width": 2560,
+          "height": 1920,
+          "quality": 84,
+          "ssim": 0.9813,
+          "bytes": 479314
+        }
+      ]
+    },
+    "workshop-group.jpg": {
+      "original": "seed/sanity/assets/workshop-group.jpg",
+      "originalBytes": 541283,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/workshop-group-480.webp",
+          "width": 480,
+          "height": 320,
+          "quality": 81,
+          "ssim": 0.9802,
+          "bytes": 28212
+        },
+        {
+          "file": "/images/workshop-group-768.webp",
+          "width": 768,
+          "height": 512,
+          "quality": 83,
+          "ssim": 0.9803,
+          "bytes": 62440
+        },
+        {
+          "file": "/images/workshop-group-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "quality": 84,
+          "ssim": 0.9805,
+          "bytes": 125878
+        },
+        {
+          "file": "/images/workshop-group-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "quality": 84,
+          "ssim": 0.9812,
+          "bytes": 196780
+        },
+        {
+          "file": "/images/workshop-group-2048.webp",
+          "width": 2048,
+          "height": 1366,
+          "quality": 85,
+          "ssim": 0.9803,
+          "bytes": 287404
+        }
+      ]
+    },
+    "workshop-presenting.jpg": {
+      "original": "seed/sanity/assets/workshop-presenting.jpg",
+      "originalBytes": 545000,
+      "source": "client_photos",
+      "variants": [
+        {
+          "file": "/images/workshop-presenting-480.webp",
+          "width": 480,
+          "height": 320,
+          "quality": 87,
+          "ssim": 0.9818,
+          "bytes": 26820
+        },
+        {
+          "file": "/images/workshop-presenting-768.webp",
+          "width": 768,
+          "height": 512,
+          "quality": 88,
+          "ssim": 0.9816,
+          "bytes": 61614
+        },
+        {
+          "file": "/images/workshop-presenting-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "quality": 88,
+          "ssim": 0.9815,
+          "bytes": 130268
+        },
+        {
+          "file": "/images/workshop-presenting-1600.webp",
+          "width": 1600,
+          "height": 1066,
+          "quality": 88,
+          "ssim": 0.9814,
+          "bytes": 215152
+        },
+        {
+          "file": "/images/workshop-presenting-2048.webp",
+          "width": 2048,
+          "height": 1365,
+          "quality": 93,
+          "ssim": 0.9916,
+          "bytes": 434652
+        }
+      ]
+    }
+  },
+  "og": {
+    "home:vi": "/og/home-vi.jpg",
+    "about:vi": "/og/about-vi.jpg",
+    "projects:vi": "/og/projects-vi.jpg",
+    "team:vi": "/og/team-vi.jpg",
+    "articles:vi": "/og/articles-vi.jpg",
+    "contact:vi": "/og/contact-vi.jpg",
+    "legal:vi": "/og/legal-vi.jpg",
+    "home:en": "/og/home-en.jpg",
+    "about:en": "/og/about-en.jpg",
+    "projects:en": "/og/projects-en.jpg",
+    "team:en": "/og/team-en.jpg",
+    "articles:en": "/og/articles-en.jpg",
+    "contact:en": "/og/contact-en.jpg",
+    "legal:en": "/og/legal-en.jpg"
+  },
+  "logo": "NEEDS_INPUT"
+}

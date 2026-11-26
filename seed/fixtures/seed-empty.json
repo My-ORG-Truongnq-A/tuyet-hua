@@ -1,0 +1,150 @@
+[
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "siteSettings",
+    "_type": "siteSettings",
+    "brandName": "Thương hiệu mẫu",
+    "personName": "Nguyễn Văn Mẫu",
+    "jobTitle": {
+      "_type": "localeString",
+      "vi": "Chức danh mẫu",
+      "en": null
+    },
+    "tagline": {
+      "_type": "localeString",
+      "vi": "Khẩu hiệu mẫu.",
+      "en": null
+    },
+    "contact": {
+      "phone": "0900 000 009"
+    },
+    "ui": {
+      "zaloCtaLabel": {
+        "_type": "localeString",
+        "vi": "Kết nối Zalo",
+        "en": null
+      },
+      "callCtaLabel": {
+        "_type": "localeString",
+        "vi": "Gọi điện",
+        "en": null
+      },
+      "consultCtaLabel": {
+        "_type": "localeString",
+        "vi": "Tư vấn",
+        "en": null
+      }
+    }
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "header",
+    "_type": "header",
+    "navItems": []
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "footer",
+    "_type": "footer",
+    "navItems": [],
+    "legalItems": []
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "homePage-vi",
+    "_type": "homePage",
+    "language": "vi",
+    "title": "Trang chủ",
+    "hero": {
+      "image": {
+        "_type": "figure",
+        "image": {
+          "_type": "image",
+          "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy.jpg"
+        },
+        "alt": "Chân dung người mẫu thử",
+        "usageApproved": false,
+        "rightsNote": "FIXTURE"
+      }
+    }
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "aboutPage-vi",
+    "_type": "aboutPage",
+    "language": "vi",
+    "title": "Giới thiệu",
+    "heroImage": {
+      "_type": "figure",
+      "image": {
+        "_type": "image",
+        "_sanityAsset": "image@file://./seed/sanity/assets/portrait-navy.jpg"
+      },
+      "alt": "Chân dung người mẫu thử",
+      "usageApproved": false,
+      "rightsNote": "FIXTURE"
+    }
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "projectsPage-vi",
+    "_type": "projectsPage",
+    "language": "vi",
+    "title": "Dự án"
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "teamPage-vi",
+    "_type": "teamPage",
+    "language": "vi",
+    "title": "Đào tạo & Đội ngũ"
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "articlesPage-vi",
+    "_type": "articlesPage",
+    "language": "vi",
+    "title": "Bài viết"
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "contactPage-vi",
+    "_type": "contactPage",
+    "language": "vi",
+    "title": "Liên hệ"
+  },
+  {
+    "_createdAt": "2026-11-20T00:00:00Z",
+    "_updatedAt": "2026-11-20T00:00:00Z",
+    "_id": "privacyPage-vi",
+    "_type": "privacyPage",
+    "language": "vi",
+    "title": "Chính sách bảo mật",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "p1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "p1s",
+            "text": "FIXTURE — nội dung mẫu.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "lastUpdated": "2026-11-01"
+  }
+]

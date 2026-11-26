@@ -1,0 +1,233 @@
+/*
+ * tokens.css — NGUỒN TOKEN DUY NHẤT cho website này (GD-02).
+ * Component chỉ dùng biến ở đây (utility Tailwind v4 sinh từ @theme, hoặc var()).
+ * KHÔNG rải mã màu / cỡ chữ / bóng đổ trong component. Đổi palette = đổi GIÁ TRỊ, giữ TÊN biến.
+ *
+ * Nguồn: design_tokens.json — bước thiết kế lần 3 (21/11/2026, change request «khớp đúng mockup anh-dan-131204-1.png;
+ *   bản hiện tại chưa đạt»): giữ palette lần 2, thêm --gradient-halo, nén --section-y cho nhịp dày như mockup.
+ *   Lần 2:
+ *   màu / chữ / chi tiết trích từ mockup khách (design.source = mockup), theo spec màu YC-10:
+ *   Primary Emerald / xanh lá trầm · Secondary trắng ngà, xám sáng · Accent champagne / gold nhẹ.
+ *   Tránh đen chủ đạo: mức tối nhất emerald-950 chỉ dùng cho footer.
+ * Mã hex là ĐỀ XUẤT, chờ khách duyệt (MI-24). Tương phản kiểm ở styles/contrast.test.ts.
+ *
+ * Mục tiêu tương phản (TC-04): chữ thường ≥ 4.5:1, chữ lớn / thành phần UI ≥ 3:1.
+ */
+
+@theme {
+  /* ---------- Bảng màu nền tảng ---------- */
+  --color-*: initial; /* bỏ bảng màu mặc định Tailwind — chỉ màu dưới đây tồn tại */
+  --color-white: #ffffff;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --color-emerald-950: #0b2c26; /* footer + dải kết nối cuối trang (mockup) */
+  --color-emerald-900: #0f3a32; /* nền hero + dải «Dự án đang triển khai» (đo từ mockup) */
+  --color-emerald-800: #17503f; /* PRIMARY — tiêu đề, nút chính trên nền sáng */
+  --color-emerald-700: #1f6650; /* hover, chữ nhấn trên nền sáng */
+  --color-emerald-600: #2e7d63; /* focus / chi tiết */
+  --color-emerald-100: #e4efe9; /* chữ phụ trên nền tối, nền nhấn rất nhẹ */
+
+  --color-ivory-50: #fffdf8;
+  --color-ivory-100: #faf7f0; /* SECONDARY — nền trang */
+  --color-ivory-200: #f2ede2; /* nền section xen kẽ */
+  --color-stone-200: #e6e2d8; /* đường kẻ, viền khung */
+  --color-stone-300: #d3cec2;
+
+  --color-ink-900: #1c2925; /* chữ thân — xanh rất trầm, không phải đen */
+  --color-ink-600: #56615c; /* chữ phụ */
+
+  --color-gold-100: #f7f0de; /* nền thẻ trích dẫn «Tôi cũng là khách hàng…» */
+  --color-gold-200: #efe2c2;
+  --color-gold-300: #e3cf9f; /* ACCENT — chữ nhấn trên nền emerald */
+  --color-gold-400: #d4b97e; /* nền nút champagne */
+  --color-gold-500: #c2a061; /* CHỈ trang trí (2.3:1 trên ngà) — không dùng cho chữ / icon mang nghĩa */
+  --color-gold-700: #7a5d24; /* chữ vàng trên nền sáng */
+
+  --color-red-700: #a1362a; /* trạng thái lỗi (chữ trên nền sáng) */
+
+  /* ---------- Tên token chuẩn (GD-02) — ánh xạ vào bảng màu ---------- */
+  --color-brand: var(--color-emerald-800);
+  --color-brand-ink: var(--color-emerald-800); /* chữ brand trên nền trắng / ngà */
+  --color-accent: var(--color-gold-400);
+  --color-ink: var(--color-ink-900);
+  --color-muted: var(--color-ink-600);
+  --color-surface: var(--color-ivory-100);
+  --color-line: var(--color-stone-200);
+  --color-danger: var(--color-red-700);
+  --color-success: var(--color-emerald-700);
+
+  /* ---------- Chữ (≤ 2 họ, đủ glyph tiếng Việt — GD-03, HN-04) ---------- */
+  --font-display: var(--font-playfair), "Noto Serif", Georgia, serif;
+  --font-sans: var(--font-bevietnam), "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Thang chữ fluid 320 → 1440 px */
+  --text-micro: 0.6875rem; /* 11px — chỉ chức danh dưới wordmark */
+  --text-micro--line-height: 1.5;
+  --text-eyebrow: 0.8125rem; /* 13px, viết hoa, giãn chữ */
+  --text-eyebrow--line-height: 1.5;
+  --text-eyebrow--letter-spacing: 0.16em;
+  --text-body: 1rem; /* thân bài ≥ 16px */
+  --text-body--line-height: 1.7;
+  --text-lead: clamp(1.0625rem, 0.98rem + 0.35vw, 1.25rem);
+  --text-lead--line-height: 1.7;
+  --text-h3: clamp(1.25rem, 1.12rem + 0.55vw, 1.625rem);
+  --text-h3--line-height: 1.35;
+  --text-h2: clamp(1.75rem, 1.4rem + 1.5vw, 2.75rem);
+  --text-h2--line-height: 1.25;
+  --text-display: clamp(2.125rem, 1.4rem + 3.4vw, 4.25rem);
+  --text-display--line-height: 1.18; /* đủ chỗ cho dấu chồng (Ồ, Ề, Ậ) */
+  --text-display-caps: clamp(1.625rem, 1rem + 2.4vw, 3rem); /* tagline VIẾT HOA ở hero — mỗi vế 1 dòng ở 1440 như mockup */
+  --text-display-caps--line-height: 1.22;
+  --text-stat: clamp(2.25rem, 1.8rem + 2vw, 3.5rem);
+  --text-stat--line-height: 1.1;
+
+  --tracking-caps: 0.14em;
+  --tracking-title: 0.08em;
+
+  /* ---------- Bố cục ---------- */
+  --spacing: 0.25rem; /* bước 4px */
+  --container-page: 76rem; /* 1216px vùng nội dung */
+  --container-site: 76rem; /* tên chuẩn GD-02 */
+  --container-prose: 40rem;
+
+  /* ---------- Bo góc ---------- */
+  --radius-xs: 2px;
+  --radius-sm: 4px; /* nút, khung ảnh */
+  --radius-md: 8px;
+  --radius-arch: 999px 999px 4px 4px; /* khung vòm chân dung (PA1) */
+  --radius-card: 6px; /* thẻ trích dẫn, thẻ cảm nhận, ảnh dự án (mockup bo rất nhẹ) */
+
+  /* ---------- Đổ bóng (ấm, thấp) ---------- */
+  --shadow-soft: 0 1px 2px rgb(14 49 41 / 0.06), 0 8px 24px -12px rgb(14 49 41 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(14 49 41 / 0.08), 0 24px 48px -24px rgb(14 49 41 / 0.32);
+
+  /* ---------- Chuyển động (design.motion = subtle, GD-04) ---------- */
+  --ease-calm: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --animate-rise: rise 700ms var(--ease-calm) both; /* chỉ chữ hero — không áp cho ảnh LCP */
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* Biến bố cục / motion không sinh utility */
+:root {
+  --gutter: 1.25rem; /* mobile */
+  --header-h: 4.5rem;
+  --section-y: 3.5rem; /* mockup dày đặc hơn bản trước: khối sát nhau, ít khoảng chết */
+  --duration-hover: 200ms;
+  --duration-reveal: 450ms; /* GD-04: reveal ≤ 0.45s */
+  /* Nút champagne của mockup: dải vàng nhạt → vàng (chữ emerald-950 đạt ≥ 7:1 trên cả hai đầu). */
+  --gradient-gold: linear-gradient(180deg, var(--color-gold-300) 0%, var(--color-gold-400) 100%);
+  /* Hero mockup: emerald sâu, sáng nhẹ phía chân dung (không gradient sặc sỡ — YC-10). */
+  --gradient-hero: radial-gradient(110% 85% at 80% 60%, var(--color-emerald-800) 0%, var(--color-emerald-900) 55%, var(--color-emerald-950) 100%);
+  /* Quầng sáng emerald sau chân dung tách nền (thay bầu trời vịnh của mockup — chưa có ảnh thật). */
+  --gradient-halo: radial-gradient(closest-side, color-mix(in srgb, var(--color-emerald-600) 55%, transparent) 0%, transparent 100%);
+  --gradient-band: linear-gradient(180deg, var(--color-emerald-900) 0%, var(--color-emerald-950) 100%);
+  --hero-min-h: 0px; /* mobile: theo nội dung */
+  --reveal-distance: 16px; /* GD-04: dịch 16px */
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --gutter: 2rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --header-h: 5.5rem;
+    --section-y: 4.5rem;
+    --hero-min-h: 38rem; /* ≈ tỉ lệ hero mockup ở 1440×900, CTA + 3 trụ cột luôn trong màn đầu */
+  }
+}
+
+/* ---------- Token ngữ nghĩa theo phương án ----------
+ * Component dùng --surface-*, --on-*, --line-*, --cta-* để đổi giao diện theo phương án mà không đổi markup.
+ * pa1 = «Bám mockup» (hero emerald, chân dung phải); pa2 = «Mockup — hero ngà, chân dung trái» (mọi khối dưới hero giống pa1).
+ * G2 chưa ghi phương án được chọn (Q-58): :root mang lớp chung pa1; chọn pa2 thì đặt data-variant="pa2" ở <html>.
+ */
+:root,
+[data-variant="pa1"] {
+  --surface-page: var(--color-ivory-100);
+  --surface-alt: var(--color-ivory-200);
+  --surface-hero: var(--color-emerald-900);
+  --surface-hero-2: var(--color-emerald-800);
+  --surface-hero-image: var(--gradient-hero);
+  --surface-band: var(--color-emerald-900);
+  --surface-band-image: var(--gradient-band);
+  --surface-quote: var(--color-gold-100);
+  --surface-portrait: var(--color-ivory-50); /* nền ô chờ ảnh chân dung (ảnh thật là bản tách nền, không khung) */
+  --surface-footer: var(--color-emerald-950);
+  --on-hero: var(--color-ivory-100);
+  --on-hero-muted: var(--color-emerald-100);
+  --on-hero-accent: var(--color-gold-300);
+  --on-page: var(--color-ink-900);
+  --on-page-muted: var(--color-ink-600);
+  --on-page-heading: var(--color-emerald-800);
+  --on-page-accent: var(--color-gold-700);
+  --line-subtle: var(--color-stone-200);
+  --line-accent: var(--color-gold-500);
+  /* Chữ / vạch trên dải nền tối (--surface-band) và liên kết trong nội dung — trang trong dùng token này,
+     không viết màu tay (T6.3). Cùng giá trị cho mọi phương án (dải tối giống nhau ở A và B). */
+  --on-band: var(--color-ivory-100);
+  --on-band-muted: var(--color-emerald-100);
+  --on-band-accent: var(--color-gold-300);
+  --line-band: var(--color-emerald-700);
+  --on-page-link: var(--color-emerald-800);
+  --cta-bg: var(--color-gold-400);
+  --cta-bg-hover: var(--color-gold-300);
+  --cta-fg: var(--color-emerald-950);
+  --cta-image: var(--gradient-gold);
+  /* Lệch design_tokens (pa1 focus-ring gold-400 = 1.9:1 trên ngà): vòng focus trên nền sáng dùng emerald-700,
+     trên nền tối (.surface-dark) dùng gold-300 — đạt ≥ 3:1 (TC, WCAG 1.4.11). */
+  --focus-ring: var(--color-emerald-700);
+  --focus-ring-on-dark: var(--color-gold-300);
+  --focus-ring-hero: var(--color-gold-300); /* vùng hero / header (pa1 nền tối) */
+}
+
+[data-variant="pa2"] {
+  --surface-hero: var(--color-ivory-50);
+  --surface-hero-2: var(--color-ivory-200);
+  --surface-hero-image: none;
+  --on-hero: var(--color-ink-900);
+  --on-hero-muted: var(--color-ink-600);
+  --on-hero-accent: var(--color-gold-700);
+  --cta-bg: var(--color-emerald-800);
+  --cta-bg-hover: var(--color-emerald-700);
+  --cta-fg: var(--color-ivory-100);
+  --cta-image: none;
+  --focus-ring: var(--color-emerald-600);
+  --focus-ring-hero: var(--color-emerald-700);
+}
+
+/* Dải nền tối (dự án, kết nối, footer): nút chính luôn là champagne như mockup, ở mọi phương án. */
+.surface-dark {
+  --cta-bg: var(--color-gold-400);
+  --cta-bg-hover: var(--color-gold-300);
+  --cta-fg: var(--color-emerald-950);
+  --cta-image: var(--gradient-gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --animate-rise: none;
+    --duration-reveal: 1ms;
+    --reveal-distance: 0px;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
